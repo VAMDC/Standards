@@ -29,16 +29,16 @@ Downloads
 
 Below are links to documents available for download.
 
-=====================          ==========
+=====================          ========== 
 document                       version
-=====================          ==========
-data access protocol           `11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`_
-query language                 `11.05 <http://www.vamdc.org/documents/vss1_v11.05.pdf>`_    
-dictionary                     `11.05 <http://www.vamdc.org/documents/dictionary_v11.05.pdf>`_
-data model schema              `0.2 <http://www.vamdc.eu/downloads/vamdc-xsams-0.2.tar.bz2>`_
-data model schema doc          `0.2 <http://www.vamdc.eu/downloads/vamdc-xsams-doc-0.2>`_
-data model guide               `0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`_
-=====================          ==========
+=====================          ========== 
+data access protocol           `11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 
+query language                 `11.05 <http://www.vamdc.org/documents/vss1_v11.05.pdf>`__    
+dictionary                     `11.05 <http://www.vamdc.org/documents/dictionary_v11.05.pdf>`__ 
+data model schema              `0.2 <http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2>`__ 
+data model schema doc          `0.2 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.2>`__ 
+data model guide               `0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`__ 
+=====================          ========== 
 
 
 Changelog
