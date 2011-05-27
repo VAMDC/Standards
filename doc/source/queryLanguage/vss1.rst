@@ -18,7 +18,7 @@ This is an example of a VSS1 query::
 
 	SELECT ALL WHERE AtomNuclearCharge = 25 AND AtomIonCharge < 2
 
-In the following definitions, VSS1 queries are assumed to be submitted by a client application  to a web-service. That service contains a query processor that converts the VSS1 query into a SQL query suitable for the relational database managed by the service. A request to the service contains the VSS1 text of the query and other parameters such as the desired formats of the returned results.
+In the following definitions, VSS1 queries are assumed to be submitted by a client application  to a web-service. That service contains a query processor that converts the VSS1 query into a SQL query or set of queries, suitable for the relational database managed by the service. A request to the service contains the VSS1 text of the query and other parameters such as the desired formats of the returned results.
 
 Interoperability and extensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,7 +42,7 @@ VSS1 queries never alter the database to which they are applied.
 
 * VSS1 queries must not contain the JOIN keyword.
 
-* Column names used as operands in a VSS1 query must be terms taken from the VAMDC dictionary. These columns names must not be qualified by the name of a schema or database. 
+* Column names used as operands in a VSS1 query must be terms taken from the VAMDC Restrictables dictionary. These columns names must not be qualified by the name of a schema or database.
 
 All the terms in the dictionary are valid as column names on all databases with a VSS1 processor. The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
 
@@ -66,9 +66,13 @@ SQL queries are written as text strings containing keywords, operators and opera
 Queries can contain any Unicode character, but the keywords can be written using only ASCII characters. In VSS1, the valid identifiers also use only ASCII characters.
 
 White space is required between keywords and operands but not between operators and operands. 
-A typical (simple) SQL query looks like this::
+A typical (simple) VSS1 query looks like this::
 
-	SELECT AtomIonCharge,AtomNuclearCharge FROM States WHERE AtomIonCharge>6
+	SELECT ALL WHERE AtomIonCharge>6
+	
+This query would be equally valid::
+
+	SELECT * WHERE AtomIonCharge > 6
 
 Here, data are selected from the columns AtomIonCharge and AtomNuclearCharge (note the use of a comma-separated list to specify the columns) of the table States according to a criterion on the electronic charge of the ions.
 String literals are delimited by single quotes (the ASCII apostrophe character) thus::
@@ -78,5 +82,5 @@ String literals are delimited by single quotes (the ASCII apostrophe character) 
 To include an apostrophe in a string, write two consecutive apostrophe-characters.
 If an identifier contains 'special characters' (typically white space), it must be protected with double quotes thus::
 
-	SELECT "silly column name" FROM ...
+	SELECT "silly column name" WHERE...
 
