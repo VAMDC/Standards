@@ -69,15 +69,15 @@ If a service supports both TAP and VAMDC-TAP, the tables available for a TAP que
 Registration
 ------------
 
-A VAMDC-TAP service must be registered. The registration document must be of type {http://www.ivoa.net/xml/VODataService/v1.0}CatalogService or {http://www.ivoa.net/xml/VODataService/v1.1}CatalogService as defined by IVOA (i.e. it must use the VODataService standard in either of two versions).
+A VAMDC-TAP service must be registered. The registration document must be of type `CatalogService <http://www.ivoa.net/xml/VODataService/v1.0>`_ or `CatalogService <http://www.ivoa.net/xml/VODataService/v1.1>`_ as defined by IVOA (i.e. it must use the VODataService standard in either of two versions).
 
-The VAMDC-TAP capability must be denoted in the registration document by a capability block with the attribute standardID=ivo://vamdc/std/VAMDC-TAP and the structural type {http://www.vamdc.eu/xml/TAPXSAMS/v1.0}TapXsams. In this schema, the returnables are denoted by returnable elements the values of which are the names of the returnables. Similliarly, the restrictables are denoted by restrictable elements. There may be zero or more of each type (but a service with zero of either type is not very useful). All the returnable elements must come before the first restrictable element.
+The VAMDC-TAP capability must be denoted in the registration document by a capability block with the attribute standardID=ivo://vamdc/std/VAMDC-TAP and the structural type VAMDC-TAP. In this schema, the returnables are denoted by returnable elements the values of which are the names of the returnables. Similliarly, the restrictables are denoted by restrictable elements. There may be zero or more of each type (but a service with zero of either type is not very useful). All the returnable elements must come before the first restrictable element.
 
-If the service is to be registered as both TAP and VAMDC-TAP, then the TAP capability must be denoted by a capability block with the attribute standardID=ivo://ivoa.net/std/TAP. This capability must have structural type {http://www.ivoa.net/Documents/REC/ReR/VOResource-20080222.html}Capability. This type has no TAP-specific metadata.
+If the service is to be registered as both TAP and VAMDC-TAP, then the TAP capability must be denoted by a capability block with the attribute standardID=ivo://ivoa.net/std/TAP. This capability must have structural type `Capability <http://www.ivoa.net/Documents/REC/ReR/VOResource-20080222.html>`_. This type has no TAP-specific metadata.
 
 The two capability blocks are siblings in the registration document. A service that fully supports TAP will have both a VAMDC-TAP and a TAP capability.
 
-A service registered with a TAP capability should have, in its registration document, details of the queriable tables and columns, denoted according to the VODataService specification  http://www.ivoa.net/Documents/VODataService/20101202/REC-VODataService-1.1-20101202.html .
+A service registered with a TAP capability should have, in its registration document, details of the queriable tables and columns, denoted according to the VODataService `specification  <http://www.ivoa.net/Documents/VODataService/20101202/REC-VODataService-1.1-20101202.html>`_ .
 
 The capabilities of a service must be made available to the registry in its VOSI-capabilties output; this avoids the need to enter them manually in the registry. If the service has a TAP capability, the details of tables and columns should be presented in its VOSI-tables output.
 
