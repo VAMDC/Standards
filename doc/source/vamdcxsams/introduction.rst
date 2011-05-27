@@ -83,13 +83,7 @@ All required and optional entries are clearly described, and examples given.
 Limitations
 --------------
 
-As of 
-
-.. raw:: latex
-
-	\today
-
-, some parts of the schema are well developed (e.g., on atomic and
+As of |today| , some parts of the schema are well developed (e.g., on atomic and
 molecular structure or processes) while the others are only in the initial
 phase of development (e.g., solids, environments). It was nevertheless decided to add those
 less-advanced sections in order to provide some insight into future

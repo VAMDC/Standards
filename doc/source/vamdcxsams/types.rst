@@ -518,18 +518,20 @@ MatrixType:
 	A nrows x ncols matrix. 
 	Being an extension of the :ref:`PrimaryType`, **MatrixType** defines following elements and attributes:
 	
-	* mandatory **RowRefs** element that contains whitespace separated list of row names, 
-	* mandatory **ColRefs** element that contains the same list for columns. 
-	* mandatory **Matrix** element that contains a whitespace separated
-	  list of values, either real or complex
-	* mandatory attribute **form** that identifies the type of matrix. It can be
+	*	mandatory **RowRefs** element that contains whitespace separated list of row names, 
+	*	mandatory **ColRefs** element that contains the same list for columns. 
+	*	mandatory **Matrix** element that contains a whitespace separated
+		list of values, either real or complex
+	*	mandatory integer attribute **nrows** defining the number of rows,
+	*	mandatory integer attribute **ncols** defining the number of columns,
+	*	mandatory attribute **form** that identifies the type of matrix. It can be
 		- *arbitrary*
 		- *symmetric*
 		- *asymmetric*
 		- *diagonal*
 		- *antidiagonal*
 		
-	* mandatory attribute 'values' that may take values
+	*	mandatory attribute 'values' that may take values
 		-	*binary*
 		-	*integer*
 		-	*real*

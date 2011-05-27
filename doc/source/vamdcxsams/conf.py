@@ -182,7 +182,7 @@ latex_documents = [
    u"VAMDC WP6 working group", 'manual'),
 ]
 
-f = open('_templates/title.tex', 'r+')
+f = open('_templates/documentTemplate.tex', 'r+')
 
 PREAMBLE = f.read()
 
