@@ -1,69 +1,53 @@
-.. _reqCollisions:
-
-Collisions
+nCollisions
 -------------------------------------------------------------------
 
 
 collisional process data
 
 
-.. _reqMethods:
-
-Methods
+nMethods
 -------------------------------------------------------------------
 
 
 method information
 
 
-.. _reqNonRadiativeTransitions:
-
-NonRadiativeTransitions
+nNonRadiativeTransitions
 -------------------------------------------------------------------
 
 
 non-radiative transitions data
 
 
-.. _reqProcesses:
-
-Processes
+nProcesses
 -------------------------------------------------------------------
 
 
 data for all available processes
 
 
-.. _reqRadiativeTransitions:
-
-RadiativeTransitions
+nRadiativeTransitions
 -------------------------------------------------------------------
 
 
 radiative transitions data
 
 
-.. _reqSources:
-
-Sources
+nSources
 -------------------------------------------------------------------
 
 
 source reference information
 
 
-.. _reqSpecies:
-
-Species
+nSpecies
 -------------------------------------------------------------------
 
 
 only brief species information, without states
 
 
-.. _reqStates:
-
-States
+nStates
 -------------------------------------------------------------------
 
 

@@ -1,4 +1,3 @@
-.. _resAsOfDate:
 
 AsOfDate
 -------------------------------------------------------------------
@@ -13,7 +12,6 @@ Return data excluding any additions or improvements that were made after the giv
 **Constraints:** 
 
 
-.. _resAtomInchi:
 
 AtomInchi
 -------------------------------------------------------------------
@@ -28,7 +26,6 @@ AtomInchi
 **Constraints:** 
 
 
-.. _resAtomInchiKey:
 
 AtomInchiKey
 -------------------------------------------------------------------
@@ -43,7 +40,6 @@ AtomInchiKey
 **Constraints:** 
 
 
-.. _resAtomIonCharge:
 
 AtomIonCharge
 -------------------------------------------------------------------
@@ -58,7 +54,6 @@ Ionization stage with 0 for neutral
 **Constraints:** >=0
 
 
-.. _resAtomMass:
 
 AtomMass
 -------------------------------------------------------------------
@@ -73,7 +68,6 @@ Atomic mass in Daltons, which is the same as the unified mass units (1Da = 1u = 
 **Constraints:** >1
 
 
-.. _resAtomMassNumber:
 
 AtomMassNumber
 -------------------------------------------------------------------
@@ -88,7 +82,6 @@ AtomMassNumber
 **Constraints:** 
 
 
-.. _resAtomNuclearCharge:
 
 AtomNuclearCharge
 -------------------------------------------------------------------
@@ -103,7 +96,6 @@ Atomic number or nuclear charge
 **Constraints:** >0
 
 
-.. _resAtomNuclearSpin:
 
 AtomNuclearSpin
 -------------------------------------------------------------------
@@ -118,7 +110,6 @@ AtomNuclearSpin
 **Constraints:** 
 
 
-.. _resAtomStateCoupling:
 
 AtomStateCoupling
 -------------------------------------------------------------------
@@ -133,7 +124,6 @@ AtomStateCoupling
 **Constraints:** 
 
 
-.. _resAtomStateEnergy:
 
 AtomStateEnergy
 -------------------------------------------------------------------
@@ -148,7 +138,6 @@ Energy of the level
 **Constraints:** >=0
 
 
-.. _resAtomStateHyperfineMomentum:
 
 AtomStateHyperfineMomentum
 -------------------------------------------------------------------
@@ -163,7 +152,6 @@ AtomStateHyperfineMomentum
 **Constraints:** 
 
 
-.. _resAtomStateID:
 
 AtomStateID
 -------------------------------------------------------------------
@@ -178,7 +166,6 @@ ID for an atomic state, e.g. for linking a process to the state
 **Constraints:** 
 
 
-.. _resAtomStateIonizationEnergy:
 
 AtomStateIonizationEnergy
 -------------------------------------------------------------------
@@ -193,7 +180,6 @@ Ionization energy in eV
 **Constraints:** >0
 
 
-.. _resAtomStateKappa:
 
 AtomStateKappa
 -------------------------------------------------------------------
@@ -208,7 +194,6 @@ AtomStateKappa
 **Constraints:** 
 
 
-.. _resAtomStateLandeFactor:
 
 AtomStateLandeFactor
 -------------------------------------------------------------------
@@ -223,7 +208,6 @@ Lande factor
 **Constraints:** 
 
 
-.. _resAtomStateLifeTime:
 
 AtomStateLifeTime
 -------------------------------------------------------------------
@@ -238,7 +222,6 @@ Life time of an atomic state in s.
 **Constraints:** >0
 
 
-.. _resAtomStateMagneticQuantumNumber:
 
 AtomStateMagneticQuantumNumber
 -------------------------------------------------------------------
@@ -253,7 +236,6 @@ AtomStateMagneticQuantumNumber
 **Constraints:** 
 
 
-.. _resAtomStateMixingCoefficient:
 
 AtomStateMixingCoefficient
 -------------------------------------------------------------------
@@ -268,7 +250,6 @@ AtomStateMixingCoefficient
 **Constraints:** 
 
 
-.. _resAtomStateParity:
 
 AtomStateParity
 -------------------------------------------------------------------
@@ -283,7 +264,6 @@ AtomStateParity
 **Constraints:** 
 
 
-.. _resAtomStatePolarizability:
 
 AtomStatePolarizability
 -------------------------------------------------------------------
@@ -298,7 +278,6 @@ AtomStatePolarizability
 **Constraints:** 
 
 
-.. _resAtomStateQuantumDefect:
 
 AtomStateQuantumDefect
 -------------------------------------------------------------------
@@ -313,7 +292,6 @@ AtomStateQuantumDefect
 **Constraints:** 
 
 
-.. _resAtomStateStatisticalWeight:
 
 AtomStateStatisticalWeight
 -------------------------------------------------------------------
@@ -328,7 +306,6 @@ AtomStateStatisticalWeight
 **Constraints:** 
 
 
-.. _resAtomSymbol:
 
 AtomSymbol
 -------------------------------------------------------------------
@@ -343,7 +320,6 @@ Atomic name
 **Constraints:** 
 
 
-.. _resCollisionIAEACode:
 
 CollisionIAEACode
 -------------------------------------------------------------------
@@ -358,7 +334,6 @@ CollisionIAEACode
 **Constraints:** 
 
 
-.. _resCollisionThreshold:
 
 CollisionThreshold
 -------------------------------------------------------------------
@@ -373,7 +348,6 @@ CollisionThreshold
 **Constraints:** 
 
 
-.. _resEnvironmentSpeciesConcentration:
 
 EnvironmentSpeciesConcentration
 -------------------------------------------------------------------
@@ -388,7 +362,6 @@ EnvironmentSpeciesConcentration
 **Constraints:** 
 
 
-.. _resEnvironmentSpeciesMoleFraction:
 
 EnvironmentSpeciesMoleFraction
 -------------------------------------------------------------------
@@ -403,7 +376,6 @@ EnvironmentSpeciesMoleFraction
 **Constraints:** 
 
 
-.. _resEnvironmentSpeciesPartialPressure:
 
 EnvironmentSpeciesPartialPressure
 -------------------------------------------------------------------
@@ -418,7 +390,6 @@ EnvironmentSpeciesPartialPressure
 **Constraints:** 
 
 
-.. _resEnvironmentTemperature:
 
 EnvironmentTemperature
 -------------------------------------------------------------------
@@ -433,7 +404,6 @@ Environment temperature
 **Constraints:** >0
 
 
-.. _resEnvironmentTotalNumberDensity:
 
 EnvironmentTotalNumberDensity
 -------------------------------------------------------------------
@@ -448,7 +418,6 @@ EnvironmentTotalNumberDensity
 **Constraints:** 
 
 
-.. _resEnvironmentTotalPressure:
 
 EnvironmentTotalPressure
 -------------------------------------------------------------------
@@ -463,7 +432,6 @@ Environment total pressure
 **Constraints:** >0
 
 
-.. _resFunctionID:
 
 FunctionID
 -------------------------------------------------------------------
@@ -478,7 +446,6 @@ FunctionID
 **Constraints:** 
 
 
-.. _resFunctionName:
 
 FunctionName
 -------------------------------------------------------------------
@@ -493,7 +460,6 @@ FunctionName
 **Constraints:** 
 
 
-.. _resInchiKey:
 
 InchiKey
 -------------------------------------------------------------------
@@ -508,7 +474,6 @@ International Chemical Identifier (InChI) key (27-character or 14-character firs
 **Constraints:** 
 
 
-.. _resMoleculeChemicalName:
 
 MoleculeChemicalName
 -------------------------------------------------------------------
@@ -523,7 +488,6 @@ Conventional molecule name, e.g. CO2, NH3, Feh (may not be unique)
 **Constraints:** 
 
 
-.. _resMoleculeInchi:
 
 MoleculeInchi
 -------------------------------------------------------------------
@@ -538,7 +502,6 @@ MoleculeInchi
 **Constraints:** 
 
 
-.. _resMoleculeInchiKey:
 
 MoleculeInchiKey
 -------------------------------------------------------------------
@@ -553,7 +516,6 @@ MoleculeInchiKey
 **Constraints:** 
 
 
-.. _resMoleculeMolecularWeight:
 
 MoleculeMolecularWeight
 -------------------------------------------------------------------
@@ -568,7 +530,6 @@ MoleculeMolecularWeight
 **Constraints:** 
 
 
-.. _resMoleculeNormalModeHarmonicFrequency:
 
 MoleculeNormalModeHarmonicFrequency
 -------------------------------------------------------------------
@@ -583,7 +544,6 @@ MoleculeNormalModeHarmonicFrequency
 **Constraints:** 
 
 
-.. _resMoleculeNormalModeIntensity:
 
 MoleculeNormalModeIntensity
 -------------------------------------------------------------------
@@ -598,7 +558,6 @@ MoleculeNormalModeIntensity
 **Constraints:** 
 
 
-.. _resMoleculeStateCharacLifeTime:
 
 MoleculeStateCharacLifeTime
 -------------------------------------------------------------------
@@ -613,7 +572,6 @@ Molecular state lifetime in seconds
 **Constraints:** >0
 
 
-.. _resMoleculeStateCharacNuclearSpinSymmetry:
 
 MoleculeStateCharacNuclearSpinSymmetry
 -------------------------------------------------------------------
@@ -628,7 +586,6 @@ MoleculeStateCharacNuclearSpinSymmetry
 **Constraints:** (ortho|para|A|E|none)
 
 
-.. _resMoleculeStateEnergy:
 
 MoleculeStateEnergy
 -------------------------------------------------------------------
@@ -643,7 +600,6 @@ MoleculeStateEnergy
 **Constraints:** 
 
 
-.. _resMoleculeStateID:
 
 MoleculeStateID
 -------------------------------------------------------------------
@@ -658,7 +614,6 @@ MoleculeStateID
 **Constraints:** 
 
 
-.. _resMoleculeStoichiometricFormula:
 
 MoleculeStoichiometricFormula
 -------------------------------------------------------------------
@@ -673,7 +628,6 @@ Molecular stoichiometric formula
 **Constraints:** 
 
 
-.. _resNonRadTranEnergy:
 
 NonRadTranEnergy
 -------------------------------------------------------------------
@@ -688,7 +642,6 @@ NonRadTranEnergy
 **Constraints:** 
 
 
-.. _resNonRadTranProbability:
 
 NonRadTranProbability
 -------------------------------------------------------------------
@@ -703,7 +656,6 @@ NonRadTranProbability
 **Constraints:** 
 
 
-.. _resNonRadTranWidth:
 
 NonRadTranWidth
 -------------------------------------------------------------------
@@ -718,7 +670,6 @@ NonRadTranWidth
 **Constraints:** 
 
 
-.. _resNormalModeSymmetry:
 
 NormalModeSymmetry
 -------------------------------------------------------------------
@@ -733,7 +684,6 @@ The character of the irreducible representation for this vibrational normal mode
 **Constraints:** 
 
 
-.. _resRadTransBandCentre:
 
 RadTransBandCentre
 -------------------------------------------------------------------
@@ -748,7 +698,6 @@ RadTransBandCentre
 **Constraints:** 
 
 
-.. _resRadTransBandWidth:
 
 RadTransBandWidth
 -------------------------------------------------------------------
@@ -763,7 +712,6 @@ RadTransBandWidth
 **Constraints:** 
 
 
-.. _resRadTransEffectiveLandeFactor:
 
 RadTransEffectiveLandeFactor
 -------------------------------------------------------------------
@@ -778,7 +726,6 @@ Effective Lande factor for a given transition
 **Constraints:** 
 
 
-.. _resRadTransEnergy:
 
 RadTransEnergy
 -------------------------------------------------------------------
@@ -793,7 +740,6 @@ RadTransEnergy
 **Constraints:** 
 
 
-.. _resRadTransFrequency:
 
 RadTransFrequency
 -------------------------------------------------------------------
@@ -808,7 +754,6 @@ RadTransFrequency
 **Constraints:** 
 
 
-.. _resRadTransProbabilityA:
 
 RadTransProbabilityA
 -------------------------------------------------------------------
@@ -823,7 +768,6 @@ RadTransProbabilityA
 **Constraints:** 
 
 
-.. _resRadTransProbabilityIdealisedIntensity:
 
 RadTransProbabilityIdealisedIntensity
 -------------------------------------------------------------------
@@ -838,7 +782,6 @@ RadTransProbabilityIdealisedIntensity
 **Constraints:** 
 
 
-.. _resRadTransProbabilityLineStrength:
 
 RadTransProbabilityLineStrength
 -------------------------------------------------------------------
@@ -853,7 +796,6 @@ RadTransProbabilityLineStrength
 **Constraints:** 
 
 
-.. _resRadTransProbabilityLog10WeightedOscillatorStrength:
 
 RadTransProbabilityLog10WeightedOscillatorStrength
 -------------------------------------------------------------------
@@ -868,7 +810,6 @@ RadTransProbabilityLog10WeightedOscillatorStrength
 **Constraints:** 
 
 
-.. _resRadTransProbabilityOscillatorStrength:
 
 RadTransProbabilityOscillatorStrength
 -------------------------------------------------------------------
@@ -883,7 +824,6 @@ RadTransProbabilityOscillatorStrength
 **Constraints:** 
 
 
-.. _resRadTransProbabilityWeightedOscillatorStrength:
 
 RadTransProbabilityWeightedOscillatorStrength
 -------------------------------------------------------------------
@@ -898,7 +838,6 @@ RadTransProbabilityWeightedOscillatorStrength
 **Constraints:** 
 
 
-.. _resRadTransWavelength:
 
 RadTransWavelength
 -------------------------------------------------------------------
@@ -913,7 +852,6 @@ RadTransWavelength
 **Constraints:** 
 
 
-.. _resRadTransWavenumber:
 
 RadTransWavenumber
 -------------------------------------------------------------------
@@ -928,7 +866,6 @@ RadTransWavenumber
 **Constraints:** 
 
 
-.. _resSourceCategory:
 
 SourceCategory
 -------------------------------------------------------------------
@@ -943,7 +880,6 @@ Type of publication, e.g. journal, book etc.
 **Constraints:** Journal | Book | Proceedings | On-line
 
 
-.. _resSourceYear:
 
 SourceYear
 -------------------------------------------------------------------
