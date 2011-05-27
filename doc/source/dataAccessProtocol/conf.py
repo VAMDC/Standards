@@ -182,6 +182,18 @@ latex_documents = [
    u'VAMDC', 'manual'),
 ]
 
+f = open('_templates/documentTemplate.tex', 'r+')
+
+PREAMBLE = f.read()
+
+latex_elements = {
+	'papersize': 'a4paper',
+	'classoptions': ',oneside',
+	'babel': '\\usepackage[english]{babel}',
+	'preamble': PREAMBLE
+}
+
+
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = '../_static/logos.png'

@@ -124,6 +124,8 @@ is acutally executed and the data transferred.
 
 The names of the headers to be used are
 
+* VAMDC-COUNT-ATOMS
+* VAMDC-COUNT-MOLECULES
 * VAMDC-COUNT-SPECIES
 * VAMDC-COUNT-SOURCES
 * VAMDC-COUNT-STATES
@@ -146,6 +148,14 @@ with the field VAMDC-TRUNCATED that contains the percentage that the returned
 data represent with respect to the total amount available for that query. It is
 up to each service to decide both where to put the limit and how to implement
 it, for example the number of states or transitions.
+
+
+Document size estimate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**VAMDC-APPROX-SIZE** HTTP header is intended to provide the estimation of the size of the response document.
+It should return an integer value, representing estimate uncompressed document size in megabytes.
+
 
 Volume limitation example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
