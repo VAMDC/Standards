@@ -225,13 +225,8 @@ UnitsType
 	the backslash symbol **/**.
 	For unitless (dimensionless) parameters, use **unitless**.
 	
-	As of 
-	
-	.. raw:: latex
-	
-		\today 
-	
-	this list contains the following values:
+	So far, this list contains the following values. If any additional values are required,
+	contact responsibles for schema.
 
 	- undef
 	- eV/amu
@@ -513,5 +508,124 @@ DataListType:
 	*	**units** of type :ref:`UnitsType` to define units of the list
 	*	integer **n** to indicate the number of elements in a list
 
+.. _MatrixType:
+
+MatrixType:
+++++++++++++++
+
+	.. image:: images/types/MatrixType.png
+	
+	A nrows x ncols matrix. 
+	Being an extension of the :ref:`PrimaryType`, **MatrixType** defines following elements and attributes:
+	
+	* mandatory **RowRefs** element that contains whitespace separated list of row names, 
+	* mandatory **ColRefs** element that contains the same list for columns. 
+	* mandatory **Matrix** element that contains a whitespace separated
+	  list of values, either real or complex
+	* mandatory attribute **form** that identifies the type of matrix. It can be
+		- *arbitrary*
+		- *symmetric*
+		- *asymmetric*
+		- *diagonal*
+		- *antidiagonal*
+		
+	* mandatory attribute 'values' that may take values
+		-	*binary*
+		-	*integer*
+		-	*real*
+		-	*imaginary*
+		-	*complex*
+	
+	For an **arbitrary** matrix, **Matrix** element has nrows*ncols entries. First you output elements of the first row,
+	starting from the leftmost column.
+	
+	+---+---+---+---+
+	|   | c1| c2| c3|
+	+---+---+---+---+
+	| r1| 0 | 1 | 2 |
+	+---+---+---+---+
+	| r2| 3 | 4 | 5 |
+	+---+---+---+---+
+	| r3| 6 | 7 | 8 |
+	+---+---+---+---+
+
+	
+	::
+
+		<MatrixData units="arbitrary" nrows="3" ncols="3" form="arbitrary" values="integer">
+			<RowRefs>r1 r2 r3</RowRefs>
+			<ColRefs>c1 c2 c3</ColRefs>
+			<Matrix>
+				0 1 2 3 4 5 6 7 8
+			</Matrix>
+		</MatrixData>
+	
+	
+	For **diagonal** and **antidiagonal** matrix there are nrows=ncols entries, counting from left to right
+	
+	+---+---+---+---+
+	|   | c1| c2| c3|
+	+---+---+---+---+
+	| r1| 1 | 0 | 0 |
+	+---+---+---+---+
+	| r2| 0 | 2 | 0 |
+	+---+---+---+---+
+	| r3| 0 | 0 | 3 |
+	+---+---+---+---+
+
+	
+	::
+	
+		<MatrixData units="arbitrary" nrows="3" ncols="3" form="diagonal" values="integer">
+			<RowRefs>r1 r2 r3</RowRefs>
+			<ColRefs>c1 c2 c3</ColRefs>
+			<Matrix>
+				1 2 3
+			</Matrix>
+		</MatrixData>
+
+	+---+---+---+---+
+	|   | c1| c2| c3|
+	+---+---+---+---+
+	| r1| 0 | 0 | 3 |
+	+---+---+---+---+
+	| r2| 0 | 2 | 0 |
+	+---+---+---+---+
+	| r3| 1 | 0 | 0 |
+	+---+---+---+---+
+
+	
+	::
+	
+		<MatrixData units="arbitrary" nrows="3" ncols="3" form="antidiagonal" values="integer">
+			<RowRefs>r1 r2 r3</RowRefs>
+			<ColRefs>c1 c2 c3</ColRefs>
+			<Matrix>
+				1 2 3
+			</Matrix>
+		</MatrixData>
 
 
+	For a **symmetric** matrix there are nrows(nrows+1)/2 entries.
+
+	+---+---+---+---+
+	|   | c1| c2| c3|
+	+---+---+---+---+
+	| r1| 1 | 2 | 3 |
+	+---+---+---+---+
+	| r2| 2 | 4 | 5 |
+	+---+---+---+---+
+	| r3| 3 | 5 | 6 |
+	+---+---+---+---+
+
+	
+	::
+
+		<MatrixData units="arbitrary" nrows="3" ncols="3" form="symmetric" values="integer">
+			<RowRefs>r1 r2 r3</RowRefs>
+			<ColRefs>c1 c2 c3</ColRefs>
+			<Matrix>
+				1 2 3 4 5 6
+			</Matrix>
+		</MatrixData>
+	

@@ -103,12 +103,9 @@ FitData
 
 	The **FitData** element of type **FitDataType**
 	gives all data necessary to calculate the numerical output
-	using a fit function.  The child element **FunctionRef** refers
-	to this function which is defined in the :ref:`Functions` branch.
-	Data are of two types:
-	
-	*	the validity limits of the arguments (x1, x2...)
-	*	the fit parameter values 
+	using a fit function. Function reference should be given in the **functionRef** attribute of
+	**FitParameters** element. Validity limits of the arguments (x1, x2...) and the fit parameter values 
+	are also provided there.
 	
 	To complete the description, the fit accuracy, the physical
 	uncertainty and the data production date may be reported.
