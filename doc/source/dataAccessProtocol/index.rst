@@ -1,7 +1,7 @@
 .. _index:
 
-Data access protocol
-====================
+Data access protocol [v |version|]
+==================================
 
 .. toctree::
    :maxdepth: 2
