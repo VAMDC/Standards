@@ -75,3 +75,5 @@
 	Classification of Processes, Version 1.2, 7 October 2003.
 	http://www-amdis.iaea.org/DCN/ProcessClassification.pdf
 	
+..	[IVOA] International Virtual Observatory Alliance (IVOA), http://www.ivoa.net/
+	
