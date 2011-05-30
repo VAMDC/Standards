@@ -455,7 +455,7 @@ SpeciesStateRefType
 ++++++++++++++++++++
 	
 	This type allows to define the **SpeciesRef** (:ref:`SpeciesRefType`) or
-	**StateRef**(:ref:`StateRefType`) child elements (or both).
+	**StateRef** (:ref:`StateRefType`) child elements (or both).
 	At least one should be specified, but it is always kind to explicitly provide **SpeciesRef**.
 	
 	.. image:: images/types/SpeciesStateRefType.png
