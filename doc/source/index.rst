@@ -24,6 +24,13 @@ Data model
 
 * VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.2>`_ in the browser or downloaded from below.
 
+Registry
+---------
+.. toctree::
+   :maxdepth: 1
+
+   registry/index
+
 Downloads
 ----------
 
@@ -38,6 +45,7 @@ dictionary                     `11.05 <http://www.vamdc.org/documents/dictionary
 data model schema              `0.2 <http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2>`__ 
 data model schema doc          `0.2 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.2.tar.bz2>`__ 
 data model guide               `0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`__ 
+registry guide                 `11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__ 
 =====================          ========== 
 
 
