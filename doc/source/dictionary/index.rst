@@ -1,4 +1,4 @@
-.. _index:
+.. _dictionary-index:
 
 ============================
 Dictionaries  [v |version|]
