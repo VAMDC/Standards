@@ -40,17 +40,15 @@ VSS1 queries never alter the database to which they are applied.
 
 * VSS1 queries must not contain the SELECT ... INTO construction of SQL92.
 
-* VSS1 queries must not contain the JOIN keyword.
+VSS1 queries must not contain the JOIN keyword.
 
-* Column names used as operands in a VSS1 query must be terms taken from the VAMDC Restrictables dictionary. These columns names must not be qualified by the name of a schema or database.
+Column names used as operands in a VSS1 query must be terms taken from the VAMDC Restrictables dictionary. These columns names must not be qualified by the name of a schema or database.
 
 All the terms in the dictionary are valid as column names on all databases with a VSS1 processor. The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
 
-Where a VSS1 query specifies a column to be returned that does not exist in the target database, the query processor must ignore that part of the query, leaving the column out of the table of results. The processor must not reject the query as invalid.
+VSS1 processors may accept only a sub-set of the dictionary keywords, corresponding to the content of the underlying database. This sub-set naturally varies between databases and the set of restrictables for a given database is normally made available to the clients of the database. Where a query includes restrictables not supported by a given VSS2 processor, the processor must reject the query; it must not process the query while ignoring the unsupported constraints.
 
-Where a VSS1 query contains constraints on a column that does not exist in the target database, the query processor must ignore that constraint. It must not reject the query.
-
-When the results of a query are to be returned in VAMDC-XSAMS format, VSS1 queries should begin with SELECT ALL ...; the set of columns from which data are returned is implicitly chosen by the choice of VAMDC-XSAMS format. If such a query does specify a set of columns (e.g. SELECT AtomIonCharge WHERE ...), then the query processor should ignore that set and proceed as if the query were SELECT ALL. However, where the results of a query are to be returned in a tabular format, the query processor must respect the query's selection of columns.
+When the results of a query are to be returned in VAMDC-XSAMS format, VSS1 queries should begin with SELECT ALL ...; the set of columns from which data are returned is implicitly chosen by the choice of VAMDC-XSAMS format. If such a query does specify a set of columns (e.g. SELECT AtomIonCharge WHERE ...), then the query processor should ignore that set and proceed as if the query were SELECT ALL. However, where the results of a query are to be returned in a tabular format, the query processor must respect the query's selection of columns. In the latter case, if the query specifies a returnable not supported by the particular database then the processor should reject the query.
 
 When processing a query that contains valid VSS1 plus extensions, the behaviour is defined by the implementation of the query processor. The processor may reject the query, or it may ignore the extensions that it does not support.
 
