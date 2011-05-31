@@ -49,7 +49,12 @@ VSS2 queries never alter the database to which they are applied.
 
 VSS2 queries must not contain the JOIN keyword.
 
-Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary. Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. The list of column names following the SELECT keyword, which specify the columns from which data are to be returned, must be taken from the Requestables dictionary, or must contain only the single keyword ALL (that keyword having its normal meaning in SQL92). Note that the 'columns' in this dictionary are composites. In a tabular representation of the results a requestable 'column' may produce multiple output-columns. In an XSAMS representation, a requestable 'column' may produce an XML fragment with significant sub-structure.
+Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary. 
+
+Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the upper and lower states of an electronic transition. The syntax of the qualified name is *context.restrictable*, e.g. ``Upper.AtomStateEnergy``.
+Available contexts are listed in the VAMDC dictionary.
+
+The list of column names following the SELECT keyword, which specify the columns from which data are to be returned, must be taken from the Requestables dictionary, or must contain only the single keyword ALL (that keyword having its normal meaning in SQL92). Note that the 'columns' in this dictionary are composites. In a tabular representation of the results a requestable 'column' may produce multiple output-columns. In an XSAMS representation, a requestable 'column' may produce an XML fragment with significant sub-structure.
 
 All the terms in the dictionary are valid as column names on all databases with a VSS2 processor. The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
 
