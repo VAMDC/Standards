@@ -1,4 +1,4 @@
-.. _index:
+.. _dataAccessProtocol-index:
 
 Data access protocol [v |version|]
 ==================================
