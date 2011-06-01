@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'vss1'
+project = u'query language'
 copyright = u'2011, VAMDC'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_show_sourcelink = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'VSS1'
+htmlhelp_basename = 'query language'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -178,7 +178,7 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'vss1.tex', u'VAMDC Query Language Specification',
+  ('index', 'querylanguage_.tex', u'VAMDC Query Language Specification',
    u'VAMDC', 'manual'),
 ]
 
@@ -223,7 +223,7 @@ latex_logo = '../_static/logos.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'documentation', u'VAMDC Query Language Specification',
+    ('index', 'querylanguage_', u'VAMDC Query Language Specification',
      [u'VAMDC'], 1)
 ]
 
