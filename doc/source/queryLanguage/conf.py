@@ -178,7 +178,7 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'vss1.tex', u'VSS1 Specification',
+  ('index', 'vss1.tex', u'VAMDC Query Language Specification',
    u'VAMDC', 'manual'),
 ]
 
@@ -223,7 +223,7 @@ latex_logo = '../_static/logos.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'documentation', u'VAMDC Documentation',
+    ('index', 'documentation', u'VAMDC Query Language Specification',
      [u'VAMDC'], 1)
 ]
 
