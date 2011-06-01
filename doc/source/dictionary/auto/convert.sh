@@ -30,6 +30,6 @@ sed -e 's/^.$//g' > returnables.rst
 #SQLITE to sphinx conversion for requestables
 sqlite3 -line dict.sqlite "select bk.name, bk.ldescr from browse_keyword as bk, browse_keyword_usage as bku where bk.id = bku.keyword_id and bku.usage_id=3 order by bk.name;" |
 
-sed -e 's/^ *name = \(.*\)/n\1\n-------------------------------------------------------------------\n\n/g'|
+sed -e 's/^ *name = \(.*\)/\1\n-------------------------------------------------------------------\n\n/g'|
 sed -e 's/^ *ldescr = \(.*\)/\1\n/g'|
 sed -e 's/^.$//g' > requestables.rst

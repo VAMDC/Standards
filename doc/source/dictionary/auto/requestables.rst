@@ -1,53 +1,53 @@
-nCollisions
+Collisions
 -------------------------------------------------------------------
 
 
 collisional process data
 
 
-nMethods
+Methods
 -------------------------------------------------------------------
 
 
 method information
 
 
-nNonRadiativeTransitions
+NonRadiativeTransitions
 -------------------------------------------------------------------
 
 
 non-radiative transitions data
 
 
-nProcesses
+Processes
 -------------------------------------------------------------------
 
 
 data for all available processes
 
 
-nRadiativeTransitions
+RadiativeTransitions
 -------------------------------------------------------------------
 
 
 radiative transitions data
 
 
-nSources
+Sources
 -------------------------------------------------------------------
 
 
 source reference information
 
 
-nSpecies
+Species
 -------------------------------------------------------------------
 
 
 only brief species information, without states
 
 
-nStates
+States
 -------------------------------------------------------------------
 
 
