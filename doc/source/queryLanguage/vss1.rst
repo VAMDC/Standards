@@ -46,7 +46,7 @@ Column names used as operands in a VSS1 query must be terms taken from the VAMDC
 
 All the terms in the dictionary are valid as column names on all databases with a VSS1 processor. The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
 
-VSS1 processors may accept only a sub-set of the dictionary keywords, corresponding to the content of the underlying database. This sub-set naturally varies between databases and the set of restrictables for a given database is normally made available to the clients of the database. Where a query includes restrictables not supported by a given VSS2 processor, the processor must reject the query; it must not process the query while ignoring the unsupported constraints.
+VSS1 processors may accept only a sub-set of the dictionary keywords, corresponding to the content of the underlying database. This sub-set naturally varies between databases and the set of restrictables for a given database is normally made available to the clients of the database. Where a query includes restrictables not supported by a given VSS1 processor, the processor must reject the query; it must not process the query while ignoring the unsupported constraints.
 
 When the results of a query are to be returned in VAMDC-XSAMS format, VSS1 queries should begin with SELECT ALL ...; the set of columns from which data are returned is implicitly chosen by the choice of VAMDC-XSAMS format. If such a query does specify a set of columns (e.g. SELECT AtomIonCharge WHERE ...), then the query processor should ignore that set and proceed as if the query were SELECT ALL. However, where the results of a query are to be returned in a tabular format, the query processor must respect the query's selection of columns. In the latter case, if the query specifies a returnable not supported by the particular database then the processor should reject the query.
 
@@ -80,5 +80,5 @@ String literals are delimited by single quotes (the ASCII apostrophe character) 
 To include an apostrophe in a string, write two consecutive apostrophe-characters.
 If an identifier contains 'special characters' (typically white space), it must be protected with double quotes thus::
 
-	SELECT "silly column name" WHERE...
+	SELECT * WHERE "silly column name" > 0...
 

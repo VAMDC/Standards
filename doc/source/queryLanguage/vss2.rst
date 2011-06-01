@@ -8,7 +8,8 @@ VSS2
 Introduction
 -------------
 
-VAMDC SQL Subset 2 (VSS2) is a query language designed for the VAMDC-TAP web-services. 
+VAMDC SQL Subset 2 (VSS2) is a query language designed for the VAMDC-TAP web-services.
+VSS2 will replace VSS1 in the near future, currently this specification is only a **draft** version and a subject to change.
 A query in VSS2 defines an extract of an archive that a data service can return in an VAMDC-XSAMS document or in a tabular format.
 
 Subset of SQL92
