@@ -41,7 +41,7 @@ Virtual Observatory Support Interface (VOSI)
 
 The Support interface is required by all IVOA compliant services and defines common interfaces for its services. The registry uses common support interfaces to help populate resources in the registry.
 
-* **Capability** - All services define capability metadata, which comprises of XML formatted metadata that describes a particular capability and location of this particular service. The capability also describes what standards this service conforms to. Certain capabilities will be to other VOSI interfaces or the XSAMS location along with what standard interface it supports for XSAMS. Registry uses this VOSI location of the capability metadata to property fill out the resource in the registry. If other VOSI locations are present such as Table and Application metadata it additionally harvests that data.
+* **Capability** - All services define capability metadata, which comprises of XML formatted metadata that describes a particular capability and location of this particular service. The capability also describes what standards this service conforms to. Certain capabilities will be to other VOSI interfaces or the VAMDC-XSAMS location along with what standard interface it supports for VAMDC-XSAMS. Registry uses this VOSI location of the capability metadata to property fill out the resource in the registry. If other VOSI locations are present such as Table and Application metadata it additionally harvests that data.
 
 * **Table Metadata** - Another VOSI interface in XML form to describe table metadata for Catalogue services.
 

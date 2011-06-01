@@ -22,72 +22,73 @@ VAMDC registry query library
 
 A small (single-class) library is available for VAMDC work. Version 2.0 of this library as well as a zip file containing all the third-party, supporting jars are available for download from the links below. (The AstroGrid client-library for the registry is one of the third-party jars if you want to use it directly.) 
 
-* `VAMDC registry-client library version 2.0 <http://www.vamd.org/downloads/registry-client-2.0.jar>`_ 
-* `3rd-party jars supporting the registry-client library <http://www.vamd.org/downloads/registry-client-dependencies.zip>`_ 
+* `VAMDC registry-client library version 2.0 <http://www.vamdc.org/downloads/registry-client-2.0.jar>`_ 
+* `3rd-party jars supporting the registry-client library <http://www.vamdc.org/downloads/registry-client-dependencies.zip>`_ 
 
 Some useage notes follow. For the full range of function, see the Javadoc. Other technical descriptions of the software are available, but the main documentation is this page and the Javadoc.
 
-To use the library, instantiate the single class eu.vamdc.registry.Registry. Each method call makes one registry query (technically, some of them make a sequence of queries). You can reuse the object for multiple, successive queries, but it is not safe to share it between threads. The no-argument constructor makes a client for the release registry. To use the development registry, pass the constant Registry.DEVELOPMENT_REGISTRY_ENDPOINT to the constructor (that's a string literal stating the endpoint for the registry of choice). The ability to select the development registry was added in v2.0 of the client.
+To use the library, instantiate the single class eu.vamdc.registry.Registry. Each method call makes one registry query (technically, some of them make a sequence of queries). You can reuse the object for multiple, successive queries, but it is not safe to share it between threads. The no-argument constructor makes a client for the release registry. To use the development registry, pass the constant ``Registry.DEVELOPMENT_REGISTRY_ENDPOINT`` to the constructor (that is a string literal stating the endpoint for the registry of choice). The ability to select the development registry was added in v2.0 of the client.
 
 The library lets you query for three kinds of information: whole registration documents, IVORNs and access URLs. The latter two types are delivered as lists or sets of strings and the registration documents as org.w3c.dom.Document instances. In the documents, the document element is an uninteresting wrapper and the query results are its first-level children.
 
 Here is an example of finding all the TAP services (this matches one of the XQuery examples in the section above)::
 
-	import eu.vamdc.registry.Registry;
-	import org.w3c.dom.Document;
-	import org.w3c.dom.NodeList;
-	...
-		Registry reggie = new Registry();
-		Document results = reggie.findTap();
-		NodeList nl = results.getDocumentElement().getElementsByTagName("ri:Resource");
-		for (int i = 0; i < nl.getLength(); i++) {
-			// Do something with this registration document...
-		}
-		
+    import eu.vamdc.registry.Registry;
+    import org.w3c.dom.Document;
+    import org.w3c.dom.NodeList;
+    ...
+        Registry reggie = new Registry();
+        Document results = reggie.findTap();
+        NodeList nl = results.getDocumentElement().getElementsByTagName("ri:Resource");
+        for (int i = 0; i < nl.getLength(); i++) {
+            // Do something with this registration document...
+        }
+
 You could also dismantle the results document using XSLT or XPATH. This might be better than using the DOM API.
+
 Sometimes you just want the access URLs for a class of services. Here is how::
 
-	import eu.vamdc.registry.Registry;
-	import java.net.URL;
-	import java.util.Set;
-	...
-		Registry reggie = new Registry();
-		Set<String> results = reggie.findAccessUrlsByCapability(Registry.TAP_XSAMS_ID);
-		for (String s : results) {
-			URL u = new URL(s);
-			// Use this service...
-		}
-		
-Note the use of a string constant to set the standard-identifier for TAP-XSAMS. You could also write the literal identifier: ivo://vamdc/std/TAP-XSAMS.
+    import eu.vamdc.registry.Registry;
+    import java.net.URL;
+    import java.util.Set;
+    ...
+        Registry reggie = new Registry();
+        Set<String> results = reggie.findAccessUrlsByCapability(Registry.TAP_XSAMS_ID);
+        for (String s : results) {
+            URL u = new URL(s);
+            // Use this service...
+        }
 
-If you want to select resources by special criteria, then you have to supply your own XQuery. Using the last example from the XQuery section above, this code looks for the access URLs of TAP-XSAMS services that can give wavelength data.::
+Note the use of a string constant to set the standard-identifier for VAMDC-TAP. You could also write the literal identifier: ``ivo://vamdc/std/VAMDC-TAP``.
 
-	import eu.vamdc.registry.Registry;
-	import org.w3c.dom.Document;
-	import org.w3c.dom.NodeList;
-	...
-		Registry reggie = new Registry();
-		String query = 
-			"declare namespace ri='http://www.ivoa.net/xml/RegistryInterface/v1.0'; " + 
-			"for $x in //ri:Resource " + 
-			"where $x/capability[@standardID='ivo://vamdc/std/TAP-XSAMS' " +
-			"and restrictable='AtomSymbol'] " +
-			"and $x/@status='active' " +
-			"return $x/capability[@standardID='ivo://vamdc/std/TAP-XSAMS']/interface/accessURL";
-		Document results = reggie.executeXquery(query);
-		//    NodeList nl = results.getDocumentElement().getElementsByTagName("ri:Resource");
-		NodeList nl = results.getDocumentElement().getElementsByTagName("accessURL");
-		for (int i = 0; i < nl.getLength(); i++) {
-			// Do something with this information...
-			System.out.println(nl.item(i).getFirstChild().getNodeValue());
-		}
-		
+If you want to select resources by special criteria, then you have to supply your own XQuery. Using the last example from the XQuery section above, this code looks for the access URLs of VAMDC-TAP services that can give wavelength data. ::
+
+    import eu.vamdc.registry.Registry;
+    import org.w3c.dom.Document;
+    import org.w3c.dom.NodeList;
+    ...
+        Registry reggie = new Registry();
+        String query = 
+            "declare namespace ri='http://www.ivoa.net/xml/RegistryInterface/v1.0'; " + 
+            "for $x in //ri:Resource " + 
+            "where $x/capability[@standardID='ivo://vamdc/std/VAMDC-TAP' " +
+            "and restrictable='AtomSymbol'] " +
+            "and $x/@status='active' " +
+            "return $x/capability[@standardID='ivo://vamdc/std/VAMDC-TAP']/interface/accessURL";
+        Document results = reggie.executeXquery(query);
+        //    NodeList nl = results.getDocumentElement().getElementsByTagName("ri:Resource");
+        NodeList nl = results.getDocumentElement().getElementsByTagName("accessURL");
+        for (int i = 0; i < nl.getLength(); i++) {
+            // Do something with this information...
+            System.out.println(nl.item(i).getFirstChild().getNodeValue());
+        }
+
 Note the spaces at the end of each fragment of the query: these are necessary to make the overall query correct.
 
 Sample registry query project
 -----------------------------------
 
-Some sample query routines are demonstrated in this eclipse project: `registry-query-sample-project.tar.gz <http://www.vamd.org/downloads/registry-query-sample-project.tar.gz>`_
+Some sample query routines are demonstrated in this eclipse project: `registry-query-sample-project.tar.gz <http://www.vamdc.org/downloads/registry-query-sample-project.tar.gz>`_
 
 Routines are:
 
@@ -101,7 +102,7 @@ VAMDC registry browser - web
 See http://131.111.70.87:8080/registrybrowser/registryViewer.seam for a registry web browser that lists all the available resources in the registry and allows the user to perform:
 
 * TAP queries
-* XSAM queries
+* VAMDC-TAP queries
 * View reference URL websites
 
 Astrogrid VODesktop
@@ -117,18 +118,18 @@ StartUp
 When VODesktop is launched, the first screen is normally VOExplorer. You can also find VOExplorer by selecting Window -> New VOExplorer in the menu. VOExplorer allows you to search the registry for resources in the registry.  Once you select a resource you can View its contents and perform certain actions that VODesktop might be aware of such as querying a Catalogue Service or running a particular Application.
     
     .. _figure-9:
-		
+
     .. figure:: images/searchRegistryWindow.png
-	
-       **Figure 9.** Search registry window
+
+       Search registry window
 
 Clicking the 'New Smart List' button brings up a window to begin searching on the registry. As the Text Boxes are filled out it queries registries for a 'count' of how many resources would be returned, and allow making the decision to perform the query or add new constraints.
     
     .. _figure-10:
-		
+
     .. figure:: images/resourceListWindow.png
-    
-       **Figure 10.** Resource list window
+
+       Resource list window
 
 Preferences
 ----------------
@@ -141,7 +142,9 @@ http://registry.vamdc.eu/vamdc_registry/services/RegistryQueryv1_0
 Development registry:
 http://casx019-zone1.ast.cam.ac.uk/registry/services/RegistryQueryv1_0
 
-	.. image:: images/voPreferences.png
+    .. _figure-11:
+    
+    .. figure:: images/voPreferences.png
 
-	**Figure 11.** VO Preferences
+       VO Preferences
 
