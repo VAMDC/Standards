@@ -25,5 +25,3 @@ References
 * Production registry: http://registry.vamdc.eu/vamdc_registry 
 
 * Development registry: http://casx019-zone1.ast.cam.ac.uk 
-
-* References for querying the registry with software: http://voparistwiki.obspm.fr/twiki/bin/view/VAMDC/RegistryQueryFromJava
