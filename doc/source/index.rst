@@ -4,6 +4,8 @@
 Documenting VAMDC standards
 ==============================================================================================
 
+On the pages listed below you will find the specifications of standards currently used by the VAMDC.  The next official release of standards is scheduled for August 2011.  
+
 Data access protocol, query language and dictionaries
 ------------------------------------------------------
 .. toctree::
