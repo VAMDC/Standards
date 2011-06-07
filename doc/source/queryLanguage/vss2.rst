@@ -26,7 +26,60 @@ In the following definitions, VSS2 queries are assumed to be submitted by a clie
 Superset of VSS1
 ~~~~~~~~~~~~~~~~
 
-VSS2 is a superset of VAMDC SQL Subset 1 (VSS1). It adds to VSS1 the ability to specify the set of database columns from which data are returned.
+VSS2 is a superset of VAMDC SQL Subset 1 (VSS1). It several aspects to VSS1:
+	* ability to specify the set of XSAMS branches to be returned, like Molecules, States, etc.
+	* ability to group restrictables related to different transition's states and different products/reactants of the same reaction.
+	
+	
+XSAMS branches selection
++++++++++++++++++++++++++++
+
+	Keywords, defining the desired branches, may be specified in SELECT part of the query, like::
+	
+		SELECT molecules where MoleculeStoichiometricFormula = "C10H20"
+	
+	this query should retrun only a list of molecules, including references and excluding all the state-related or process-related information.
+	
+	If query specifies a states or quantum numbers branch, parent species information should also be provided. Contrary the selection of species should not cause the output of states or quantum numbers.
+	
+	For the full list of possible branch selectors, their behaviour and relations see the **Requestables** section of the VAMDC dictionary
+
+Restrictables prefixes
+++++++++++++++++++++++++
+
+Another addition is the prefixes for restrictables keywords, used for processes selection refinement.
+
+*	When selecting transition information, prefixes to the state-related restrictables are grouping them by initial or final state. If prefix is omitted in the query, keywords should be assumed to be related to initial state.
+
+	Examples::
+	
+		Select * where initial.AtomStateEnergy = 0 and final.AtomStateEnergy > 1000
+		select * where AtomStateEnergy = 0 and final.AtomStateEnergy > 1000
+	
+	**Note:** query
+
+	::
+
+		select * where AtomStateEnergy < 100 and initial.AtomStateEnergy>100
+
+	will (and must) return no results.
+
+*	When selecting collision information, prefixes are **reactantX** and **productX**, where X is a case-insensitive alphanumeric symbol [0-9A-Z] , defining a group of keywords applying to the single reactant. 
+
+	Example::
+	
+		Select collisions,states where reactantA.AtomSymbol = "O" and reactantA.AtomIonCharge = 1 and ReAcTaNt2.MoleculeStoichiometricFormula in ("HN","HC","C2")
+
+	would return all reactions data between :math:`O^+` atomic ion and *NH*, *CH* or *C2* molecules
+	
+	Another example::
+
+		Select collisions,states where reactantA.AtomSymbol = "O" and ( reactantA.AtomIonCharge = 1 OR reactantA.AtomIonCharge = 2)
+	
+	should return all reactions data of one or two times ionized oxygen atom.
+	
+	
+	
 
 Interoperability and extensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
