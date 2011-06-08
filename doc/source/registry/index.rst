@@ -1,7 +1,8 @@
 .. _registry-index:
+.. |reigistry-version| replace:: 11.05
 
 ==============================================================================================
-Registry user's guide [v |version|]
+Registry user's guide [v |reigistry-version|] [r |release|]
 ==============================================================================================
 
 .. toctree::

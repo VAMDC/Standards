@@ -226,7 +226,7 @@ Shells
 Specific XML Types
 ------------------------
 
-	Here, XML types, specific to Species.Atoms branch of [XSAMS]_ are described
+	Here, XML types, specific to Species.Atoms branch of XSAMS are described
 
 .. _ShellType:
 

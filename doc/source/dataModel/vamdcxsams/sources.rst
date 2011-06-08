@@ -82,6 +82,6 @@ Source
 	*	Optional **Comments** element
 	*	Optional **BibTeX** element for the BibTeX representation of this reference. That element 
 		may be useful if you already have data in BibTeX format in your database and wish to export 
-		some fields that can't be represented in [XSAMS]_.
+		some fields that can't be represented in XSAMS.
 		
 	
