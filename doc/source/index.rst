@@ -5,7 +5,7 @@ Documenting VAMDC standards
 ==============================================================================================
 .. warning::
 
-    Development version, due to release at the end of July 2011.
+    This is the development version of the standards, due to be released at the end of July 2011.
     
     Visit http://www.vamdc.org/documents/standards/ for the official standards.
 
