@@ -27,7 +27,7 @@ Data model
 
 * VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.2>`_ in the browser or downloaded from below.
 
-* Case-By-Case schema documentation can downloaded from below.
+* Case-By-Case schema documentation can be `viewed <http://www.vamdc.eu/documents/cbc-0.2>`_ in the browser or downloaded from below.
 
 
 Registry
