@@ -43,7 +43,7 @@ Downloads
 Below are links to documents available for download.
 
 =============================       ========================================================================= 
-document                            release [|release|]
+document                            release |release|
 =============================       ========================================================================= 
 data access protocol                `v11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 
 query language                      `v11.05 <http://www.vamdc.org/documents/querylanguage_v11.05.pdf>`__    
