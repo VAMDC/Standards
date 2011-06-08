@@ -61,13 +61,12 @@
 
 ..	[IUPAC] http://www.chem.qmul.ac.uk/iupac/
 
-..  [IUPACAt] Recommendations for the Naming of Elements of Atomic Numbers Greater than 100,
-                http://www.chem.qmul.ac.uk/iupac/AtWt/element.html
+..	[IUPACAt] Recommendations for the Naming of Elements of Atomic Numbers Greater than 100,
+	http://www.chem.qmul.ac.uk/iupac/AtWt/element.html
 
 ..	[InChI] http://www.iupac.org/inchi/
 
-..	[case-by-case] For full documentation on cases see cbc-doc.pdf in docs folder of schema source.
-	Schema source may be downloaded from http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/
+..	[case-by-case] For full documentation on cases see http://www.vamdc.org/documents/standards/casedocs/
 
 ..	[CML] Chemical Markup Language, http://www.xml-cml.org/
 
