@@ -16,4 +16,5 @@ doc*/build/*
 *.json
 *.dat
 *.log
+*.aux
 pdf*
