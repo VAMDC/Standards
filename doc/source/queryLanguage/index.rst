@@ -10,7 +10,6 @@ Query language  [v |queryLanguageVersion|] [r |release|]
    :maxdepth: 2
    
    vss1
-   vss2
    references
 
 
