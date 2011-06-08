@@ -22,13 +22,15 @@ Data model
 .. toctree::
    :maxdepth: 1
 
-   vamdcxsams/index
+   dataModel/vamdcxsams/index
+   dataModel/changelog/index
    
 * VAMDC-XSAMS schema files are available for download below.
 
 * VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.2>`_ in the browser or downloaded from below.
 
-* Case-By-Case schema documentation can downladed from below.
+* Case-By-Case schema documentation can downloaded from below.
+
 
 Registry
 ---------

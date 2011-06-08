@@ -1,13 +1,9 @@
-.. XSAMS documentation master file, created by
-   sphinx-quickstart on Mon Apr 18 15:04:41 2011.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _dataModel-changelog-index:
+.. |dataModel-changelog-version| replace:: 0.2
 
-Welcome to XSAMS-VAMDC documentation!
-======================================
-
-
-
+==============================================================================================
+VAMDC-XSAMS changelog [v |dataModel-changelog-version|] [r |release|]
+==============================================================================================
 
 .. toctree::
    :maxdepth: 2
