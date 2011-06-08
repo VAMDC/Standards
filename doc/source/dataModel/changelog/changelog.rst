@@ -1,6 +1,6 @@
 .. _changelog:
 
-XSAMS-VAMDC changelog 
+Introduction 
 =====================================
 
 This document outlines the modifications made to the International Atomic
@@ -11,7 +11,7 @@ schema is XSAMS-VAMDC.
 
 XSAMS version 0.1.1: http://www-amdis.iaea.org/xsams/docu/xsams-0.1.1.pdf
 
-XSAMS-VAMDC version 0.2 xsd: http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/
+XSAMS-VAMDC version 0.2 xsd: http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2
 
 
 Changes versus official schema v.0.1.1
@@ -22,8 +22,7 @@ Changes versus official schema v.0.1.1
 	The case-by-case XML description of molecular states within XSAMS	
 	is designed to provide a straightforward and flat data structure for representing 
 	the quantum numbers and symmetries that denote a molecular state.
-	For full documentation on cases see cbc-doc.pdf in docs folder of schema source.
-	Schema source may be downloaded from http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/
+	For full documentation on cases see http://www.vamdc.org/documents/cbc_v0.2.pdf.
 	
 	
 	Each **MolecularState** has Case element of type **cases:BaseCase** from separate namespace.
