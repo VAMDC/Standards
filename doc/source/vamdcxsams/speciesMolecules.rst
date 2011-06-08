@@ -244,11 +244,9 @@ MolecularStateCharacterisation
 
 Concept of cases
 ----------------------
-	The case-by-case XML description of molecular states within XSAMS	
+	The [case-by-case]_ XML description of molecular states within XSAMS	
 	is designed to provide a straightforward and flat data structure for representing 
 	the quantum numbers and symmetries that denote a molecular state.
-	For full documentation on cases see cbc-doc.pdf in docs folder of schema source.
-	Schema source may be downloaded from http://xsams.svn.sourceforge.net/viewvc/xsams/branches/vamdc-working/
 	
 
 .. _StateExpansion:
