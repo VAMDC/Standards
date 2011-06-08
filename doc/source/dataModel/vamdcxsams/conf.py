@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'VAMDC-XSAMS'
-copyright = u'2011, XSAMS group, VAMDC team'
+copyright = u'2011, VAMDC'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -170,7 +170,7 @@ htmlhelp_basename = 'XSAMSDocs'
 # -- Options for LaTeX output --------------------------------------------------
 
 # The paper size ('letter' or 'a4').
-#latex_paper_size = 'letter'
+latex_paper_size = 'a4'
 
 # The font size ('10pt', '11pt' or '12pt').
 #latex_font_size = '10pt'
@@ -178,7 +178,7 @@ htmlhelp_basename = 'XSAMSDocs'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'XSAMSDocs.tex', u'XSAMS-VAMDC Reference Guide',
+  ('index', 'vamdc-xsams-guide_.tex', u'VAMDC-XSAMS Reference Guide',
    u"VAMDC WP6 working group", 'manual'),
 ]
 
@@ -222,8 +222,8 @@ latex_logo = '../../_static/logos.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'xsamsdocs', u'XSAMS-VAMDC Reference Guide',
-     [u'XSAMS group, VAMDC team'], 1)
+    ('index', 'vamdc-xsams-guide_', u'VAMDC-XSAMS Reference Guide',
+     [u'VAMDC'], 1)
 ]
 
 highlight_language="none"
