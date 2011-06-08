@@ -1,0 +1,93 @@
+body {
+	color: #000;
+	font-size: 12pt;
+	font-family: serif;
+	background: #acf;
+	text-align: justify;
+}
+
+#container {
+	border: 2px solid #000;
+	background: #fff;
+	padding: 10px;
+	max-width: 800px;
+	margin: auto;
+}
+
+h3 {
+	text-decoration: underline;
+}
+h4 {
+	font-size: 120%;
+	font-weight: normal;
+	padding: 0 0 0 0;
+	margin: 0 0 10px 5px;
+}
+h5 {
+	font-size: 100%;
+	font-weight: normal;
+	text-decoration: underline;
+	padding: 0 0 0 0;
+	margin: 0 0 0 5px;
+}
+
+.QN {
+	width: 80%;
+	background: #eef;
+	color: #000;
+	border: 1px solid #000;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	padding: 0 0 0 0;
+	margin: 0 0 10px 5px;
+}
+
+sub {
+	font-size: 70%;
+	margin: 0 0 0 -2px;
+}
+
+.section {
+	border-top: 2px dotted #000;
+}
+
+
+li {
+	margin-top: 5px;
+}
+
+.figure {
+	text-align: center;
+	padding-top: 20px;
+	background: #eee;
+}
+.figure p{
+	margin: 0 20% 0 20%;
+}
+
+#footer {
+	border-top: 2px solid #000;
+	margin-top: 10px;
+	font-size: 90%;
+}
+
+#navigation {
+	margin-top: 10px;
+}
+
+#contact{
+	float: left;
+}
+
+#validate{
+	float: right;
+	color: #888
+}
+#validate a{
+	color: #888;
+}

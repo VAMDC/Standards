@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+   <meta name="author" content="Christian Hill"/>
+   <meta name="description" content="VAMDC, University College London, UCL, XML Schema, XSAMS, Case-by-Case, Spectroscopy"/>
+   <meta name="robots" content="noindex, nofollow"/>
+   <title>Case-by-Case XML Schemata - Quantum Number Descriptions</title>
+   <link rel="stylesheet" href="layout2.css" type="text/css" media="screen"/>
+</head>
+<body>
+<div id="container">
+   <h2 class="pagetitle">Open-shell, linear, triatomic molecules</h2>
+   <div id="content">
+<ul>
+  <li>case prefix: ltos</li>
+  <li>case ID: 12</li>
+</ul>
+<div class="QN">
+<h4><tt>ElecStateLabel</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:ElecStateLabel</tt></p>
+<h5>Description</h5>
+<p><tt>ElecStateLabel</tt> is a label identifying the electronic state: <em>X</em>, <em>A</em>, <em>a</em>, <em>B</em>, etc..</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>string</p>
+</div>
+<div class="QN">
+<h4><tt>elecInv</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:elecInv</tt></p>
+<h5>Description</h5>
+<p><tt>elecInv</tt> is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>'g' or 'u'</p>
+</div>
+<div class="QN">
+<h4><tt>elecRefl</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:elecRefl</tt></p>
+<h5>Description</h5>
+<p><tt>elecRefl</tt> is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>'+' or '-'</p>
+</div>
+<div class="QN">
+<h4><em>S</em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:S</tt></p>
+<h5>Description</h5>
+<p><em>S</em> is the quantum number associated with the total electronic spin angular momentum, <strong><em>S</em></strong>.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer or half-odd integer</p>
+</div>
+<div class="QN">
+<h4><em>N</em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:N</tt></p>
+<h5>Description</h5>
+<p><em>N</em> is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, <strong>N</strong>: <strong><em>J</em></strong>&nbsp;=&nbsp;<strong><em>N</em></strong>&nbsp;+&nbsp;<strong><em>S</em</strong>.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer</p>
+</div>
+<div class="QN">
+<h4><em>v<sub>1</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:v1</tt></p>
+<h5>Description</h5>
+<p><em>v<sub>1</sub></em> is the vibrational quantum number associated with the &nu;<sub>1</sub> normal mode.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer</p>
+</div>
+<div class="QN">
+<h4><em>v<sub>2</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:v2</tt></p>
+<h5>Description</h5>
+<p><em>v<sub>2</sub></em> is the vibrational quantum number associated with the doubly-degenerate &nu;<sub>2</sub> normal mode.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer</p>
+</div>
+<div class="QN">
+<h4><em>l<sub>2</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:l2</tt></p>
+<h5>Description</h5>
+<p><em>l<sub>2</sub></em> is the vibrational angular momentum quantum number associated with the degenerate bending vibration, &nu;<sub>2</sub>; positive and negative values distinguish <em>l</em>&endash;type doubling components.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>integer; |<em>l<sub>2</sub></em>|&nbsp;=&nbsp;<em>v<sub>2</sub></em>,&nbsp;<em>v<sub>2</sub></em>-2,&nbsp;...,&nbsp;1&nbsp;or&nbsp;0</p>
+</div>
+<div class="QN">
+<h4><em>v<sub>3</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:v3</tt></p>
+<h5>Description</h5>
+<p><em>v<sub>3</sub></em> is the vibrational quantum number associated with the &nu;<sub>3</sub> normal mode.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer</p>
+</div>
+<div class="QN">
+<h4><em>J</em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:J</tt></p>
+<h5>Description</h5>
+<p><em>J</em> is the quantum number associated with the total angular momentum excluding nuclear spin, <strong><em>J</em></strong>.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>non-negative integer</p>
+</div>
+<div class="QN">
+<h4><em>F<sub>1</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:F1</tt></p>
+<h5>Description</h5>
+<p><em>F<sub>1</sub></em> is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: <strong><em>F<sub>1</sub></em></strong>&nbsp;=&nbsp;<strong><em>J</em></strong>&nbsp;+&nbsp;<strong><em>I<sub>1</sub></em></strong>; <em>F<sub>1</sub></em> is often not a good quantum number.</p>
+<h5>Attributes</h5>
+<p><tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>J</em></strong> to form the intermediate angular momentum</p>
+<h5>Restrictions</h5>
+<p>non-negative integer or half-integer; |<em>J</em>&nbsp;-&nbsp;<em>I<sub>1</sub></em>|&nbsp;&le;&nbsp;<em>F<sub>1</sub></em>&nbsp;&le;&nbsp;<em>J</em>&nbsp;+&nbsp;<em>I<sub>1</sub></em></p>
+</div>
+<div class="QN">
+<h4><em>F<sub>2</sub></em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:F2</tt></p>
+<h5>Description</h5>
+<p><em>F<sub>2</sub></em> is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: <strong><em>F<sub>2</sub></em></strong>&nbsp;=&nbsp;<strong><em>F<sub>1</sub></em></strong>&nbsp;+&nbsp;<strong><em>I<sub>2</sub></em></strong>; <em>F<sub>2</sub></em> is often not a good quantum number.</p>
+<h5>Attributes</h5>
+<p><tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>F<sub>1</sub></em></strong> to form the intermediate angular momentum</p>
+<h5>Restrictions</h5>
+<p>non-negative integer or half-integer; |<em>F<sub>1</sub></em>&nbsp;-&nbsp;<em>I<sub>2</sub></em>|&nbsp;&le;&nbsp;<em>F<sub>2</sub></em>&nbsp;&le;&nbsp;<em>F<sub>1</sub></em>&nbsp;+&nbsp;<em>I<sub>2</sub></em></p>
+</div>
+<div class="QN">
+<h4><em>F</em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:F</tt></p>
+<h5>Description</h5>
+<p><em>F</em> is the quantum number associated with the total angular momentum including nuclear spin: <strong><em>F</em></strong> = <strong><em>J</em></strong> + <strong><em>I<sub>1</sub></em></strong> if only one hyperfine coupling is resolved, <strong><em>F</em></strong> = <strong><em>F<sub>1</sub></em></strong> + <strong><em>I<sub>2</sub></em></strong> if two couplings are resolved, or <strong><em>F</em></strong> = <strong><em>F<sub>2</sub></em></strong> + <strong><em>I<sub>3</sub></em></strong> if all three couplings are resolved.</p>
+<h5>Attributes</h5>
+<p><tt>nuclearSpinRef</tt>: a label identifying the nuclear spin coupled to <strong><em>J</em></strong>, <strong><em>F<sub>1</sub></em></strong>, or <strong><em>F<sub>2</sub></em></strong> to form the total angular momentum</p>
+<h5>Restrictions</h5>
+<p>non-negative integer or half-integer; |<em>F<sub>2</sub></em>&nbsp;-&nbsp;<em>I<sub>3</sub></em>|&nbsp;&le;&nbsp;<em>F</em>&nbsp;&le;&nbsp;<em>F<sub>2</sub></em>&nbsp;+&nbsp;<em>I<sub>3</sub></em></p>
+</div>
+<div class="QN">
+<h4><em>r</em></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:r</tt></p>
+<h5>Description</h5>
+<p><em>r</em> is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.</p>
+<h5>Attributes</h5>
+<p><tt>name</tt>: a string identifying this ranking index</p>
+<h5>Restrictions</h5>
+<p>positive integer</p>
+</div>
+<div class="QN">
+<h4><tt>parity</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:parity</tt></p>
+<h5>Description</h5>
+<p><tt>parity</tt> is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the <em>E<sup>*</sup></em> operation.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>'+' or '-'</p>
+</div>
+<div class="QN">
+<h4><tt>kronigParity</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:kronigParity</tt></p>
+<h5>Description</h5>
+<p><tt>kronigParity</tt> is the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system..</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>'e' or 'f'</p>
+</div>
+<div class="QN">
+<h4><tt>asSym</tt></h4>
+<h5>XML Element</h5>
+<p><tt>ltos:asSym</tt></p>
+<h5>Description</h5>
+<p><tt>asSym</tt> is (for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei (<em>P<sub>12</sub></em>), according to whether they are bosons or fermions respectively.</p>
+<h5>Attributes</h5>
+<p>None</p>
+<h5>Restrictions</h5>
+<p>'s' or 'a'</p>
+</div>
+</div>
+   </div>
+</body>
+</html>
