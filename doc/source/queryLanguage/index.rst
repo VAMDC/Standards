@@ -1,10 +1,8 @@
-.. _queryLanguage-index::
+.. _queryLanguage-index:
 .. |queryLanguageVersion| replace:: 11.05
 
-
-
 Query language  [v |queryLanguageVersion|] [r |release|]
-==============================
+=========================================================
 
 .. toctree::
    :maxdepth: 2

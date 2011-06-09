@@ -3,10 +3,13 @@
 ==============================================================================================
 Documenting VAMDC standards
 ==============================================================================================
+.. warning::
 
-**Development version, due to release in the end of July 2011**
+    This is the development version of the standards, due to be released at the end of July 2011.
+    
+    Visit http://www.vamdc.org/documents/standards/ for the official standards.
 
-On the pages listed below you will find the specifications of standards currently used by the VAMDC.  The next official release of standards is scheduled for August 2011.  
+.. On the pages listed below you will find the specifications of standards currently used by the VAMDC.  The next official release of standards is scheduled for July 2011.  
 
 Data access protocol, query language and dictionaries
 ------------------------------------------------------
@@ -29,7 +32,7 @@ Data model
 
 * VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.2>`_ in the browser or downloaded from below.
 
-* Case-By-Case schema documentation can downloaded from below.
+* Case-By-Case schema documentation can be `viewed <http://www.vamdc.eu/documents/cbc-0.2>`_ in the browser or downloaded from below.
 
 
 Registry
@@ -52,7 +55,7 @@ Downloads
 Below are links to documents available for download.
 
 =============================       ========================================================================= 
-document                            release [|release|]
+document                            release |release|
 =============================       ========================================================================= 
 data access protocol                `v11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 
 query language                      `v11.05 <http://www.vamdc.org/documents/querylanguage_v11.05.pdf>`__    
