@@ -2,7 +2,7 @@
 .. |units-version| replace:: 11.05
 
 ==============================================================================================
-Units Conversion Table  [v |units-version|] [r |release|]
+Unit Conversion Table  [v |units-version|] [r |release|]
 ==============================================================================================
 
 
