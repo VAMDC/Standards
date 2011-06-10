@@ -27,6 +27,7 @@ Data model
 
    dataModel/vamdcxsams/index
    dataModel/changelog/index
+   dataModel/cases/index
    
 * VAMDC-XSAMS schema files are available for download below.
 
