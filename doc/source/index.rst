@@ -43,6 +43,13 @@ Registry
 
    registry/index
 
+Units
+---------
+.. toctree::
+   :maxdepth: 1
+
+   units/index
+
 Downloads
 ----------
 

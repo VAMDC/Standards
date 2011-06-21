@@ -323,65 +323,87 @@ Example XML instances
 Vald Fe example
 '''''''''''''''''''
 
-Example from VALD database for Fe, with two states present::
+Example from VALD database for :math:`\mathrm{Fe}^{2+}`, with two states present::
 
       <Atom>
         <ChemicalElement>
-          <NuclearCharge>59</NuclearCharge>
-          <ElementSymbol>Pr</ElementSymbol>
+          <NuclearCharge>26</NuclearCharge>
+          <ElementSymbol>Fe</ElementSymbol>
         </ChemicalElement>
         <Isotope>
           <IsotopeParameters>
-            <MassNumber>141</MassNumber>
+            <MassNumber>56</MassNumber>
           </IsotopeParameters>
-          <Ion speciesID="Xvald-1714">
+          <Ion speciesID="Xvald-328">
             <IonCharge>2</IonCharge>
-            <AtomicState stateID="Svald-1086">
+            <AtomicState stateID="Svald-7776">
               <AtomicNumericalData>
                 <StateEnergy>
-                  <SourceRef>Bvald-ISAN</SourceRef>
-                  <SourceRef>Bvald-RRKB</SourceRef>
-                  <SourceRef>Bvald-WTCR</SourceRef>
-                  <Value units="1/cm">18693.6490</Value>
+                  <SourceRef>Bvald-K10</SourceRef>
+                  <SourceRef>Bvald-K10M</SourceRef>
+                  <SourceRef>Bvald-K10Q</SourceRef>
+                  <Value units="1/cm">201170.1000</Value>
                 </StateEnergy>
-                <LandeFactor>
-                  <SourceRef>Bvald-ISAN</SourceRef>
-                  <SourceRef>Bvald-RRKB</SourceRef>
-                  <SourceRef>Bvald-WTCR</SourceRef>
-                  <Value units="unitless">0.63</Value>
-                </LandeFactor>
               </AtomicNumericalData>
-              <AtomicQuantumNumbers/>
+              <AtomicQuantumNumbers>
+                <TotalAngularMomentum>2.0</TotalAngularMomentum>
+              </AtomicQuantumNumbers>
               <AtomicComposition>
                 <Component>
-                  <Configuration/>
+                  <Configuration>
+                    <AtomicCore>
+                      <Term/>
+                    </AtomicCore>
+                  </Configuration>
+                  <Term>
+                    <LS>
+                      <L>
+                        <Value>2.0</Value>
+                      </L>
+                      <S>1.0</S>
+                    </LS>
+                  </Term>
                 </Component>
               </AtomicComposition>
             </AtomicState>
-            <AtomicState stateID="Svald-1115">
+            <AtomicState stateID="Svald-7788">
               <AtomicNumericalData>
                 <StateEnergy>
-                  <SourceRef>Bvald-ISAN</SourceRef>
-                  <SourceRef>Bvald-RRKB</SourceRef>
-                  <SourceRef>Bvald-WTCR</SourceRef>
-                  <Value units="1/cm">52026.9010</Value>
+                  <SourceRef>Bvald-K10</SourceRef>
+                  <SourceRef>Bvald-K10M</SourceRef>
+                  <SourceRef>Bvald-K10Q</SourceRef>
+                  <Value units="1/cm">105895.3500</Value>
                 </StateEnergy>
                 <LandeFactor>
-                  <SourceRef>Bvald-ISAN</SourceRef>
-                  <SourceRef>Bvald-RRKB</SourceRef>
-                  <SourceRef>Bvald-WTCR</SourceRef>
-                  <Value units="unitless">1.32</Value>
+                  <SourceRef>Bvald-K10</SourceRef>
+                  <SourceRef>Bvald-K10M</SourceRef>
+                  <SourceRef>Bvald-K10Q</SourceRef>
+                  <Value units="unitless">0.50</Value>
                 </LandeFactor>
               </AtomicNumericalData>
-              <AtomicQuantumNumbers/>
+              <AtomicQuantumNumbers>
+                <TotalAngularMomentum>2.0</TotalAngularMomentum>
+              </AtomicQuantumNumbers>
               <AtomicComposition>
                 <Component>
-                  <Configuration/>
+                  <Configuration>
+                    <AtomicCore>
+                      <Term/>
+                    </AtomicCore>
+                  </Configuration>
+                  <Term>
+                    <LS>
+                      <L>
+                        <Value>1.0</Value>
+                      </L>
+                      <S>1.0</S>
+                    </LS>
+                  </Term>
                 </Component>
               </AtomicComposition>
             </AtomicState>
-            <InChI>InChI=1S/Pr/q+2/i1+0</InChI>
-            <InChIKey>BXZAMIARVDIHCY-IGMARMGPSA-N</InChIKey>
+            <InChI>InChI=1S/Fe/q+2/</InChI>
+            <InChIKey>CWYNVVGOOAEACU-IGMARMGPSA-N</InChIKey>
           </Ion>
         </Isotope>
       </Atom>
