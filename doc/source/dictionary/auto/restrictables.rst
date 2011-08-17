@@ -17,7 +17,7 @@ AtomInchi
 -------------------------------------------------------------------
 
 
-
+The IUPAC International Chemical Identifier (InChI) is a textual identifier for chemical substances, designed to provide a standard and human-readable way to encode atomic and molecular information and facilitate the search and exchange of such such information in databases and on the web.
 
 
 
@@ -31,7 +31,7 @@ AtomInchiKey
 -------------------------------------------------------------------
 
 
-
+InChi key is hashed, fixed-length (currently 27 character) form of International Chemical Identifier (InChI) string describing a given atom/ion/isotope. InChIKeys consist of 14 characters resulting from a hash of the connectivity information of the InChI, followed by a hyphen, followed by 9 characters resulting from a hash of the remaining layers of the InChI, followed by a single character indication the version of InChI used, another hyphen, followed by single checksum character. More information about InChI and InChI Key can be found at http://www.iupac.org/inchi/
 
 
 
@@ -59,7 +59,7 @@ AtomMass
 -------------------------------------------------------------------
 
 
-Atomic mass in Daltons, which is the same as the unified mass units (1Da = 1u = 1.660 538 86 (28) e-27)
+The atomic mass is the mass of an atom expressed in unified atomic mass unit u. It is defined as 1/12 of the rest mass of an unbound carbon-12 atom in its nuclear and electronic ground state. 1 u = 1.660538782(83)E-27 kg.
 
 **Units:** u
 
@@ -73,13 +73,13 @@ AtomMassNumber
 -------------------------------------------------------------------
 
 
+Atomic mass number (A), also called mass number or nucleon number, is the total number of protons and neutrons (together known as nucleons) in an atomic nucleus. Because protons and neutrons both are baryons, the mass number A is identical with the baryon number B as of the nucleus as of the whole atom or ion. The mass number is different for each different isotope of a chemical element. 
 
 
-**Units:** u
 
 **Type:** integer number
 
-**Constraints:** 
+**Constraints:** >0
 
 
 
@@ -101,7 +101,7 @@ AtomNuclearSpin
 -------------------------------------------------------------------
 
 
-
+The total angular momentum of a nucleus, usually represented as l. For electrons spin and orbital angular momentum are treated separately but particles in a nucleus generally behave as a single entity with intrinsic angular momentum I. Associated with each nuclear spin is a nuclear magnetic moment which produces magnetic interactions with its environment.
 
 
 
@@ -115,7 +115,7 @@ AtomStateCoupling
 -------------------------------------------------------------------
 
 
-
+Coupling scheme used to describe the state. Currently five coupling schemes are supported LS, jj, J1J2, jK and LK. For a detailed description of these and other schemes see, e.g., Atomic Spectroscopy at http://physics.nist.gov/Pubs/AtSpec/index.html
 
 
 
@@ -185,7 +185,7 @@ AtomStateKappa
 -------------------------------------------------------------------
 
 
-
+Relativistic correction.
 
 
 
@@ -227,21 +227,7 @@ AtomStateMagneticQuantumNumber
 -------------------------------------------------------------------
 
 
-
-
-
-
-**Type:** floating-point number
-
-**Constraints:** 
-
-
-
-AtomStateMixingCoefficient
--------------------------------------------------------------------
-
-
-
+Magnetic quantum number of a state, can be integer or half-integer, positive and negative.
 
 
 
@@ -255,7 +241,7 @@ AtomStateParity
 -------------------------------------------------------------------
 
 
-
+State parity. Can have values: "even", "odd" or "undefined"
 
 
 
@@ -269,7 +255,7 @@ AtomStatePolarizability
 -------------------------------------------------------------------
 
 
-
+State polarizability.
 
 
 
@@ -283,7 +269,7 @@ AtomStateQuantumDefect
 -------------------------------------------------------------------
 
 
-
+The quantum defect is a correction applied to the potential to account for the fact that the inner electrons do not entirely screen the corresponding charge of the nucleus. It is particularity important for atoms with single electron in the outer shell.
 
 
 
@@ -312,6 +298,20 @@ AtomSymbol
 
 
 Atomic name
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+CollisionCode
+-------------------------------------------------------------------
+
+
+
 
 
 
@@ -425,11 +425,11 @@ EnvironmentTotalPressure
 
 Environment total pressure
 
-**Units:** bar
+**Units:** Pa
 
 **Type:** floating-point number
 
-**Constraints:** >0
+**Constraints:** >=0
 
 
 
@@ -517,6 +517,20 @@ MoleculeInchiKey
 
 
 
+MoleculeIonCharge
+-------------------------------------------------------------------
+
+
+Molecule ion charge
+
+
+
+**Type:** integer number
+
+**Constraints:** 
+
+
+
 MoleculeMolecularWeight
 -------------------------------------------------------------------
 
@@ -559,21 +573,7 @@ MoleculeNormalModeIntensity
 
 
 
-MoleculeStateCharacLifeTime
--------------------------------------------------------------------
-
-
-Molecular state lifetime in seconds
-
-**Units:** s
-
-**Type:** floating-point number
-
-**Constraints:** >0
-
-
-
-MoleculeStateCharacNuclearSpinSymmetry
+MoleculeProtonation
 -------------------------------------------------------------------
 
 
@@ -583,7 +583,7 @@ MoleculeStateCharacNuclearSpinSymmetry
 
 **Type:** string
 
-**Constraints:** (ortho|para|A|E|none)
+**Constraints:** 
 
 
 
@@ -612,6 +612,48 @@ MoleculeStateID
 **Type:** string
 
 **Constraints:** 
+
+
+
+MoleculeStateLifeTime
+-------------------------------------------------------------------
+
+
+Molecular state lifetime in seconds
+
+**Units:** s
+
+**Type:** floating-point number
+
+**Constraints:** >0
+
+
+
+MoleculeStateNuclearSpinIsomer
+-------------------------------------------------------------------
+
+
+Nuclear spin isomer (symetry) of a molecular state.
+
+
+
+**Type:** string
+
+**Constraints:** (ortho|para|A|E|none)
+
+
+
+MoleculeStateTotalStatisticalWeight
+-------------------------------------------------------------------
+
+
+Total statistical weight (degeneracy) for a given molecular energy level
+
+
+
+**Type:** integer number
+
+**Constraints:** >0
 
 
 
@@ -685,6 +727,20 @@ The character of the irreducible representation for this vibrational normal mode
 
 
 
+Pressure
+-------------------------------------------------------------------
+
+
+Pressure as a Restrictable alone. Each node can decide itself how to interpret and treat this, if it makes sense to its data.
+
+**Units:** Pa
+
+**Type:** floating-point number
+
+**Constraints:** >=0
+
+
+
 RadTransBandCentre
 -------------------------------------------------------------------
 
@@ -708,6 +764,62 @@ RadTransBandWidth
 
 
 **Type:** floating-point number
+
+**Constraints:** 
+
+
+
+RadTransBroadeningDoppler
+-------------------------------------------------------------------
+
+
+Only Restrictable (not NULL) to make a query where there is Broadening information.
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+RadTransBroadeningInstrument
+-------------------------------------------------------------------
+
+
+Only Restrictable (not NULL) to make a query where there is Broadening information.
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+RadTransBroadeningNatural
+-------------------------------------------------------------------
+
+
+Only Restrictable (not NULL) to make a query where there is Broadening information.
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+RadTransBroadeningPressure
+-------------------------------------------------------------------
+
+
+Only Restrictable (not NULL) to make a query where there is Broadening information.
+
+
+
+**Type:** string
 
 **Constraints:** 
 
@@ -890,6 +1002,20 @@ Publication Year
 
 
 **Type:** integer number
+
+**Constraints:** >0
+
+
+
+Temperature
+-------------------------------------------------------------------
+
+
+Temperature as a Restrictable alone. Each node can decide itself how to interpret and treat this, if it makes sense to its data.
+
+**Units:** K
+
+**Type:** floating-point number
 
 **Constraints:** >0
 
