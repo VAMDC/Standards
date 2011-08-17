@@ -83,7 +83,7 @@ tran    Charge transfer             Transfer of an electron from one "center"
                                     (atomic ion, atom, molecule, etc.) to another
 exch    Electron exchange           The exchange of an electron with another electron
                                     (most commonly in electron-impact processes)
-                                    reco & Recombination & Capture of an electron
+reco    Recombination               Capture of an electron
                                     by an atomic or molecular ion,
                                     e.g., in dissociative recombination,
                                     dielectronic recombination,
@@ -112,12 +112,12 @@ Particle Solid Interactions
 ======  =====================   =====================================================================================
 Code     Name                          Description
 ======  =====================   =====================================================================================
-sure    Reflection              The elastic or inelastic reflection of a reactant from a surface
-suem    Emission or erosion     Any form of erosion of a surface,
+sore    Reflection              The elastic or inelastic reflection of a reactant from a surface
+soem    Emission or erosion     Any form of erosion of a surface,
                                 e.g., physical or chemical sputtering, etching, sublimation, emission of particle or
                                 macroscopic pieces, desorption, secondary electron emission
-sudp    Deposition              Absorption of particles by a surface, sticking, surface implantation
-such    Change                  Change of the composition or properties of a surface induced by any reactant
+sodp    Deposition              Absorption of particles by a surface, sticking, surface implantation
+soch    Change                  Change of the composition or properties of a surface induced by any reactant
 sope    Penetration             The penetration of a reactant into a solid, characterized by the 
                                 change of energy, e.g., stopping, straggling, energy loss, range, 
                                 charge state equilibrium, or 
