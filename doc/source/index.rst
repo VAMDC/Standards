@@ -50,6 +50,13 @@ Units
 
    units/index
 
+InChI Generation
+-----------------
+.. toctree::
+   :maxdepth: 1
+
+   inchi/index
+
 Downloads
 ----------
 
