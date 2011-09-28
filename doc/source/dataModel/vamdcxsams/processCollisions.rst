@@ -6,6 +6,8 @@ Processes.Collisions
 The element **Collisions** of the **Processes** branch, 
 defined by **CollisionsType**, contains one or more **CollisionalTransition** elements.
 
+.. _Collision:
+
 CollisionalTransition
 ------------------------
 
@@ -24,8 +26,10 @@ CollisionalTransition
 	.. image:: images/collisions/CollisionalTransition.png
 	
 	Element **CollisionalTransition**, defined by type **CollisionalTransitionType**,
-	extends :ref:`PrimaryType`, adding 6 primary elements:
+	extends :ref:`PrimaryType`, adding following attribures and elements:
 
+	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
+	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
 	*	optional element **ProcessClass** of type **ProcessClassType**, that describes the
 		collision process or particle surface interaction. It is a combination of
 		three optional elements:
@@ -35,7 +39,7 @@ CollisionalTransition
 			using XSAMS-specific 4-letter :ref:`XSAMSProcessCodes`.
 			Taking examples for common processes, excitation has one value *exci* and dissociative
 			recombination has two values *diss* and *reco*.
-		-	**IAEACode** element, defined by **IAEACodeType**, identifies the process 
+		-	list of **IAEACode** elements, defined by **IAEACodeType**, identifies the process 
 			using :ref:`IAEAcodes` from [IAEAProc]_. The initial purpose of IAEA codes was the development of
 			search engines for atomic and molecular data. Processes, represented with a
 			three-letter code, are classified in four categories: electron collisions,

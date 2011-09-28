@@ -18,8 +18,10 @@ NonRadiativeTransition
 	.. image:: images/nonradiative/NonRadiativeTransition.png
 	
 	**NonRadiativeTransition** element is defined in **NonRadiativeTransitionType** as
-	the extension of the :ref:`PrimaryType`, containing following elements:
+	the extension of the :ref:`PrimaryType`, containing following attributes and elements:
 	
+	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
+	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
 	*	mandatory **InitialStateRef** :ref:`StateRefType` reference,
 	*	optional **FinalStateRef** of the same type,
 	*	optional **SpeciesRef** of :ref:`SpeciesRefType`,

@@ -17,8 +17,10 @@ RadiativeTransition
 --------------------------
 
 	Extension of the :ref:`PrimaryType`. A transition is characterized by its
-	energy/wavelength (element :ref:`EnergyWavelength`) and following optional elements:
+	energy/wavelength (element :ref:`EnergyWavelength`) and following optional attributes and elements:
 	
+	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
+	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
 	*	**InitialStateRef** of type :ref:`StateRefType`, reference to the initial state of the transition,
 	*	**FinalStateRef**, reference to the final state of the transition, type :ref:`StateRefType`),
 	*	**SpeciesRef** element of type :ref:`SpeciesRefType`, that may be used in place of the previous two
@@ -105,7 +107,7 @@ Broadening
 	
 	-	**name** attribute, that must contain one of the names from :ref:`lineshape_dictionary`
 	
-	-	**envRef** attribute, referencing the specific environment conditions, 
+	-	**envRef** attribute, referencing the specific :ref:`Environment` conditions, 
 		for example, for collisional broadening.
 	
 	-	one or more :ref:`lineshape` elements, with their respective parameters.
@@ -254,7 +256,7 @@ Shifting
 CrossSection
 -------------------
 
-	Among with **RadiativeTransition** elements, :ref:`Radiative` processes block now has a **CrossSection** element,
+	Among with **RadiativeTransition** elements, :ref:`Radiative` processes block has a **CrossSection** element,
 	which allows description of
 	absorption cross-section data and vibrational bands assignment in case of complex molecules.
 	
@@ -262,6 +264,9 @@ CrossSection
 	.. image:: images/radiative/CrossSection.png
 		:alt:	RadiativeTransition child elements
 		
+	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the cross-section,
+	-	mandatory **id** attribute of type :ref:`ProcessIDType` should contain a unique process reference id,
+	-	optional **groupLabel** attribute may contain an arbitrary group label string,
 	-	**Description**, **X** and **Y** elements describe cross-section data in tabular form, 
 		where **X** can be absorbed radiation frequency, wavelength or wavenumber in a form of a list of values or sequence.
 		**Y** then represents a sequence of sigma values.
@@ -283,7 +288,7 @@ Example cross-sections record
 	
 	::
 
-		<CrossSection>
+		<CrossSection id="PCtest01">
 			<SourceRef>B_NIST1</SourceRef>
 			
 			<Description>The IR transmittance cross section of azulene from the NIST 

@@ -12,11 +12,15 @@ VAMDC-XSAMS reference guide  [v |vamdcxsamsLanguage-version|] [r |release|]
    :maxdepth: 2
    
    introduction
+   
+   changelog
+   
    structure
    types
    sources
    methods
    functions
+   environments
    species
    speciesAtoms
    speciesMolecules

@@ -27,7 +27,7 @@ XSAMSData
 	An :ref:`xsamsdata` element is defined by the type **XSAMSDataType** which in turn
 	may consist of following optional elements:
 
-	-	**Environments** of type **EnvironmentsType** that keeps data relevant to description of processes environments,
+	-	:ref:`Environments` of type **EnvironmentsType** that keeps data relevant to description of processes environments,
 
 	-	:ref:`Species` of type **SpeciesType** which may include sub-elements 
 		:ref:`Atoms`, :ref:`Molecules`, :ref:`Particles`, :ref:`Solids`.

@@ -15,7 +15,7 @@ for **Solid** elements.
 
 Solid
 ------------
-	Extension of the :ref:`PrimaryType`. Attribute **stateID** is mandatory. Must
+	Extension of the :ref:`PrimaryType`. Attribute **speciesID** is mandatory. Must
 	have one or more **Layer** elements of type **MaterialType**.
 	
 Layer

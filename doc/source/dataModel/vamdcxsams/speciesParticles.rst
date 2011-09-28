@@ -15,7 +15,7 @@ Particle
 	.. image:: images/particles/Particles.png
 
 	If a particle is needed in some of the processes,
-	then it must have a **stateID** (:ref:`StateIDType`) identifier to enable referencing it.
+	then it must have a **speciesID** (:ref:`SpeciesIDType`) identifier to enable referencing it.
 	The attribute **name** of the type is optional.
 	It is defined as a restriction of String, that may take following values:
 	
@@ -23,6 +23,12 @@ Particle
 	*	electron
 	*	muon
 	*	positron
+	*	neutron
+	*	alpha
+	*	cosmic
+	
+	Name *cosmic* may be used for collisions with cosmic ray particles, where the nature of a particle is not
+	important, but what matters is it's energy.
 
 	Other particle names may be added in future versions, based on schema users requests.
 	

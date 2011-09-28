@@ -34,7 +34,7 @@ Source
 		followed by one or more characters. The **sourceID** is then referred to with the help of 
 		element **SourceRef** of the :ref:`PrimaryType`.
 	
-	*	Mandatory **Category** element, defined by **CategoryType**, that may take one of the following values:
+	*	Mandatory **Category** element, defined by **SourceCategoryType**, that may take one of the following values:
 	
 		- book
 		- database
@@ -43,7 +43,7 @@ Source
 		- private communication
 		- proceedings
 		- report
-		- theses
+		- thesis
 	
 	*	Mandatory **SourceName** element. 
 		It's value should be a string containing the name of a journal, proceedings, book, etc.

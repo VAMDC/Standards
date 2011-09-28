@@ -8,6 +8,17 @@ Documenting VAMDC standards
     This is the development version of the standards, due to be released at the end of July 2011.
     
     Visit http://www.vamdc.org/documents/standards/ for the official standards.
+    
+    
+
+VAMDC documentation and software versioning policy
+------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   
+   management/index
+
 
 .. On the pages listed below you will find the specifications of standards currently used by the VAMDC.  The next official release of standards is scheduled for July 2011.  
 

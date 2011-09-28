@@ -68,7 +68,7 @@ ElementSymbolType
 EnvironmentIDType
 ++++++++++++++++++++++++++++++
 
-	Identifier for environments.
+	Identifier for :ref:`environments`.
 	May contain any symbols except spaces, first symbol must be **E**.
 	
 EnvironmentRefType
@@ -81,7 +81,7 @@ EnvironmentRefType
 FunctionIDType
 ++++++++++++++++++++++++++++++
 
-	Identifier for functions.
+	Identifier for :ref:`functions`.
 	May contain any symbols except spaces, first symbol must be **F**.
 
 .. _FunctionRefType:
@@ -182,6 +182,8 @@ SpeciesIDType
 
 	Identifier for species. Used in Atoms and Molecules.
 	May contain any symbols except spaces, first symbol must be **X**.
+	If database keeps different species kinds in different tables, it may make sense to add some additional prefixes
+	to assure process identifier uniqueness, like *XA* for atoms, *XM* for molecules, etc.
 
 .. _SpeciesRefType:
 
@@ -198,6 +200,16 @@ StateIDType
 	Identifier for a specific state. Used in all species.
 	May contain any symbols except spaces, first symbol must be **S**.
 
+.. _ProcessIDType:
+
+ProcessIDType
+++++++++++++++++++++++++++++++
+	
+	Identifier for a specific process. Used in all processes for the mandatory **id** attribute.
+	May contain any symbols except spaces, first symbol must be **P**.
+	If database keeps different process kinds in different tables, it may make sense to add some additional prefixes
+	to assure process identifier uniqueness.
+	
 .. _StateRefType:
 
 StateRefType
@@ -574,7 +586,7 @@ VectorsType
 
 .. _DataListType:
 
-DataListType:
+DataListType
 +++++++++++++++
 
 	.. image:: images/types/DataListType.png
@@ -587,7 +599,7 @@ DataListType:
 
 .. _MatrixType:
 
-MatrixType:
+MatrixType
 ++++++++++++++
 
 	.. image:: images/types/MatrixType.png
@@ -602,13 +614,16 @@ MatrixType:
 	*	mandatory integer attribute **nrows** defining the number of rows,
 	*	mandatory integer attribute **ncols** defining the number of columns,
 	*	mandatory attribute **form** that identifies the type of matrix. It can be
+	
 		- *arbitrary*
 		- *symmetric*
 		- *asymmetric*
 		- *diagonal*
 		- *antidiagonal*
 		
-	*	mandatory attribute 'values' that may take values
+	*	mandatory attribute **values** that describes the type of **Matrix** element contents and may be
+		one of
+	
 		-	*binary*
 		-	*integer*
 		-	*real*
