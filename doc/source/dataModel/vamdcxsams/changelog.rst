@@ -33,6 +33,8 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 	#.	**envID** attribute is now required for the :ref:`Environment` element
 	
 	#.	Fix :ref:`MatrixType` to use correct types for **values** attribute and **Matrix** element
+	
+	#.	Change few of the :ref:`XSAMSProcessCodes` abbreviations
 
 	
 
