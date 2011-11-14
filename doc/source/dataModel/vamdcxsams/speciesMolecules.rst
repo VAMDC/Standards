@@ -359,7 +359,7 @@ NormalModes
 	*	optional **pointGroupSymmetry** string attribute;
 	*	optional **id** attribute of :ref:`NormalModeIDType`,
 		defining unique identifier for this mode, 
-		to be referenced from radiative :ref:`CrossSection` band assignment;
+		to be referenced from radiative :ref:`AbsorptionCrossSection` band assignment;
 	*	optional **HarmonicFrequency** element of :ref:`DataType`;
 	*	optional **Intensity** :ref:`DataType` element;
 	*	optional **DisplacementVectors** element of type :ref:`VectorsType` 

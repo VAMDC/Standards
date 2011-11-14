@@ -4,7 +4,8 @@ Processes.Radiative
 ======================
 
 This part of the schema describes radiative processes including spontaneous
-radiative decays. Also photoabsorption :ref:`CrossSection` is represented here.
+radiative decays. Also photoabsorption (:ref:`AbsorptionCrossSection` 
+and :ref:`CollisionInducedAbsorptionCrossSection`) is represented here.
 The other way to describe Collisions between photons and various objects (e.g.,
 molecules) is in the :ref:`Collisions` part.
 
@@ -16,13 +17,16 @@ molecules) is in the :ref:`Collisions` part.
 RadiativeTransition
 --------------------------
 
+	.. image:: images/radiative/RadTrans.png
+
 	Extension of the :ref:`PrimaryType`. A transition is characterized by its
 	energy/wavelength (element :ref:`EnergyWavelength`) and following optional attributes and elements:
 	
-	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
+	*	mandatory **id** attribute of type :ref:`ProcessIDType`;
 	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
-	*	**InitialStateRef** of type :ref:`StateRefType`, reference to the initial state of the transition,
-	*	**FinalStateRef**, reference to the final state of the transition, type :ref:`StateRefType`),
+	*	optional **process** attribute to reflect if the process is *excitation* or *deexcitation*;
+	*	**UpperStateRef** of type :ref:`StateRefType`, reference to the upper state of the transition;
+	*	**LowerStateRef**, reference to the lower state of the transition, type :ref:`StateRefType`),
 	*	**SpeciesRef** element of type :ref:`SpeciesRefType`, that may be used in place of the previous two
 		in case of unknown states. All three references may be specified, in that case states should belong
 		to the molecule/atom, indicated by **SpeciesRef**.
@@ -31,27 +35,33 @@ RadiativeTransition
 		(e.g., M1 and E2 may be possible for the same initial and final states).
 	*	multiple :ref:`SatelliteLine` elements,
 	*	multiple :ref:`Broadening` elements,
-	*	list of :ref:`Shifting`.
+	*	list of :ref:`Shifting` elements.
 
-	.. image:: images/radiative/RadTrans.png
+	
+	**WARNING!** A note should be taken that the schema has no mean so far to enforce 
+	the energy of the upper state to be higher than the energy of the lower state. 
+	Data producers should take care of it explicitly 
+	and data consumers should rely on that with the notion of the possible error condition.
 
 .. _EnergyWavelength:
 
 EnergyWavelength
 -------------------
 
+	.. image:: images/radiative/EnergyWavelength.png
+	
 	Extension of the :ref:`PrimaryType`, may contain multiple **Wavenumber**, **Wavelength**, **Energy** 
 	or **Frequency** elements, each of :ref:`DataType`. Exact nature of parameter must be determined through 
 	:ref:`Method`, with help of :ref:`PrimaryType`'s method reference. Method's **Category** element takes in this
 	case values in (*experiment*, *theory*, *ritz*).
-
-	.. image:: images/radiative/EnergyWavelength.png
 	
 
 .. _Probability:
 
 Probability
 -------------
+
+	.. image:: images/radiative/Probability.png
 
 	Probability element is defined as the extension of the :ref:`PrimaryType`. 
 	Describes parameters, relevant to transition probability.
@@ -73,7 +83,7 @@ Probability
 		and the first digit cannot be **0**.
 	*	**EffectiveLandeFactor** - Effective Lande factor, line intensity coefficient for magneto-sensitive atomic lines.
 
-	.. image:: images/radiative/Probability.png
+	
 	
 
 
@@ -251,30 +261,36 @@ Shifting
 	
 
 
-.. _CrossSection:
+.. _AbsorptionCrossSection:
 
-CrossSection
--------------------
+AbsorptionCrossSection
+----------------------------
 
-	Among with **RadiativeTransition** elements, :ref:`Radiative` processes block has a **CrossSection** element,
-	which allows description of
+	Among with **RadiativeTransition** elements, :ref:`Radiative` processes block 
+	has an **AbsorptionCrossSection** element which allows the description of
 	absorption cross-section data and vibrational bands assignment in case of complex molecules.
 	
 	
-	.. image:: images/radiative/CrossSection.png
-		:alt:	RadiativeTransition child elements
+	.. image:: images/radiative/AbsorptionCrossSection.png
+		:alt:	AbsorptionCrossSection child elements
 		
-	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the cross-section,
-	-	mandatory **id** attribute of type :ref:`ProcessIDType` should contain a unique process reference id,
-	-	optional **groupLabel** attribute may contain an arbitrary group label string,
-	-	**Description**, **X** and **Y** elements describe cross-section data in tabular form, 
-		where **X** can be absorbed radiation frequency, wavelength or wavenumber in a form of a list of values or sequence.
+	-	**Description**, **X** and **Y** elements, derived from the :ref:`SimpleDataTableType` 
+		describe cross-section data in tabular form, 
+		where **X** can be absorbed radiation frequency, wavelength or wavenumber 
+		in a form of a list of values or a sequence.
 		**Y** then represents a sequence of sigma values.
+		
+	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the data.
+		One example would be to use it to describe absorption of some gases mixture.
+		
+	-	mandatory **id** attribute of type :ref:`ProcessIDType` should contain a unique process reference id,
 	
-	- 	**Species** element may have **StateRef** and/or **SpeciesRef** child elements, indicating species or specific states,
+	-	optional **groupLabel** attribute may contain an arbitrary group label string,
+	
+	- 	optional **Species** element may have **StateRef** and/or **SpeciesRef** child elements, indicating species or specific states,
 		to which crossection data applies.
 	
-	-	**BandAssignment** allows to indicate specific vibrational modes in cross-section data.
+	-	optional **BandAssignment** elements allow to indicate specific vibrational modes in cross-section data.
 	
 	.. image:: images/radiative/BandAssignment.png
 		:alt:	CrossSection BandAssignment element
@@ -295,10 +311,10 @@ Example cross-sections record
 			Standard Reference Data Program Collection</Description>
 			
 			<X parameter="wavenumber" units="1/cm">
-				<LinearSequence n="880" units="1/cm" a0="450." a1="4"/>
+				<LinearSequence count="880" initial="450." increment="4"/>
 			</X>
 			<Y parameter="sigma" units="arbitrary">
-				<DataList n="880">
+				<DataList count="880">
 					0 85 94 .. 102
 				</DataList>    
 			</Y>
@@ -336,7 +352,53 @@ Example cross-sections record
 					<DeltaV modeID="V3">2</DeltaV>
 				</Modes>
 			</BandAssignment>
-			
 		</CrossSection>
 		
 
+.. _CollisionInducedAbsorptionCrossSection:
+
+CollisionInducedAbsorptionCrossSection
+-------------------------------------------
+
+	This element allows to describe absorption cross-sections for short-living complexes
+	created by collisions (e.g. N2-N2 or He-H2). Similar to the :ref:`AbsorptionCrossSection` description,
+	it extends the :ref:`SimpleDataTableType` in the following way:
+	
+	-	**Description**, **X** and **Y** elements, derived from the :ref:`SimpleDataTableType` 
+		describe cross-section data in tabular form, 
+		where **X** can be absorbed radiation frequency, wavelength or wavenumber 
+		in a form of a list of values or a sequence.
+		**Y** then represents a sequence of sigma values.
+		
+	-	two mandatory :ref:`SpeciesRef` elements containin a reference 
+		to the species creating a molecular complex.
+		
+	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the data.
+		It can give, for example, the environment temperature.
+		
+	-	mandatory **id** attribute of type :ref:`ProcessIDType` should contain a unique process reference id,
+	
+	-	optional **groupLabel** attribute may contain an arbitrary group label string,
+	
+	.. image:: images/radiative/CollisionInducedAbsorptionCrossSection.png
+		:alt:	CollisionInducedAbsorptionCrossSection child elements
+		
+	
+	
+Example collision-induced cross-sections record
+````````````````````````````````````````````````
+	
+	::
+	
+		<CollisionInducedAbsorptionCrossSection envRef="EHIT-512" id="PHIT-CIA-0">
+			<Description>The collision-induced absorption cross section 
+			for He-H at 1500.0 K</Description>
+			<X parameter="nu" units="1/cm">
+				<LinearSequence count="10951" initial="50.000000" increment="1.000000"/>
+			</X>
+			<Y parameter="alpha" units="cm5">
+				<DataFile>He-H_1500.0K_50-11000.alpha</DataFile>
+			</Y>
+			<SpeciesRef>XHIT-SWQJXJOGLNCZEY-UHFFFAOYSA-N</SpeciesRef>
+			<SpeciesRef>XHIT-YZCKVEUIGOORGS-UHFFFAOYSA-N</SpeciesRef>
+		</CollisionInducedAbsorptionCrossSection>
