@@ -301,6 +301,8 @@ UnitsType
 	- km/mol
 	- 1/cm2/atm
 	- 1/cm/atm
+	- cm5
+	- Torr
 
 
 
@@ -500,49 +502,59 @@ DataSeriesType
 	
 	Extends :ref:`PrimaryType` to allow source references, adds following attributes and elements:
 	
-	*	optional string attribute **parameter** that may contain the function parameter name or just
-		a description of meaning of sequence.
-	*	optional attribute **units** of :ref:`UnitsType` to define the data units
-	*	optional attribute **id** of type **xs:ID** that is reserved for future use.
+	*	optional string attribute **parameter** that may contain the function
+		parameter name;
+	*	optional attribute **units** of :ref:`UnitsType` to define the data 
+		units;
+	*	optional string **DataDescription** element that may contain a verbose 
+		description of data stored in the column;
 	*	mandatory choice of 
 	
-		-	**DataList** element of :ref:`DataListType` to represent a space-separated list of *double* values.
-		-	**LinearSequence** element of :ref:`LinearSequenceType`. Should be used if
-			data is a linear sequence. Example would be to represent frequency/wavelength points for spectrum data.
-		-	**DataFile** string element that should contain a file name, containing space-separated or
-			newline-separated set of data. This element is also reserved for future use, currently no software
-			is able to pass data files along with XSAMS instance documents.
+		-	**DataList** element of :ref:`DataListType` to represent a 
+			space-separated list of *double* values.
+		-	**LinearSequence** element of :ref:`LinearSequenceType`. Should
+			be used if data is a linear sequence. Example would be to
+			represent frequency/wavelength points for spectrum data.
+		-	**DataFile** string element that should contain a file name,
+			containing space-separated or newline-separated set of data.
 			
-	*	optional choise of **Error** or **ErrorList** to define errors for data points.
-		List may be used if error values are different for different points, 
-		otherwise single **Error** element should be used.
-		
-		
-		
-.. _DataTableType:
+			For now, this element should contain a fully qualified URL of 
+			the data file. In a future xsams-bundle format this element will 
+			contain names of bundled text files.
 
-DataTableType
-+++++++++++++
 
-	**DataTableType** is the type used in Collision's :ref:`DataXY` element.
-
-	.. image:: images/types/DataTableType.png
+			
+Errors representation
+````````````````````````
 	
-	DataTableType has following attributes and elements defined:
+	.. image:: images/types/DataSeriesTypeErr.png
 	
-	*	mandatory **units** attribute of type :ref:`UnitsType`,
-	*	optional **parameter** attribute to describe the type of unit (e.g.,
-		energy, time, or surface...)
-	*	mandatory **DataList** element, of type :ref:`DataListType`,
-		providing the numerical values as a list.
-	*	optional **Error**, providing centered error bar, or
-	*	**NegativeError** and
-	*	**PositiveError** elements, providing asymmetric error bar;
-	*	optional **DataDescription** string element.
+	To represent data points errors, one of the following optional elements may be used:
+			
+	*	**ErrorList** element of :ref:`DataListType`,
 	
-	All error-related elements have the same type :ref:`DataListType` (list of values of type **xs:double**). 
+	*	**ErrorValue** in case all points have the same error value
+	
+	*	**ErrorFile** which has the same meaning as **DataFile** element
+	
+	In a case when positive/negative errors are not equal, corresponding pairs of elements may be used:
+	
+	*	**NegativeErrorList** and **PositiveErrorList**
+	*	**NegativeErrorValue** and **PositiveErrorValue**
+	*	**NegativeErrorFile** and **PositiveErrorFile**
+	
 	All missing error values should be reported as **-1**.
+		
 	
+.. _DataListType:
+
+DataListType
++++++++++++++++
+
+	.. image:: images/types/DataListType.png
+
+	Defines a space-separated list of double precision floating-point numbers, with
+	the optional **count** attribute to indicate the number of elements in a list
 
 .. _LinearSequenceType:
 
@@ -554,11 +566,70 @@ LinearSequenceType
 	
 	.. image:: images/types/LinearSequenceType.png
 	
-	An extension of :ref:`PrimaryType`, defines following attributes:
+	Defines three mandatory attributes: **initial**, **increment** and **count**.
 	
-	*	Mandatory **a0** and **a1** attributes of type **xs:double**
-	*	Optional integer **n** attribute to indicate the count of sequence elements
-	*	Optional **units** attribute of :ref:`UnitsType` to define units of data
+	
+	
+.. _SimpleDataTableType:
+
+SimpleDataTableType
++++++++++++++++++++++
+
+	**SimpleDataTableType** is the universal table type used as a base type for absorption cross-sections
+	and for all kinds of tabular data within collisions.
+
+	.. image:: images/types/SimpleDataTableType.png
+	
+	SimpleDataTableType has following attributes and elements defined:
+	
+	*	optional string **Description** to hold the table name;
+	*	mandatory **X** element of :ref:`DataSeriesType` that can be repeated multiple times to 
+		allow description of multi-dimensional data, as for example  :math:`y=f(x_1, x_2, x_3)`.
+	*	mandatory **Y** element of :ref:`DataSeriesType` intended to contain data points.
+	
+	
+	It is possible to mix **DataList**, **DataFile** and **LinearSequence** elements within a single table.
+	In any case each numerical list from any **X** or **Y** element must have the same number of values.
+	
+	This is necessary to transfer the numerical data in a consistant way.
+	This way, the n'th value of the **DataList** element of the **Y** element has as argument values
+	the n'th value of the **DataList** element from each **X** elements.  It is important to note
+	that no missing values are possible within the **DataList** element, as each **Y** value
+	has always a defined set of **X** values.
+	
+	The only exception to this rule is a **LinearSequence** element that may contain less elements.
+	In this case when the last element is reached, value should be reset to **initial** 
+	and begin to increment again.
+	
+	
+	
+	The following table:
+
+	
+	**Differential cross-sections in**  :math:`10^{-16} cm^2` 
+
+	
+	+-------------------------+-----+-----+-----+
+	| :math:`x1(eV)|x2(deg)`  |   0 | 20  | 40  |
+	+=========================+=====+=====+=====+
+	|            1.           |  .1 | .2  | .3  |
+	+-------------------------+-----+-----+-----+
+	|            2.           |  .4 | .5  | .6  |
+	+-------------------------+-----+-----+-----+
+	|            3.           |  .7 |     | .9  |
+	+-------------------------+-----+-----+-----+
+
+	produces as output::
+	
+		<X units='deg'>
+			<Datalist>0 20 40 0 20 40 0 40</Datalist>
+		</X>
+		<X units='eV'>
+			<Datalist>1. 1. 1. 2. 2. 2. 3. 3.</Datalist>
+		</X>
+		<Y units='cm2'>
+			<Datalist>.1e-16 .2e-16 .3e-16 .4e-16 .5e-16 .6e-16 .7e-16 .9e-16</Datalist>
+		</Y>
 	
 	
 .. _VectorsType:
@@ -584,18 +655,7 @@ VectorsType
 		with units defined in the **Vectors** container.
 	
 
-.. _DataListType:
 
-DataListType
-+++++++++++++++
-
-	.. image:: images/types/DataListType.png
-
-	Defines a space-separated list of double precision floating-point numbers, with
-	the following optional attributes:
-
-	*	**units** of type :ref:`UnitsType` to define units of the list
-	*	integer **n** to indicate the number of elements in a list
 
 .. _MatrixType:
 

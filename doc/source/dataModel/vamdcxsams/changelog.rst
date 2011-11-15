@@ -13,17 +13,19 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 
 	#.	Fixed spelling error in :ref:`Sources` category, **theses** -> **thesis**
 	
-	#.	Change Namespace URL from "http://vamdc.org/xml/xsams/0.2" to "http://vamdc.org/xml/xsams/0.3"
+	#.	**cm5** and **Torr** are added to the :ref:`UnitsType`
 	
-	#.	Update Case-By-Case definition of molecular quantum numbers to version 0.3
+	#.	Changed Namespace URL from "http://vamdc.org/xml/xsams/0.2" to "http://vamdc.org/xml/xsams/0.3"
 	
-	#.	Rename CategoryType into SourceCategoryType in :ref:`Sources`
+	#.	Updated Case-By-Case definition of molecular quantum numbers to version 0.3
 	
-	#.	Allow up to three **LifeTime** elements within :ref:`AtomicNumericalData`
+	#.	Renamed CategoryType into SourceCategoryType in :ref:`Sources`
 	
-	#.	Allow more than one IAEA code per :ref:`Collision`
+	#.	Allowed up to three **LifeTime** elements within :ref:`AtomicNumericalData`
 	
-	#.	Added few more :ref:`particles`: neutron, alpha and cosmic. 
+	#.	Allowed more than one IAEA code per :ref:`Collision`
+	
+	#.	Addeded few more :ref:`particles`: neutron, alpha and cosmic. 
 		Latter is 'any high-energy cosmic ray particle'.
 	
 	#.	Replaced StateID with SpeciesID in :ref:`Particles` and :ref:`Solids`
@@ -48,9 +50,11 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 	#.	Change the SourceName element to be optional in Sources: sources such as 'private communications' 
 		do not necessarily have meaningful SourceNames
 		
-	#.	Changed :ref:`RadiativeTransition` and :ref:`NonRadiativeTransition` to have 'UpperStateRef' and 'LowerStateRef'
-		elements, plus optional 'process' attribute with 'excitation'/'deexcitation' values
+	#.	Changed :ref:`RadiativeTransition` and :ref:`NonRadiativeTransition` to have 'UpperStateRef' 
+		and 'LowerStateRef' elements, plus optional 'process' attribute 
+		with 'excitation'/'deexcitation' values
 	
-	#.	In :ref:`DataListType` rename **n** attribute into **count**
+	#.	In :ref:`DataListType` renamed **n** attribute into **count**
 	
-	#.	In :ref:`LinearSequenceType` rename **n** , **a0** , **a1** attributes into **count** , **initial** , **increment**
+	#.	In :ref:`LinearSequenceType` renamed **n** , **a0** , **a1** attributes 
+		into **count** , **initial** , **increment**

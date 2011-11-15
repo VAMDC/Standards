@@ -277,7 +277,7 @@ AbsorptionCrossSection
 	-	**Description**, **X** and **Y** elements, derived from the :ref:`SimpleDataTableType` 
 		describe cross-section data in tabular form, 
 		where **X** can be absorbed radiation frequency, wavelength or wavenumber 
-		in a form of a list of values or a sequence.
+		in a form of a list of values ( **DataList** ) or a sequence ( **LinearSequence** ).
 		**Y** then represents a sequence of sigma values.
 		
 	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the data.
@@ -370,7 +370,7 @@ CollisionInducedAbsorptionCrossSection
 		in a form of a list of values or a sequence.
 		**Y** then represents a sequence of sigma values.
 		
-	-	two mandatory :ref:`SpeciesRef` elements containin a reference 
+	-	two mandatory **SpeciesRef** elements of :ref:`SpeciesRefType` containing a reference 
 		to the species creating a molecular complex.
 		
 	-	optional **envRef** attribute allows to point to the :ref:`environment` relevant to the data.

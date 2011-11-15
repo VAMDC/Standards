@@ -22,8 +22,9 @@ NonRadiativeTransition
 	
 	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
 	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
-	*	mandatory **InitialStateRef** :ref:`StateRefType` reference,
-	*	optional **FinalStateRef** of the same type,
+	*	optional **process** attribute to specify if *deexcitation* or *excitation* is described;
+	*	mandatory **UpperStateRef** :ref:`StateRefType` reference,
+	*	optional **LowerStateRef** of the same type,
 	*	optional **SpeciesRef** of :ref:`SpeciesRefType`,
 	*	optional **Probability** element (type :ref:`DataType`),
 	*	optional **TransitionEnergy** of :ref:`DataType`, the energy difference between initial and

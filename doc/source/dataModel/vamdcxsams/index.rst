@@ -27,6 +27,7 @@ VAMDC-XSAMS reference guide  [v |vamdcxsamsLanguage-version|] [r |release|]
    speciesParticles
    speciesSolids
    
+   processes
    processRadiative
    processNonRadiative
    processCollisions

@@ -130,61 +130,9 @@ TabulatedData
 
 	.. image:: images/collisions/TabulatedData.png
 	
-	This element of type **TabulatedDataType**, extension of the :ref:`PrimaryType`,
-	provides the necessary information to describe the
-	numerical data in a tabulated form. It includes the elements :ref:`DataXY`,
+	Extending the base :ref:`SimpleDataTableType`, it adds the elements
 	:ref:`ReferenceFrame`, **PhysicalUncertainty** and **ProductionDate** (see
 	description of :ref:`FitData` element for definitions).
-
-
-.. _DataXY:
-
-DataXY
-+++++++++
-
-	.. image:: images/collisions/DataXY.png
-
-	The **DataXY** element of type **DataXYType** provides the numerical data
-	in a tabulated form. It has two elements **X** and **Y** of same :ref:`DataTableType`.
-	The element **X** may be specified multiple times to allow description of multi-dimensional data,
-	as for example:  :math:`y=f(x_1, x_2, x_3)`.
-
-	Each numerical list from any **X** or **Y** element must
-	have the same number of values. This is necessary to transfer the numerical data in a consistant way.
-	This way, the n'th value of the **DataList** element of the **Y** element has as argument values
-	the n'th value of the **DataList** element from each **X** elements.  It is important to note
-	that no missing values are possible within the **DataList** element, as each **Y** value
-	has always a defined set of **X** values.
-
-	The following table:
-
-	
-	**Differential cross-sections in**  :math:`10^{-16} cm^2` 
-
-	
-	+-------------------------+-----+-----+-----+
-	| :math:`x1(eV)|x2(deg)`  |   0 | 20  | 40  |
-	+=========================+=====+=====+=====+
-	|            1.           |  .1 | .2  | .3  |
-	+-------------------------+-----+-----+-----+
-	|            2.           |  .4 | .5  | .6  |
-	+-------------------------+-----+-----+-----+
-	|            3.           |  .7 |     | .9  |
-	+-------------------------+-----+-----+-----+
-
-	produces as output::
-	
-		<DataXY>
-			<X unit='deg'>
-				<Datalist>0 20 40 0 20 40 0 40</Datalist>
-			</X>
-			<X unit='eV'>
-				<Datalist>1. 1. 1. 2. 2. 2. 3. 3.</Datalist>
-			</X>
-			<Y unit='cm2'>
-				<Datalist>.1e-16 .2e-16 .3e-16 .4e-16 .5e-16 .6e-16 .7e-16 .9e-16</Datalist>
-			</Y>
-		</DataXY>
 	
 
 .. _ReferenceFrame:
