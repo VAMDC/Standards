@@ -69,3 +69,5 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 	
 	#.	Renamed **Multipole** element of :ref:`RadiativeTransition` **Probability** into **TransitionKind**. Added *P* value for 
 		transitions due to polarizability, not multipole. For example, Raman transitions.
+		
+	#.	:ref:`ElementSymbolType` now contains an enumeration of all possible atomic element symbols from the [IUPAC]_ list.
