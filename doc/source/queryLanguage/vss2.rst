@@ -48,8 +48,7 @@ Restrictables prefixes
 
 Another addition is the prefixes for restrictables keywords, used for processes selection refinement.
 
-*	When selecting transition information, prefices to the state-related restrictables are grouping them by upper or lower state. If the prefix is omitted in the query, keywords should be assumed to be related to lower state.
-
+*	When selecting transition information, prefices to the state-related restrictables are grouping them by upper or lower state. 
 	Examples::
 	
 		Select * where lower.StateEnergy = 0 and upper.StateEnergy > 1000
@@ -62,6 +61,8 @@ Another addition is the prefixes for restrictables keywords, used for processes 
 		select * where StateEnergy < 100 and lower.StateEnergy>100
 
 	will (and must) return no results.
+	
+	If the prefix is omitted in the query, constraints apply to both states of a transition.
 
 *	When selecting collision information, prefices are **reactantX** and **productX**, where X is a case-insensitive alphanumeric symbol [0-9A-Z] , defining a group of keywords applying to the single reactant. For the special case of two-particle collisions, in which it is necessary to distinguish the incident particle, the prefices **target** and **collider** may be used instead. 
 
