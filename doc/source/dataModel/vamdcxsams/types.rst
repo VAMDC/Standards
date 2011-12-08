@@ -60,8 +60,7 @@ ElementSymbolType
 ++++++++++++++++++++++++++++++
 
 	Symbol for a chemical element. 
-	Allowed values: an upper-case letter that may be followed by a lower-case
-	letter. Examples: **D**, **Hf**, **P**.
+	Allowed values are atom symbols from the [IUPAC]_ atomic elements list, from H for Hydrogen to Cn for Copernicium
 
 .. _EnvironmentIDType:
 
@@ -502,15 +501,23 @@ DataSeriesType
 			For now, this element should contain a fully qualified URL of 
 			the data file. In a future xsams-bundle format this element will 
 			contain names of bundled text files.
+	*	optional **Accuracy** elements, defined by the :ref:`DataSeriesAccuracyType`, similar to one in :ref:`DataType`
 
 
+.. _DataSeriesAccuracyType:
 			
-Errors representation
+DataSeriesAccuracyType
 ````````````````````````
 	
-	.. image:: images/types/DataSeriesTypeErr.png
+	.. image:: images/types/DataSeriesAccuracy.png
 	
-	To represent data points errors, one of the following optional elements may be used:
+	To represent data points errors, optional Accuracy element is introduced.
+	It extends :ref:`PrimaryType` by adding following attributes, similar to introduced in :ref:`AccuracyType` : 
+	
+	*	string **type** attribute which may be *arbitrary*, *estimated*, *statistical*, *systematic*
+	*	boolean **relative** attribute
+	
+	one of the following optional elements may be used to describe error values:
 			
 	*	**ErrorList** element of :ref:`DataListType`,
 	
@@ -518,14 +525,7 @@ Errors representation
 	
 	*	**ErrorFile** which has the same meaning as **DataFile** element
 	
-	In a case when positive/negative errors are not equal, corresponding pairs of elements may be used:
-	
-	*	**NegativeErrorList** and **PositiveErrorList**
-	*	**NegativeErrorValue** and **PositiveErrorValue**
-	*	**NegativeErrorFile** and **PositiveErrorFile**
-	
-	All missing error values should be reported as **-1**.
-		
+	All missing or unknown error values in the **ErrorList** and **ErrorFile** should be reported as **-1**.
 	
 .. _DataListType:
 
