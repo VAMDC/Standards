@@ -44,6 +44,7 @@ Source
 		- proceedings
 		- report
 		- thesis
+		- vamdc node
 	
 	*	Mandatory **SourceName** element. 
 		It's value should be a string containing the name of a journal, proceedings, book, etc.
@@ -66,6 +67,7 @@ Source
 	*	Optional **Title** element.
 	*	Optional **Volume** element for journal volume.
 	*	Optional **DigitalObjectIdentifier** [DOI]_ element.
+	*	Optional **ArticleNumber** element, containing a journal-specific article identifier
 	*	Optional **PageBegin** element for initial page of article.
 	*	Optional **PageEnd** element for final page.
 	*	Optional **UniformResourceIdentifier** element of type **xs:anyURI** 
