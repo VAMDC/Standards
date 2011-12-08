@@ -59,7 +59,8 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 	#.	In :ref:`LinearSequenceType` renamed **n** , **a0** , **a1** attributes 
 		into **count** , **initial** , **increment**
 		
-	#.	Simplified **Accuracy** description and introduced **Evaluation** description for :ref:`DataType` and :ref:`DataTableType`
+	#.	Simplified **Accuracy** description and introduced **Evaluation** description for :ref:`DataType`, 
+		:ref:`DataFuncType` and :ref:`DataSeriesType`
 	
 	#.	Abandoned **SymbolType**, **CNPIGroup** of the :ref:`MolecularChemicalSpecies` is now a string 
 		containing the latex description of the CNPI group symbol

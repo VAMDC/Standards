@@ -22,7 +22,7 @@ Source
 ------------
 
 	.. image:: images/Source.png
-		:scale: 65 %
+		:scale: 60 %
 
 	**Source** element describes a data source, bibliography item 
 	or any other reference relevant to the data element.

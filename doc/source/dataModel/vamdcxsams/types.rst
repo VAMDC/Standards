@@ -345,8 +345,11 @@ DataType
 	
 	Extension of the :ref:`PrimaryType` which
 	is used for description of numerical data, including units and accuracy.
-	Contains a mandatory **Value** element of type :ref:`ValueType` and an
-	optional **Accuracy** element, defined by :ref:`AccuracyType`.
+	Contains 
+	
+	* mandatory **Value** element of type :ref:`ValueType`
+	* optional **Evaluation** elements, defined by the :ref:`EvaluationType`
+	* optional **Accuracy** elements, defined by :ref:`AccuracyType`.
 
 
 
@@ -360,7 +363,7 @@ DataFuncType
 	Defined in the similar way as :ref:`DataType`, **DataFuncType** has additionally
 	
 	*	mandatory **name** attribute,
-	*	choice between a pair of **value** / **Accuracy** elements and a list of **FitParameters**
+	*	choice between a :ref:`DataType` elements and a list of **FitParameters**
 		elements, defined by :ref:`FitParametersType`, each containing sufficient set of parameters needed to calculate
 		the value using some :ref:`Function`.
 	
@@ -374,58 +377,36 @@ AccuracyType
 
 	.. image:: images/types/AccuracyType.png
 	
-	Extension of the :ref:`PrimaryType`, describing measurement/calculation accuracy of some
-	physical quantity. Used in the **Accuracy** element of :ref:`DataType` and :ref:`DataFuncType`.
-	The definition is inspired by [IVOA]_ *Spectral Data Model* and is still a draft and a subject
-	to change or refine in future versions of [XSAMS]_.
+	**AccuracyType** is an extension of **xs:double** type, adding optional attributes:
 	
-	Following attributes and child elements are defined:
-	
-	*	optional **calibration** attribute, describing the kind of the reference frame for data. 
-		It may take values:
+	*	**type** attribute that may take values
 		
-		-	**absolute**	indicates that the values in the data are expected to be correct within the given uncertainty
+		- **arbitrary**
+		- **estimated**
+		- **systematic**
+		- **statistical**
 		
-		-	**relative**	indicates that although an unknown systematic error is present, 
-			the ratio and difference of any two values originating from the same source will be correct.
-		
-		-	**normalized**	indicates that the values, originating from this source, 
-			have been divided by a certain reference quantity. 
-			In this case units field of ValueType should be 'unitless'
-		
-		-	**uncalibrated** indicates that not only an unknown systematic error is present in data, 
-			originating from that source, but also some unspecified value-dependant error.
-			Thus, for example, for transitions frequencies only the order of transitions is guaranteed, 
-			neither frequencies, nor their difference/ratio are accurate.
-
-	*	Optional **quality** attribute of integer type that may be used for distinguishing quality-assessed data.
-		Zero value means data, accurate within their errors, other values means that there were some problems with data.
-	
-	*	Optional **Systematic** element of type :ref:`AccuracyErrorType` for systematic errors
-	*	Optional **Statistical** element of type :ref:`AccuracyErrorType` for total statistical error, i.e.
-		upper/lower range are equal.
-	*	Optional **StatHigh** and **StatLow** elements group, also of :ref:`AccuracyErrorType`,
-		may be specified instead of single **Statistical** element 
-		to indicate statistical errors in case of unequal upper and lower error ranges.
-		
-		
-.. _AccuracyErrorType:
-
-AccuracyErrorType
-++++++++++++++++++++++++++++++++
-
-	.. image:: images/types/AccuracyErrorType.png
-
-	**AccuracyErrorType** is an extension of **xs:double** type, adding two optional attributes:
-	
-	*	**confidence** of type **xs:double**, with valid ranges from 0 to 1, 
-		indicating confidence level for which this accuracy is calculated.
+	*	**confidenceInterval** of type **xs:double**, with valid ranges from 0 to 1, 
+		indicating confidence interval for the statistical error.
 		Ususal values would be like **0.95** or **0.99**.
 		
 	*	**relative** of type **xs:boolean**, indicating whether this accuracy value 
 		is absolute(**false**) or relative(**true**).
 		By default, accuracy should be treated as absolute.
 
+.. _EvaluationType:
+
+EvaluationType
+++++++++++++++++
+	
+	.. image:: images/types/EvaluationType.png
+	
+	**EvaluationType** is an extension of the :ref:`PrimaryType`, intended to describe the data quality assessment and recommendation.
+	Following attributes and elements are defined:
+	
+	*	optional boolean **recommended** attribute, true if the corresponding value is evaluated and recommended
+	*	optional string **Quality** element, intended to contain a string specific to evaluation commitee, describing the
+		data quality.
 
 .. _FitParametersType:
 
