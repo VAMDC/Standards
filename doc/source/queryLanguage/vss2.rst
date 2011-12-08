@@ -51,7 +51,19 @@ VSS2 queries must not contain the JOIN keyword.
 
 Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary. 
 
-Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the upper and lower states of an electronic transition. The qualified name is written with the context name as a prefix to the restictable name, separated by a full stop, e.g. ``Upper.AtomStateEnergy``. Available contexts are listed in the VAMDC dictionary.
+Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the upper and lower states of an electronic transition. The qualified name is written with the context name as a prefix to the restrictable name, separated by a full stop, e.g. ``final.StateEnergy``. The following contexts are defined in VSS2.
+
+* ``reactantn`` (where n is a positive integer) associates column names with the nth reactant in a chemical network. E.g. ``reactant1.MoleculeInchiKey``.
+
+* ``productn`` (where n is a positive integer) associates column names with the nth product in a chemical network. E.g. ``product2.MoleculeInchiKey``.
+
+* ``collider`` associates column names with the incident particle in a collision. E.g. ``collider.AtomSymbol``.
+
+* ``target`` associates column names with the target particle in a collision. E.g. ``target.MoleculeStateEnergy``.
+
+* ``initial`` associates column names with the initial state of a transition. E.g. ``initial.StateEnergy.
+
+* ``final`` associates column names with the final state of a transition. E.g. ``final.StateLifeTime``.
 
 The list of column names following the SELECT keyword, which specify the columns from which data are to be returned, must be taken from the Requestables dictionary, or must contain only the single keyword ALL (that keyword having its normal meaning in SQL92). Note that the 'columns' in this dictionary are composites. In a tabular representation of the results a requestable 'column' may produce multiple output-columns. In an XSAMS representation, a requestable 'column' may produce an XML fragment with significant sub-structure.
 
