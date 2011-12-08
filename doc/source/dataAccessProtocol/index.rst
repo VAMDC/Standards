@@ -1,7 +1,9 @@
-.. _index:
+.. _dataAccessProtocol-index:
+.. |dataAccessProtocol-version| replace:: 11.05
 
-Data access protocol [v |version|]
-==================================
+==============================================================================================
+Data access protocol [v |dataAccessProtocol-version|] [r |release|]
+==============================================================================================
 
 .. toctree::
    :maxdepth: 2

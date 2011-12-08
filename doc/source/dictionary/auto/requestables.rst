@@ -1,53 +1,116 @@
-nCollisions
+AtomStates
+-------------------------------------------------------------------
+
+
+Requesting information about atoms, including the states information.
+
+
+Atoms
+-------------------------------------------------------------------
+
+
+Requesting information about atoms, without their states.
+
+
+Collisions
 -------------------------------------------------------------------
 
 
 collisional process data
 
 
-nMethods
+Functions
+-------------------------------------------------------------------
+
+
+
+
+
+Methods
 -------------------------------------------------------------------
 
 
 method information
 
 
-nNonRadiativeTransitions
+MoleculeQuantumNumbers
+-------------------------------------------------------------------
+
+
+Request the full molecule information, including states and quantum numbers.
+
+
+MoleculeStates
+-------------------------------------------------------------------
+
+
+request molecules, including their states but excluding the quantum numbers
+
+
+Molecules
+-------------------------------------------------------------------
+
+
+Request molecules, without information about their states.
+
+
+NonRadiativeTransitions
 -------------------------------------------------------------------
 
 
 non-radiative transitions data
 
 
-nProcesses
+Particles
+-------------------------------------------------------------------
+
+
+request particle information only
+
+
+Processes
 -------------------------------------------------------------------
 
 
 data for all available processes
 
 
-nRadiativeTransitions
+RadiativeCrossections
+-------------------------------------------------------------------
+
+
+
+
+
+RadiativeTransitions
 -------------------------------------------------------------------
 
 
 radiative transitions data
 
 
-nSources
+Solids
+-------------------------------------------------------------------
+
+
+request soldis only.
+
+
+Sources
 -------------------------------------------------------------------
 
 
 source reference information
 
 
-nSpecies
+Species
 -------------------------------------------------------------------
 
 
 only brief species information, without states
 
 
-nStates
+States
 -------------------------------------------------------------------
 
 

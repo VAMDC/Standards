@@ -175,13 +175,43 @@ will show the HTTP-header as::
 
     VAMDC-TRUNCATED: 2.9 %
 
-and at the top of the returned XML, you will find::
+In Django node software implementation you will also find the following section at the top of the returned XML::
 
     <!--
       ATTENTION: The amount of data returned has been truncated by the node.
       The data below represent 2.9 percent of all available data at this node that
       matched the query.
     -->
+
+
+HTTP result codes
+---------------------
+
+Following HTTP result codes should be implemented by the node software for the SYNC TAP endpoint:
+
+==========	====================	=========================	====================
+HTTP Code	meaning             	Content type				Response body
+==========	====================	=========================	====================
+200		Request processed 	application/x-xsams+xml		XSAMS instance document
+		normally, data is 
+		present.
+            
+204		Request processed,	none				none
+		but no matching 
+		data found
+            
+400 		bad request with	application/x-votable+xml	votable with error message
+		malformed query 
+		string or missing 
+		restrictable 
+            
+404		not used, will be	unspecified, may be		unspecified, may be the
+		encountered if the	application/x-votable+xml	votable with error message
+		endpoint is wrong 
+            
+500		internal crash		unspecified, may be		unspecified, may be the
+					application/x-votable+xml	votable with error message
+==========	====================	=========================	====================
 
 
 .. rubric:: Footnotes

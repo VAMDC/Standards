@@ -178,7 +178,7 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'vamdc-tap.tex', u'VAMDC-TAP Specification',
+  ('index', 'vamdc-tap_.tex', u'VAMDC-TAP Specification',
    u'VAMDC', 'manual'),
 ]
 
@@ -223,7 +223,7 @@ latex_logo = '../_static/logos.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'documentation', u'VAMDC Documentation',
+    ('index', 'vamdc-tap_', u'VAMDC Documentation',
      [u'VAMDC'], 1)
 ]
 

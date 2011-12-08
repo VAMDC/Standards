@@ -1,4 +1,4 @@
-.. _references:
+.. _queryLanguage-references:
 
 References
 ==========================

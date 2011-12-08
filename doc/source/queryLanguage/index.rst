@@ -1,10 +1,8 @@
-.. VSS1 documentation master file, created by
-   sphinx-quickstart on Wed May 25 14:41:04 2011.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _queryLanguage-index:
+.. |queryLanguageVersion| replace:: 11.05
 
-Query language  [v |version|]
-==============================
+Query language  [v |queryLanguageVersion|] [r |release|]
+=========================================================
 
 .. toctree::
    :maxdepth: 2
