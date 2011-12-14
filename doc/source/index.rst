@@ -29,6 +29,7 @@ Data access protocol, query language and dictionaries
 
    dataAccessProtocol/index
    queryLanguage/index
+   queryLanguage/changelog
    dictionary/index
 
 Data model
