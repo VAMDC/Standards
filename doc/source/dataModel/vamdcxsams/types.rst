@@ -60,8 +60,7 @@ ElementSymbolType
 ++++++++++++++++++++++++++++++
 
 	Symbol for a chemical element. 
-	Allowed values: an upper-case letter that may be followed by a lower-case
-	letter. Examples: **D**, **Hf**, **P**.
+	Allowed values are atom symbols from the [IUPAC]_ atomic elements list, from H for Hydrogen to Cn for Copernicium
 
 .. _EnvironmentIDType:
 
@@ -345,8 +344,11 @@ DataType
 	
 	Extension of the :ref:`PrimaryType` which
 	is used for description of numerical data, including units and accuracy.
-	Contains a mandatory **Value** element of type :ref:`ValueType` and an
-	optional **Accuracy** element, defined by :ref:`AccuracyType`.
+	Contains 
+	
+	* mandatory **Value** element of type :ref:`ValueType`
+	* optional **Evaluation** elements, defined by the :ref:`EvaluationType`
+	* optional **Accuracy** elements, defined by :ref:`AccuracyType`.
 
 
 
@@ -360,7 +362,7 @@ DataFuncType
 	Defined in the similar way as :ref:`DataType`, **DataFuncType** has additionally
 	
 	*	mandatory **name** attribute,
-	*	choice between a pair of **value** / **Accuracy** elements and a list of **FitParameters**
+	*	choice between a :ref:`DataType` elements and a list of **FitParameters**
 		elements, defined by :ref:`FitParametersType`, each containing sufficient set of parameters needed to calculate
 		the value using some :ref:`Function`.
 	
@@ -374,58 +376,36 @@ AccuracyType
 
 	.. image:: images/types/AccuracyType.png
 	
-	Extension of the :ref:`PrimaryType`, describing measurement/calculation accuracy of some
-	physical quantity. Used in the **Accuracy** element of :ref:`DataType` and :ref:`DataFuncType`.
-	The definition is inspired by [IVOA]_ *Spectral Data Model* and is still a draft and a subject
-	to change or refine in future versions of [XSAMS]_.
+	**AccuracyType** is an extension of **xs:double** type, adding optional attributes:
 	
-	Following attributes and child elements are defined:
-	
-	*	optional **calibration** attribute, describing the kind of the reference frame for data. 
-		It may take values:
+	*	**type** attribute that may take values
 		
-		-	**absolute**	indicates that the values in the data are expected to be correct within the given uncertainty
+		- **arbitrary**
+		- **estimated**
+		- **systematic**
+		- **statistical**
 		
-		-	**relative**	indicates that although an unknown systematic error is present, 
-			the ratio and difference of any two values originating from the same source will be correct.
-		
-		-	**normalized**	indicates that the values, originating from this source, 
-			have been divided by a certain reference quantity. 
-			In this case units field of ValueType should be 'unitless'
-		
-		-	**uncalibrated** indicates that not only an unknown systematic error is present in data, 
-			originating from that source, but also some unspecified value-dependant error.
-			Thus, for example, for transitions frequencies only the order of transitions is guaranteed, 
-			neither frequencies, nor their difference/ratio are accurate.
-
-	*	Optional **quality** attribute of integer type that may be used for distinguishing quality-assessed data.
-		Zero value means data, accurate within their errors, other values means that there were some problems with data.
-	
-	*	Optional **Systematic** element of type :ref:`AccuracyErrorType` for systematic errors
-	*	Optional **Statistical** element of type :ref:`AccuracyErrorType` for total statistical error, i.e.
-		upper/lower range are equal.
-	*	Optional **StatHigh** and **StatLow** elements group, also of :ref:`AccuracyErrorType`,
-		may be specified instead of single **Statistical** element 
-		to indicate statistical errors in case of unequal upper and lower error ranges.
-		
-		
-.. _AccuracyErrorType:
-
-AccuracyErrorType
-++++++++++++++++++++++++++++++++
-
-	.. image:: images/types/AccuracyErrorType.png
-
-	**AccuracyErrorType** is an extension of **xs:double** type, adding two optional attributes:
-	
-	*	**confidence** of type **xs:double**, with valid ranges from 0 to 1, 
-		indicating confidence level for which this accuracy is calculated.
+	*	**confidenceInterval** of type **xs:double**, with valid ranges from 0 to 1, 
+		indicating confidence interval for the statistical error.
 		Ususal values would be like **0.95** or **0.99**.
 		
 	*	**relative** of type **xs:boolean**, indicating whether this accuracy value 
 		is absolute(**false**) or relative(**true**).
 		By default, accuracy should be treated as absolute.
 
+.. _EvaluationType:
+
+EvaluationType
+++++++++++++++++
+	
+	.. image:: images/types/EvaluationType.png
+	
+	**EvaluationType** is an extension of the :ref:`PrimaryType`, intended to describe the data quality assessment and recommendation.
+	Following attributes and elements are defined:
+	
+	*	optional boolean **recommended** attribute, true if the corresponding value is evaluated and recommended
+	*	optional string **Quality** element, intended to contain a string specific to evaluation commitee, describing the
+		data quality.
 
 .. _FitParametersType:
 
@@ -521,15 +501,23 @@ DataSeriesType
 			For now, this element should contain a fully qualified URL of 
 			the data file. In a future xsams-bundle format this element will 
 			contain names of bundled text files.
+	*	optional **Accuracy** elements, defined by the :ref:`DataSeriesAccuracyType`, similar to one in :ref:`DataType`
 
 
+.. _DataSeriesAccuracyType:
 			
-Errors representation
+DataSeriesAccuracyType
 ````````````````````````
 	
-	.. image:: images/types/DataSeriesTypeErr.png
+	.. image:: images/types/DataSeriesAccuracy.png
 	
-	To represent data points errors, one of the following optional elements may be used:
+	To represent data points errors, optional Accuracy element is introduced.
+	It extends :ref:`PrimaryType` by adding following attributes, similar to introduced in :ref:`AccuracyType` : 
+	
+	*	string **type** attribute which may be *arbitrary*, *estimated*, *statistical*, *systematic*
+	*	boolean **relative** attribute
+	
+	one of the following optional elements may be used to describe error values:
 			
 	*	**ErrorList** element of :ref:`DataListType`,
 	
@@ -537,14 +525,7 @@ Errors representation
 	
 	*	**ErrorFile** which has the same meaning as **DataFile** element
 	
-	In a case when positive/negative errors are not equal, corresponding pairs of elements may be used:
-	
-	*	**NegativeErrorList** and **PositiveErrorList**
-	*	**NegativeErrorValue** and **PositiveErrorValue**
-	*	**NegativeErrorFile** and **PositiveErrorFile**
-	
-	All missing error values should be reported as **-1**.
-		
+	All missing or unknown error values in the **ErrorList** and **ErrorFile** should be reported as **-1**.
 	
 .. _DataListType:
 

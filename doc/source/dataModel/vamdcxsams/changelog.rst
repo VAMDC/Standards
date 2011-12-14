@@ -58,3 +58,14 @@ Changes between VAMDC-XSAMS version 0.2 and 0.3
 	
 	#.	In :ref:`LinearSequenceType` renamed **n** , **a0** , **a1** attributes 
 		into **count** , **initial** , **increment**
+		
+	#.	Simplified **Accuracy** description and introduced **Evaluation** description for :ref:`DataType`, 
+		:ref:`DataFuncType` and :ref:`DataSeriesType`
+	
+	#.	Abandoned **SymbolType**, **CNPIGroup** of the :ref:`MolecularChemicalSpecies` is now a string 
+		containing the latex description of the CNPI group symbol
+		
+	#.	Introduced ArticleNumber element into :ref:`Source` element, added "vamdc node" option for **Category**
+	
+	#.	Renamed **Multipole** element of :ref:`RadiativeTransition` **Probability** into **TransitionKind**. Added *P* value for 
+		transitions due to polarizability, not multipole. For example, Raman transitions.

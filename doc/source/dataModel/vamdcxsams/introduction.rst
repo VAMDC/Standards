@@ -6,22 +6,23 @@ Status of VAMDC-XSAMS
 
 The VAMDC consortium include many databases providers from very 
 different fields of atomic, molecular and solid spectroscopy 
-commmunity. The VAMDC consortium has initially implemented the 
+commmunity. Started with the 
 International Atomic Energy Agency's XML Schema for Atomic, Molecular and Solid 
-Data (XSAMS) version 0.1.1 [XSAMS]_ has found that modifications/additions
-were necessary in order to meet the needs of implementation and
-queries. This effort has been carried out within the WP6 workpackage
+Data (XSAMS) version 0.1.1 [XSAMS]_ , VAMDC consortium has found that 
+modifications/additions were necessary in order to meet the needs
+of implementation and queries. 
+This effort has been carried out within the WP6 workpackage
 including contributions/requirements from all VAMDC partners.
 This effort has resulted in the so-called VAMDC-XSAMS schema
 that is used within VAMDC. Releases of VAMDC-XSAMS are planned
 every 3 months and it is planned that VAMDC-XSAMS and XSAMS will
-converge every year. The current version of VAMDC-XSAMS is version 0.2 
-and it is part of the 11.05 Release of VAMDC Standards. The VAMDC release
+converge every year. The current version of VAMDC-XSAMS is version 0.3 
+and it is part of the 11.11 Release of VAMDC Standards. The VAMDC release
 documents for the VAMDC-XSAMS schema include: a tarball including the VAMDC-XSAMS 
 schema files (main file is xsams.xsd) and some example files [VAMDC-XSAMS-SCHEMA]_, 
 the current reference guide and its PDF file [VAMDC-XSAMS-PDF]_, the documentation created 
 directly from the schema [VAMDC-XSAMS-DOC]_, the changelog document [VAMDC-XSAMS-LOG]_ 
-that provides the log between the IEAE XSAMS version 0.1.1  [XSAMS]_ and the current 
+that provides the log between the IAEA XSAMS version 0.1.1  [XSAMS]_ and the
 VAMDC-XSAMS version 0.2 [VAMDC-XSAMS-SCHEMA]_, the documentation for the
 case-by-case description of molecular states [case-by-case]_.
 
@@ -78,8 +79,9 @@ Although XSAMS does require inclusion of documentation of the source and
 generation of the data, issues related to the correctness or applicability of
 the data are left for consideration by data producers. 
 
-The overall structure of XSAMS consists of specifying physical processes in
-terms of states. Specific rules are used to describe the physical states of
+The overall structure of XSAMS reflects the standard approach to description
+of A+M physics in terms of physical processes connecting different states. 
+Specific rules are used to describe the physical states of
 atoms, molecules, ions, elementary particles and solids as unambiguously as
 possible. States can be specified in any of a number of levels of detail and
 in different coupling schemes. Processes between states can be described using

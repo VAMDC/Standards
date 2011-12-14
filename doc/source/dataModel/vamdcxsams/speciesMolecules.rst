@@ -104,8 +104,8 @@ MolecularChemicalSpecies
 	*	**CASRegistryNumber** optional element of type :ref:`ReferencedTextType` that
 		provides the CAS Registry Number.
 
-	*	**CNPIGroup** element of type :ref:`SymbolType`, that
-		describes the Complete Nuclear Permutation Inversion Group.
+	*	String **CNPIGroup** element, describing the Complete Nuclear Permutation Inversion Group.
+		Should contain LaTeX representation of the CNPI group symbol.
 
 	*	**PartitionFunction** element that may contain a temperature dependence of molecule partition function
 		in a form of a list of points. May be specified multiple times.
@@ -289,36 +289,6 @@ ReferencedTextType
 	is used to define strings with :ref:`Source` reference.
 	
 	.. image:: images/molecules/RefTextType.png
-	
-	
-.. _SymbolType:
-
-SymbolType:
-'''''''''''''''
-
-	It is a model to describe symbols. Extending :ref:`PrimaryType`, it adds:
-	
-	*	a list of **Symbol** elements of type **SimpleSymbolType**
-	*	a string element **LatexExpression**, that may contain latex representation of the symbol.
-	
-	.. image:: images/molecules/SymbolType.png
-	
-	SimpleSymbolType defines three string elements,
-	
-	*	**CentralSymbol** which is a string with 4 string attributes,
-	
-		-	**UpperLeftValue**
-		-	**LowerLeftValue**
-		-	**UpperRightValue**
-		-	**LowerTightValue**
-		
-		.. image:: images/molecules/CentralSymbolType.png
-		
-	*	**RightCoefficient**
-	*	**LeftCoefficient**
-	
-	Mathematical symbols and greek alphabet letters should be defined as unicode symbols,
-	for example, &#8734; or &#x221E; for infinity sign (:math:`\infty`)
 	
 	
 .. _CharacterisationType:
