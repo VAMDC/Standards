@@ -10,5 +10,5 @@ Query language  [v |queryLanguageVersion|] [r |release|]
    vss1
    vss2
    references
-
+   changelog
 
