@@ -10,3 +10,4 @@ Data access protocol [v |dataAccessProtocol-version|] [r |release|]
    
    vamdctap
    references
+   changelog
