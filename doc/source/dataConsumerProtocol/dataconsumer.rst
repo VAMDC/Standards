@@ -91,11 +91,40 @@ VOSI capabilities
 -----------------
 
 The VOSI capabilities are a single XML-document at the URL /capabilities relative to the root resource. A "capability" is an XML fragment describing a particular aspect of an application.
-The general rules for VOSI capabilities are defined by IVOA's VOSI standard [ref]. 
+The general rules for VOSI capabilities are defined by IVOA's VOSI standard. 
 
+For applications conforming to the current standard, there must be a capability following the schema ``http://www.vamdc.org/xml/XSAMS-consumer/v1.0``. Such a capability provides two access URLs, one for the form (of type ``WebBrowser``) and one for the primary result (of type ``ParamHTTP``).
 
+The following code shows a sample capabilities-document, with the namespaces and locations of schema filled in::
 
-For applications conforming to the current standard, there must be a capability following the schema [TBD]. Such a capability provides two access URLs, one for the form (of type ``WebBrowser``) and one for the primary result (of type ``ParamHTTP``).
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <cap:capabilities
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cap="http://www.ivoa.net/xml/VOSICapabilities/v1.0"
+    xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.0"
+    xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+    xmlns:xc="http://www.vamdc.org/xml/XSAMS-consumer/v1.0"
+    xsi:schemaLocation="
+    http://www.ivoa.net/xml/VOSICapabilities/v1.0 http://www.vamdc.org/downloads/xml/VOSI-capabilities-1.0.xsd
+    http://www.ivoa.net/xml/XSAMS-consumer/v1.0 http://www.ivoa.net/xml/XSAMS-consumer/v1.0
+    http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0
+    http://www.ivoa.net/xml/VODataService/v1.0 http://www.ivoa.net/xml/VODataService/v1.0">
+  
+    <capability standardID="ivo://vamdc/std/XSAMS-consumer" xsi:type="xc:XsamsConsumer">
+      <interface xsi:type="vr:WebBrowser">
+         <accessURL>http://some.server/some/app</accessURL>
+      </interface>
+      <interface xsi:type="vs:ParamHTTP">
+        <accessURL>http://some.server/some/app/service</accessURL>
+        <resultType>text/html</resultType>
+      </interface>
+      <versionOfStandards>11.12</versionOfStandards>
+      <versionOfSoftware>whatever</versionOfSoftware>
+      <numberOfInputs>1-100</numberOfInputs>
+    </capability>
+  
+  </cap:capabilities>
 
 
 VOSI availability
@@ -103,7 +132,7 @@ VOSI availability
 
 The VOSI availability is a single XML-document at the URL /availability relative to the root resource.
 
-The general rules for VOSI availability are defined by IVOA's VOSI standard [ref].
+The general rules for VOSI availability are defined by IVOA's VOSI standard.
 
 
 Service information
@@ -149,7 +178,7 @@ Registration
 
 The application should be registered in the VAMDC registry. This makes it visible to generic UIs such as the VAMDC portal.
 
-If registered, the registration-document type must be ``{http://www.ivoa.net/xml/VOResource/v1.0}Service`` as defined in the IVOA standard for registration [ref]. The registration must include the capability data taken from the VOSI resource of the application.
+If registered, the registration-document type must be ``{http://www.ivoa.net/xml/VOResource/v1.0}Service`` as defined in the IVOA standard for registration. The registration must include the capability data taken from the VOSI-capabilities resource of the application, as detailed above.
 
 Generic UIs will typically present users with a list of XSAMS-consuming applications. The ``title`` element of the application's registration-document should be suitable to distinguish the application in such a list: it should state explicitly but tersely what the application does. 
 

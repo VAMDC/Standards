@@ -71,6 +71,13 @@ InChI Generation
 
    inchi/index
 
+XSAMS consumers
+----------------
+.. toctree::
+   :maxdepth: 1
+
+   dataConsumerProtocol/index
+
 Downloads
 ----------
 
