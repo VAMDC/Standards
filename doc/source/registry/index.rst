@@ -14,3 +14,4 @@ Registry user's guide [v |reigistry-version|] [r |release|]
    queryingForResources
    registeringVamdcTap
    references
+   changelog

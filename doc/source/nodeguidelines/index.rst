@@ -1,13 +1,12 @@
-.. _dataAccessProtocol-index:
-.. |dataAccessProtocol-version| replace:: 11.05
+.. _index:
+.. |version| replace:: 11.12
 
 ==============================================================================================
-Data access protocol [v |dataAccessProtocol-version|] [r |release|]
+Dictionaries  [v |version|]
 ==============================================================================================
 
 .. toctree::
-   :maxdepth: 2
-   
-   vamdctap
-   references
-   changelog
+   :maxdepth: 1
+
+   treatqueries
+   returndata

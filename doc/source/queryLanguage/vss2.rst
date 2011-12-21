@@ -9,7 +9,6 @@ Introduction
 -------------
 
 VAMDC SQL Subset 2 (VSS2) is a query language designed for the VAMDC-TAP web-services.
-VSS2 will replace VSS1 in the near future, currently this specification is only a **draft** version and a subject to change.
 A query in VSS2 defines an extract of an archive that a data service can return in an VAMDC-XSAMS document or in a tabular format.
 
 Subset of SQL92
@@ -38,7 +37,7 @@ XSAMS branches selection
 	
 		SELECT molecules where MoleculeStoichiometricFormula = "C10H20"
 	
-	this query should retrun only a list of molecules, including references and excluding all the state-related or process-related information.
+	this query should return only a list of molecules, including references and excluding all the state-related or process-related information.
 	
 	If query specifies a states or quantum numbers branch, parent species information should also be provided. Contrary the selection of species should not cause the output of states or quantum numbers.
 	
@@ -49,26 +48,27 @@ Restrictables prefixes
 
 Another addition is the prefixes for restrictables keywords, used for processes selection refinement.
 
-*	When selecting transition information, prefixes to the state-related restrictables are grouping them by initial or final state. If prefix is omitted in the query, keywords should be assumed to be related to initial state.
-
+*	When selecting transition information, prefices to the state-related restrictables are grouping them by upper or lower state. 
 	Examples::
 	
-		Select * where initial.AtomStateEnergy = 0 and final.AtomStateEnergy > 1000
-		select * where AtomStateEnergy = 0 and final.AtomStateEnergy > 1000
+		Select * where lower.StateEnergy = 0 and upper.StateEnergy > 1000
+		select * where StateEnergy = 0 and upper.StateEnergy > 1000
 	
 	**Note:** query
 
 	::
 
-		select * where AtomStateEnergy < 100 and initial.AtomStateEnergy>100
+		select * where StateEnergy < 100 and lower.StateEnergy>100
 
 	will (and must) return no results.
+	
+	If the prefix is omitted in the query, constraints apply to both states of a transition.
 
-*	When selecting collision information, prefixes are **reactantX** and **productX**, where X is a case-insensitive alphanumeric symbol [0-9A-Z] , defining a group of keywords applying to the single reactant. 
+*	When selecting collision information, prefices are **reactantX** and **productX**, where X is a case-insensitive alphanumeric symbol [0-9A-Z] , defining a group of keywords applying to the single reactant. For the special case of two-particle collisions, in which it is necessary to distinguish the incident particle, the prefices **target** and **collider** may be used instead. 
 
 	Example::
 	
-		Select collisions,states where reactantA.AtomSymbol = "O" and reactantA.AtomIonCharge = 1 and ReAcTaNt2.MoleculeStoichiometricFormula in ("HN","HC","C2")
+		Select collisions,states where reactantA.AtomSymbol = "O" and reactantA.AtomIonCharge = 1 and reactant2.MoleculeStoichiometricFormula in ("HN","HC","C2")
 
 	would return all reactions data between :math:`O^+` atomic ion and *NH*, *CH* or *C2* molecules
 	
@@ -103,27 +103,32 @@ VSS2 queries never alter the database to which they are applied.
 
 VSS2 queries must not contain the JOIN keyword.
 
-Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary. 
+Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary.
+Column names may be written in any mix of upper and lower case and query processors must treat all variations of case as equivalent.
 
-Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the upper and lower states of an electronic transition. The qualified name is written with the context name as a prefix to the restrictable name, separated by a full stop, e.g. ``final.StateEnergy``. The following contexts are defined in VSS2.
+Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the initial and final states of an electronic transition. The qualified name is written with the context name as a prefix to the restrictable name, separated by a full stop, e.g. ``final.StateEnergy``. The following contexts are defined in VSS2.
 
-* ``reactantn`` (where n is a positive integer) associates column names with the nth reactant in a chemical network. E.g. ``reactant1.MoleculeInchiKey``.
+* ``reactantx`` (where x is any single character) associates column names with the nth reactant in a chemical network. E.g. ``reactant1.MoleculeInchiKey``.
 
-* ``productn`` (where n is a positive integer) associates column names with the nth product in a chemical network. E.g. ``product2.MoleculeInchiKey``.
+* ``productx`` (where x is any single character) associates column names with the nth product in a chemical network. E.g. ``product2.MoleculeInchiKey``.
 
 * ``collider`` associates column names with the incident particle in a collision. E.g. ``collider.AtomSymbol``.
 
 * ``target`` associates column names with the target particle in a collision. E.g. ``target.MoleculeStateEnergy``.
 
-* ``initial`` associates column names with the initial state of a transition. E.g. ``initial.StateEnergy.
+* ``upper`` associates column names with the higher-energy state of a transition. E.g. ``upper.StateEnergy``.
 
-* ``final`` associates column names with the final state of a transition. E.g. ``final.StateLifeTime``.
+* ``lower`` associates column names with the lower-energy state of a transition. E.g. ``lower.StateLifeTime``.
 
-The list of column names following the SELECT keyword, which specify the columns from which data are to be returned, must be taken from the Requestables dictionary, or must contain only the single keyword ALL (that keyword having its normal meaning in SQL92). Note that the 'columns' in this dictionary are composites. In a tabular representation of the results a requestable 'column' may produce multiple output-columns. In an XSAMS representation, a requestable 'column' may produce an XML fragment with significant sub-structure.
+Context prefices may be written in any mix of upper and lower case and query processors must treat all variations of case as equivalent. This includes the final character in the ``reactantx`` and ``productx`` prefices: ``reactantA`` must be treated as equivalent to ``reactanta``.
 
-All the terms in the dictionary are valid as column names on all databases with a VSS2 processor. The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
+The list of column names following the SELECT keyword, which specify the columns from which data are to be returned, must be taken from the Requestables dictionary, or must contain only the single keyword ALL (that keyword having its normal meaning in SQL92). Note that the 'columns' in this dictionary are composites. In a tabular representation of the results a requestable 'column' may produce multiple output-columns. In an XSAMS representation, a requestable 'column' may produce an XML fragment with significant sub-structure. Column names may be written in any mix of upper and lower case and query processors must treat all variations of case as equivalent.
+
+The query processor must implement the translation of the dictionary terms to names of real columns in the underlying database.
 
 VSS2 processors may accept only a sub-set of the dictionary keywords, corresponding to the content of the underlying database. This sub-set naturally varies between databases and the set of restrictables and requestables for a given database is normally made available to the clients of the database. Where a query includes restrictables or requestables not supported by a given VSS2 processor, the processor must reject the query; it must not process the query while ignoring the unsupported items.
+
+A VSS2 processor should accept only the (possibly empty) sub-set of the context prefices that apply to its database. E.g. processors that have no data on reactions should reject the ``reactantx`` prefix.
 
 When processing a query that contains valid VSS2 plus extensions, the behaviour is defined by the implementation of the query processor. The processor may reject the query, or it may ignore the extensions that it does not support.
 

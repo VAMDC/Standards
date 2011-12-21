@@ -28,7 +28,9 @@ Data access protocol, query language and dictionaries
    :maxdepth: 1
 
    dataAccessProtocol/index
+   dataAccessProtocol/changelog
    queryLanguage/index
+   queryLanguage/changelog
    dictionary/index
 
 Data model
@@ -53,6 +55,7 @@ Registry
    :maxdepth: 1
 
    registry/index
+   registry/changelog
 
 Units
 ---------

@@ -20,14 +20,14 @@ There is a VAMDC client-library (see below), which tries to abstract common quer
 VAMDC registry query library
 =============================
 
-A small (single-class) library is available for VAMDC work. Version 2.0 of this library as well as a zip file containing all the third-party, supporting jars are available for download from the links below. (The AstroGrid client-library for the registry is one of the third-party jars if you want to use it directly.) 
+A small (single-class) library is available for VAMDC work. Version 3.0 of this library as well as a zip file containing all the third-party, supporting jars are available for download from the links below. (The AstroGrid client-library for the registry is one of the third-party jars if you want to use it directly.) 
 
-* `VAMDC registry-client library version 2.0 <http://www.vamdc.org/downloads/registry-client-2.0.jar>`_ 
+* `VAMDC registry-client library version 3.0 <http://www.vamdc.org/downloads/registry-client-3.0.jar>`_ 
 * `3rd-party jars supporting the registry-client library <http://www.vamdc.org/downloads/registry-client-dependencies.zip>`_ 
 
-Some useage notes follow. For the full range of function, see the Javadoc. Other technical descriptions of the software are available, but the main documentation is this page and the Javadoc.
+Some usage notes follow. For the full range of function, see the Javadoc. Other technical descriptions of the software are available, but the main documentation is this page and the Javadoc.
 
-To use the library, instantiate the single class eu.vamdc.registry.Registry. Each method call makes one registry query (technically, some of them make a sequence of queries). You can reuse the object for multiple, successive queries, but it is not safe to share it between threads. The no-argument constructor makes a client for the release registry. To use the development registry, pass the constant ``Registry.DEVELOPMENT_REGISTRY_ENDPOINT`` to the constructor (that is a string literal stating the endpoint for the registry of choice). The ability to select the development registry was added in v2.0 of the client.
+To use the library, instantiate the single class ``eu.vamdc.registry.Registry``. Each method call makes one registry query (internally, some of them make a sequence of queries but you receive a single set of results). You can reuse the object for multiple, successive queries, but it is not safe to share it between threads. The no-argument constructor makes a client for the release registry. To use the development registry, pass the constant ``Registry.DEVELOPMENT_REGISTRY_ENDPOINT`` to the constructor (that is a string literal stating the endpoint for the registry of choice). The ability to select the development registry was added in v2.0 of the client.
 
 The library lets you query for three kinds of information: whole registration documents, IVORNs and access URLs. The latter two types are delivered as lists or sets of strings and the registration documents as org.w3c.dom.Document instances. In the documents, the document element is an uninteresting wrapper and the query results are its first-level children.
 
@@ -46,6 +46,12 @@ Here is an example of finding all the TAP services (this matches one of the XQue
 
 You could also dismantle the results document using XSLT or XPATH. This might be better than using the DOM API.
 
+If you want all the information for all the VAMDC-TAP services in the registry, there is a convenience method::
+
+    import eu.vamdc.registry.Registry;
+    Registry reggie = new Registry();
+    Document results = reggie.findVamdcTap();
+
 Sometimes you just want the access URLs for a class of services. Here is how::
 
     import eu.vamdc.registry.Registry;
@@ -53,7 +59,7 @@ Sometimes you just want the access URLs for a class of services. Here is how::
     import java.util.Set;
     ...
         Registry reggie = new Registry();
-        Set<String> results = reggie.findAccessUrlsByCapability(Registry.TAP_XSAMS_ID);
+        Set<String> results = reggie.findAccessUrlsByCapability(Registry.VAMDC_TAP_ID);
         for (String s : results) {
             URL u = new URL(s);
             // Use this service...
@@ -96,14 +102,10 @@ Routines are:
 * String getTapURL(String ivoaid) - get access URL for specific service
 * Collection getRestrictables(String ivoaID) - get list of supported restrictables for specific service
 
-VAMDC registry browser - web
-================================
+VAMDC web-portal
+================
 
-See http://131.111.70.87:8080/registrybrowser/registryViewer.seam for a registry web browser that lists all the available resources in the registry and allows the user to perform:
-
-* TAP queries
-* VAMDC-TAP queries
-* View reference URL websites
+If you are only interested in VAMDC-TAP data-services, then you can find them in the registry using the VAMDC web-portal.
 
 Astrogrid VODesktop
 =======================

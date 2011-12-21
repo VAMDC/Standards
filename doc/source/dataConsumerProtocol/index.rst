@@ -8,6 +8,5 @@ Data access protocol [v |dataAccessProtocol-version|] [r |release|]
 .. toctree::
    :maxdepth: 2
    
-   vamdctap
+   dataconsumer
    references
-   changelog

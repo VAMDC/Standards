@@ -30,6 +30,8 @@ A VAMDC-TAP service must support at least the following features:
 * VSS1 query language
 * XSAMS as an output format
 * a standard view of the relational data (see below)
+* VOSI availability readout
+* VOSI capabiliies readout
 
 If the service provides all of these features then it may be registered as VAMDC-TAP.
 
@@ -66,20 +68,53 @@ The implementor of a service must also define the *returnables*: these are the t
 
 If a service supports both TAP and VAMDC-TAP, the tables available for a TAP query need not be related to the standard view. One of the main reasons for supporting TAP is to give access to a wider range of tables.
 
+VOSI availability
+-----------------
+Notes on service availability, current and planned, are provided in an XML document. The availability metadata help in monitoring the VAMDC system and in managing downtime. A service installation may use the availability document to announce a number of conditions, including planned down-time for maintenance and unavailability of the database when the web service itself is available.
+
+A VAMDC-TAP service must provide the availability document, in the form defined by IVOA's Virtual Observatory Support Interfaces (VOSI) standard, at the location mandated by the TAP standard.
+
+VOSI capabilities
+-----------------
+A service "capability" is an XML element describing the use of one aspect of the service. The capability states the URL for accessing that aspect and may add other metadata. A VAMDC-TAP installation will have a sequence of capabilities for different aspects, including a primary capability for the query protocol itself; the capabilities are distinguished by their ``standardID`` attributes.  This sequence of capabilities is combined into the capabilities (XML) document and that document is copied from a URL on the VAMDC-TAP service into the VAMDC registry to form the machine-readable part of the registration.
+
+A VAMDC-TAP service must provide the capabilities document as defined by Virtual Observatory Support Interfaces (VOSI) standard, at the location mandated by the TAP standard.
+
+A VAMDC-TAP service must include the following capabilities in its capabilities document.
+(The notation ``{x}y`` for an XML type indicates the type ``x`` in the namespace ``y``.)
+
+* The VAMDC-TAP protocol, with structural type ``{http://www.vamdc.org/xml/VAMDC-TAP/v1.0}VamdcTap`` and standard ID ``ivo://vamdc/std/VAMDC-TAP``.
+
+* The generic protocol TAP, with structural type ``{http://www.ivoa.net/xml/VOResource/v1.0}Capability`` and standard ID ``ivo://ivoa.net/std/TAP``.
+
+* The capabilities, with structural type ``{http://www.ivoa.net/xml/VOResource/v1.0}Capability`` and standard ID ``ivo://ivoa.net/std/VOSI#capabilities``.
+
+* The availability, with structural type ``{http://www.ivoa.net/xml/VOResource/v1.0}Capability`` and standard ID ``ivo://ivoa.net/std/VOSI#availability``.
+
+In the capabilities document, structural types must be stated using the ``xsi:type`` attribute, except where the default type, ``{http://www.ivoa.net/xml/VOResource/v1.0}Capability``, is used.
+
+The XML schemata defining the parts of the registration are available on-line.
+
+=============================================   ==================
+Namespace                                       Location of schema
+=============================================   ==================
+http://www.vamdc.org/xml/VAMDC-TAP/v1.0         http://www.vamdc.org/xml/VAMDC-TAP/v1.0
+http://www.ivoa.net/xml/VOResource/v1.0         http://www.ivoa.net/xml/VOResource/v1.0
+http://www.ivoa.net/xml/VODataService/v1.1      http://www.ivoa.net/xml/VODataService/v1.1
+http://www.ivoa.net/xml/VODataService/v1.0      http://www.ivoa.net/xml/VODataService/v1.0
+http://www.ivoa.net/xml/VOSICapabilities/v1.0   http://www.vamdc.org/downloads/xml/VOSI-capabilities-1.0.xsd
+=============================================   ==================
+
+The capabilities document should refer to these schemata using the ``xsi:schemaLocation`` attribute on the document element. This makes it easier to validate the document. However, the registration process will still work in the absence of ``xsi:schemaLocation``.
+ 
+
+
 Registration
 ------------
 
 A VAMDC-TAP service must be registered. The registration document must be of type `CatalogService (v1.0) <http://www.ivoa.net/xml/VODataService/v1.0>`_ or `CatalogService (v1.1) <http://www.ivoa.net/xml/VODataService/v1.1>`_ as defined by IVOA (i.e. it must use the VODataService standard in either of two versions).
 
-The VAMDC-TAP capability must be denoted in the registration document by a capability block with the attribute standardID=ivo://vamdc/std/VAMDC-TAP and the structural type VAMDC-TAP. In this schema, the returnables are denoted by returnable elements the values of which are the names of the returnables. Similliarly, the restrictables are denoted by restrictable elements. There may be zero or more of each type (but a service with zero of either type is not very useful). All the returnable elements must come before the first restrictable element.
-
-If the service is to be registered as both TAP and VAMDC-TAP, then the TAP capability must be denoted by a capability block with the attribute standardID=ivo://ivoa.net/std/TAP. This capability must have structural type `Capability <http://www.ivoa.net/Documents/REC/ReR/VOResource-20080222.html>`_. This type has no TAP-specific metadata.
-
-The two capability blocks are siblings in the registration document. A service that fully supports TAP will have both a VAMDC-TAP and a TAP capability.
-
-A service registered with a TAP capability should have, in its registration document, details of the queriable tables and columns, denoted according to the VODataService `specification  <http://www.ivoa.net/Documents/VODataService/20101202/REC-VODataService-1.1-20101202.html>`_ .
-
-The capabilities of a service must be made available to the registry in its VOSI-capabilties output; this avoids the need to enter them manually in the registry. If the service has a TAP capability, the details of tables and columns should be presented in its VOSI-tables output.
+The registration must include the capability elements copies from the capabilities document described above.
 
 Making a synchronous query
 --------------------------
