@@ -178,7 +178,7 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'vamdc-consumer_.tex', u'VAMDC Consumer Service Specification',
+  ('index', 'xsams-consumer_.tex', u'VAMDC Consumer Service Specification',
    u'VAMDC', 'manual'),
 ]
 
