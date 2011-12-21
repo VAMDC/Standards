@@ -13,48 +13,6 @@ Return data excluding any additions or improvements that were made after the giv
 
 
 
-AtomInchi
--------------------------------------------------------------------
-
-
-The IUPAC International Chemical Identifier (InChI) is a textual identifier for chemical substances, designed to provide a standard and human-readable way to encode atomic and molecular information and facilitate the search and exchange of such such information in databases and on the web.
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
-AtomInchiKey
--------------------------------------------------------------------
-
-
-InChi key is hashed, fixed-length (currently 27 character) form of International Chemical Identifier (InChI) string describing a given atom/ion/isotope. InChIKeys consist of 14 characters resulting from a hash of the connectivity information of the InChI, followed by a hyphen, followed by 9 characters resulting from a hash of the remaining layers of the InChI, followed by a single character indication the version of InChI used, another hyphen, followed by single checksum character. More information about InChI and InChI Key can be found at http://www.iupac.org/inchi/
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
-AtomIonCharge
--------------------------------------------------------------------
-
-
-Ionization stage with 0 for neutral
-
-
-
-**Type:** integer number
-
-**Constraints:** >=0
-
-
-
 AtomMass
 -------------------------------------------------------------------
 
@@ -125,20 +83,6 @@ Coupling scheme used to describe the state. Currently five coupling schemes are 
 
 
 
-AtomStateEnergy
--------------------------------------------------------------------
-
-
-Energy of the level
-
-
-
-**Type:** floating-point number
-
-**Constraints:** >=0
-
-
-
 AtomStateHyperfineMomentum
 -------------------------------------------------------------------
 
@@ -153,27 +97,13 @@ AtomStateHyperfineMomentum
 
 
 
-AtomStateID
--------------------------------------------------------------------
-
-
-ID for an atomic state, e.g. for linking a process to the state
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
 AtomStateIonizationEnergy
 -------------------------------------------------------------------
 
 
 Ionization energy in eV
 
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
@@ -206,20 +136,6 @@ Lande factor
 **Type:** floating-point number
 
 **Constraints:** 
-
-
-
-AtomStateLifeTime
--------------------------------------------------------------------
-
-
-Life time of an atomic state in s.
-
-**Units:** s
-
-**Type:** floating-point number
-
-**Constraints:** >0
 
 
 
@@ -279,7 +195,7 @@ The quantum defect is a correction applied to the potential to account for the f
 
 
 
-AtomStateStatisticalWeight
+AtomStateTotalAngMom
 -------------------------------------------------------------------
 
 
@@ -287,7 +203,7 @@ AtomStateStatisticalWeight
 
 
 
-**Type:** floating-point number
+**Type:** integer number
 
 **Constraints:** 
 
@@ -330,20 +246,6 @@ CollisionIAEACode
 
 
 **Type:** string
-
-**Constraints:** 
-
-
-
-CollisionThreshold
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
 
 **Constraints:** 
 
@@ -461,11 +363,54 @@ FunctionName
 
 
 
+Inchi
+-------------------------------------------------------------------
+
+
+The IUPAC International Chemical Identifier (InChI) is a textual identifier for chemical substances, designed to provide a standard and human-readable way to encode atomic and molecular information and facilitate the search and exchange of such such information in databases and on the web.
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
 InchiKey
 -------------------------------------------------------------------
 
 
-International Chemical Identifier (InChI) key (27-character or 14-character first part)
+InChi key is hashed, fixed-length (currently 27 character) form of International Chemical Identifier (InChI) string describing a given atom/ion/isotope. InChIKeys consist of 14 characters resulting from a hash of the connectivity information of the InChI, followed by a hyphen, followed by 9 characters resulting from a hash of the remaining layers of the InChI, followed by a single character indication the version of InChI used, another hyphen, followed by single checksum character. More information about InChI and InChI Key can be found at http://www.iupac.org/inchi/
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+IonCharge
+-------------------------------------------------------------------
+
+
+Ionization stage with 0 for neutral
+
+
+
+**Type:** integer number
+
+**Constraints:** >=0
+
+
+
+MethodCategory
+-------------------------------------------------------------------
+
+
+Method category. Allowed values are: experiment, theory, ritz, recommended, evaluated, empirical, scalingLaw, semiempirical, compilation, derived
+
 
 
 
@@ -489,55 +434,13 @@ Conventional molecule name, e.g. CO2, NH3, Feh (may not be unique)
 
 
 
-MoleculeInchi
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
-MoleculeInchiKey
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
-MoleculeIonCharge
--------------------------------------------------------------------
-
-
-Molecule ion charge
-
-
-
-**Type:** integer number
-
-**Constraints:** 
-
-
-
 MoleculeMolecularWeight
 -------------------------------------------------------------------
 
 
 
 
-
+**Units:** u
 
 **Type:** floating-point number
 
@@ -551,21 +454,7 @@ MoleculeNormalModeHarmonicFrequency
 
 
 
-
-
-**Type:** floating-point number
-
-**Constraints:** 
-
-
-
-MoleculeNormalModeIntensity
--------------------------------------------------------------------
-
-
-
-
-
+**Units:** MHz
 
 **Type:** floating-point number
 
@@ -587,21 +476,7 @@ MoleculeProtonation
 
 
 
-MoleculeStateEnergy
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-**Constraints:** 
-
-
-
-MoleculeStateID
+MoleculeQNJ
 -------------------------------------------------------------------
 
 
@@ -615,17 +490,101 @@ MoleculeStateID
 
 
 
-MoleculeStateLifeTime
+MoleculeQNK
 -------------------------------------------------------------------
 
 
-Molecular state lifetime in seconds
 
-**Units:** s
 
-**Type:** floating-point number
 
-**Constraints:** >0
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNKa
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNKc
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNv
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNv1
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNv2
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+MoleculeQNv3
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+**Constraints:** 
 
 
 
@@ -640,20 +599,6 @@ Nuclear spin isomer (symetry) of a molecular state.
 **Type:** string
 
 **Constraints:** (ortho|para|A|E|none)
-
-
-
-MoleculeStateTotalStatisticalWeight
--------------------------------------------------------------------
-
-
-Total statistical weight (degeneracy) for a given molecular energy level
-
-
-
-**Type:** integer number
-
-**Constraints:** >0
 
 
 
@@ -718,6 +663,20 @@ NormalModeSymmetry
 
 
 The character of the irreducible representation for this vibrational normal mode in the molecular point group
+
+
+
+**Type:** string
+
+**Constraints:** 
+
+
+
+ParticleName
+-------------------------------------------------------------------
+
+
+Particle name, one of photon, electron, muon, positron, neutron, alpha, cosmic
 
 
 
@@ -871,13 +830,13 @@ RadTransProbabilityA
 -------------------------------------------------------------------
 
 
+The Einstein coefficient for spontaneous radiative de-excitation (emission) A.
 
-
-
+**Units:** 1/s
 
 **Type:** floating-point number
 
-**Constraints:** 
+**Constraints:** >= 0
 
 
 
@@ -899,13 +858,13 @@ RadTransProbabilityLineStrength
 -------------------------------------------------------------------
 
 
+Line profile-integrated absorption for transition between two energy levels. Line strength K = h&nu; / 4&pi; (n<sub>1</sub> B<sub>12</sub> - n<sub>2</sub> B<sub>21</sub>)
 
-
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
-**Constraints:** 
+**Constraints:** >0
 
 
 
@@ -1004,6 +963,48 @@ Publication Year
 **Type:** integer number
 
 **Constraints:** >0
+
+
+
+StateEnergy
+-------------------------------------------------------------------
+
+
+Energy of the level
+
+**Units:** 1/cm
+
+**Type:** floating-point number
+
+**Constraints:** >=0
+
+
+
+StateLifeTime
+-------------------------------------------------------------------
+
+
+Life time of an atomic state in s.
+
+**Units:** s
+
+**Type:** floating-point number
+
+**Constraints:** >0
+
+
+
+StateStatisticalWeight
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+**Constraints:** 
 
 
 

@@ -488,7 +488,7 @@ AtomStateEnergy
 
 Energy of the level
 
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
@@ -569,7 +569,7 @@ AtomStateIonizationEnergy
 
 Ionization energy in eV
 
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
@@ -2058,6 +2058,51 @@ AtomStateSuperShellPrincipalQN
 
 
 
+AtomStateTermJ1J2
+-------------------------------------------------------------------
+
+
+J1 or J2 quantum number for atomic core described in J1J2 coupling.
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermJJ
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermJKJ
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
 AtomStateTermJKK
 -------------------------------------------------------------------
 
@@ -2073,7 +2118,97 @@ AtomStateTermJKK
 
 
 
-AtomStateTotalAngMom
+AtomStateTermJKS
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLKK
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLKL
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLKLSymbol
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLKS2
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLSL
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLSLSymbol
 -------------------------------------------------------------------
 
 
@@ -2082,6 +2217,81 @@ AtomStateTotalAngMom
 
 
 **Type:** string
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLSMultiplicity
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLSS
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLSSeniority
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+AtomStateTermLabel
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+AtomStateTotalAngMom
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
 
 
 **Constraints:** 
@@ -2855,445 +3065,6 @@ CollisionalTabulatedDataYN
 
 
 
-CrossSectionBandCentre
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandModeComment
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandModeDeltaV
--------------------------------------------------------------------
-
-
-List of dV values
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** >0
-
-
-
-CrossSectionBandModeDeltaVID
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandModeMethod
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandModeName
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandName
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionBandWidth
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** 
-
-
-
-CrossSectionDescription
--------------------------------------------------------------------
-
-
-A string describing the cross section being given in a CrossSection element, e.g. 'IR absorption cross section'
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionEnvironment
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionID
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionSpecies
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionState
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionX
--------------------------------------------------------------------
-
-
-A list of whitespace-delimited values of the independent variable (e.g. wavelength) against which the cross section is given
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionXDataFile
--------------------------------------------------------------------
-
-
-Datafile containing X data. 
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionXError
--------------------------------------------------------------------
-
-
-An error (accuracy) applying to each and every data point in the Cross section independent variable data series
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionXErrorList
--------------------------------------------------------------------
-
-
-A list of errors (accuracy values), separated by whitespace, one for each of the data points listed in the cross section independent variable data series (e.g. wavenumber)
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionXLinearA0
--------------------------------------------------------------------
-
-
-The coefficient a0 in the linear series X_i = a0 + a1.i giving the independent variable against which the cross section is given when this data series is an evenly-spaced series of values.
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionXLinearA0
--------------------------------------------------------------------
-
-
-The coefficient a0 in the linear series X_i = a0 + a1.i giving the independent variable against which the cross section is given
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionXName
--------------------------------------------------------------------
-
-
-The name of the independent variable against which the cross section is measured (e.g. wavenumber)
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionXUnit
--------------------------------------------------------------------
-
-
-The units of the independent variable against which the cross section is measured (e.g. 1/cm)
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionY
--------------------------------------------------------------------
-
-
-A whitespace-delimited list of data points comprising the cross section
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionYDataFile
--------------------------------------------------------------------
-
-
-Datafile containing Y data. 
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionYError
--------------------------------------------------------------------
-
-
-A single error (accuracy) value applying to each and every data point of the cross section
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionYErrorList
--------------------------------------------------------------------
-
-
-A white-space delimited list of error (accuracy) values for each data point given for the cross section
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionYLinearA1
--------------------------------------------------------------------
-
-
-The coefficient a1 in the linear series Y_i = a0 + a1.i giving the independent variable against which the cross section is given when this data series is an evenly-spaced series of values
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionYLinearA1
--------------------------------------------------------------------
-
-
-The coefficient a1 in the linear series Y_i = a0 + a1.i giving the independent variable against which the cross section is given
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-CrossSectionYName
--------------------------------------------------------------------
-
-
-Name of the Cross Section parameter given (e.g. 'sigma')
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CrossSectionYUnit
--------------------------------------------------------------------
-
-
-Units of the cross section (e.g. 'Mb', 'arbitrary', 'km/mol')
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
 EnvironmentComment
 -------------------------------------------------------------------
 
@@ -3801,6 +3572,22 @@ FunctionYUpperLimit
 
 
 
+MethodCategory
+-------------------------------------------------------------------
+
+
+Method category. Allowed values are: experiment, theory, ritz, recommended, evaluated, empirical, scalingLaw, semiempirical, compilation, derived
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 MethodComment
 -------------------------------------------------------------------
 
@@ -3897,7 +3684,7 @@ MoleculeMolecularWeight
 
 
 
-
+**Units:** u
 
 **Type:** floating-point number
 
@@ -3914,7 +3701,7 @@ MoleculeNormalModeHarmonicFrequency
 
 
 
-
+**Units:** MHz
 
 **Type:** floating-point number
 
@@ -4632,6 +4419,21 @@ MoleculeQNvibRefl
 
 
 
+MoleculeQNvibSym
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 MoleculeQNvibSymGroup
 -------------------------------------------------------------------
 
@@ -4683,7 +4485,7 @@ MoleculeStateEnergy
 
 
 
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
@@ -4756,6 +4558,218 @@ Nuclear statistical weight for a given molecular energy level
 
 
 
+MoleculeStateParameterMatrix
+-------------------------------------------------------------------
+
+
+A space-separated list of values for the matrix. For an arbitrary matrix, it has nrows*ncols entries. For a diagonal matrix there are nrows=ncols entries. For a symmetric matrix there are nrows(nrows+1)/2 entries etc.
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixColRefs
+-------------------------------------------------------------------
+
+
+This is a space-separated list of column names for the parameter matrix, as many as there are columns. 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixForm
+-------------------------------------------------------------------
+
+
+Molecular State parameter on matrix form; the matrix' form, such as "symmetric", "diagonal" etc.
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixNcols
+-------------------------------------------------------------------
+
+
+Molecular State parameters in matrix form; number of matrix columns 
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixNrows
+-------------------------------------------------------------------
+
+
+Molecular state parameter data on matrix form, number of rows in matrix
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixRowRefs
+-------------------------------------------------------------------
+
+
+This is a space-separated list of row names for the parameter matrix, as many as there are rows. 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixUnits
+-------------------------------------------------------------------
+
+
+Molecular State parameters, units for data on matrix data form
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterMatrixValues
+-------------------------------------------------------------------
+
+
+Molecular State parameter on matrix form; type of matrix values: "real", "imaginary" or "complex".
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterValueData
+-------------------------------------------------------------------
+
+
+State parameter with a specific value
+
+
+
+**Type:** floating-point number
+
+Has **DataType** suffixes support
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterVectorDataUnits
+-------------------------------------------------------------------
+
+
+Molecular State vector data units
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterVectorRef
+-------------------------------------------------------------------
+
+
+Molecular State parameter reference string giving context. 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterVectorX3
+-------------------------------------------------------------------
+
+
+Molecular State parameter vector coordinate X
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterVectorY3
+-------------------------------------------------------------------
+
+
+Molecular State parameter vector coordinate Y
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParameterVectorZ3
+-------------------------------------------------------------------
+
+
+Molecular State parameter vector coordinate Z
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
 MoleculeStateParameters
 -------------------------------------------------------------------
 
@@ -4816,6 +4830,21 @@ Molecular stoichiometric formula
 
 
 
+MoleculeStructure
+-------------------------------------------------------------------
+
+
+The molecular structure, as defined in CML
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 NodeID
 -------------------------------------------------------------------
 
@@ -4863,26 +4892,11 @@ Has **DataType** suffixes support
 
 
 
-NonRadTranFinalState
+NonRadTranLowerState
 -------------------------------------------------------------------
 
 
-Final state of the transition
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-NonRadTranInitialState
--------------------------------------------------------------------
-
-
-Initial state of the transition
+Lower state of the transition
 
 
 
@@ -4960,6 +4974,21 @@ NonRadTranType
 
 
 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+NonRadTranUpperState
+-------------------------------------------------------------------
+
+
+Upper state of the transition
 
 
 
@@ -5102,7 +5131,7 @@ ParticleName
 -------------------------------------------------------------------
 
 
-
+Particle name, one of photon, electron, muon, positron, neutron, alpha, cosmic
 
 
 
@@ -5143,6 +5172,21 @@ ParticleRef
 
 
 
+ParticleSpeciesID
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 ParticleSpin
 -------------------------------------------------------------------
 
@@ -5152,21 +5196,6 @@ ParticleSpin
 
 
 **Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-ParticleStateID
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
 
 
 **Constraints:** 
@@ -5650,6 +5679,415 @@ RadTransComment
 
 
 
+RadTransCrossSectionBandCentre
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+Has **DataType** suffixes support
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandModeComment
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandModeDeltaV
+-------------------------------------------------------------------
+
+
+List of dV values
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** >0
+
+
+
+RadTransCrossSectionBandModeDeltaVID
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandModeMethod
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandModeName
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandName
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionBandWidth
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+Has **DataType** suffixes support
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionDescription
+-------------------------------------------------------------------
+
+
+A string describing the cross section being given in a CrossSection element, e.g. 'IR absorption cross section'
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionEnvironment
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionID
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionSpecies
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionState
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionX
+-------------------------------------------------------------------
+
+
+A list of whitespace-delimited values of the independent variable (e.g. wavelength) against which the cross section is given
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXDataFile
+-------------------------------------------------------------------
+
+
+Datafile containing X data. 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXError
+-------------------------------------------------------------------
+
+
+An error (accuracy) applying to each and every data point in the Cross section independent variable data series
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXErrorList
+-------------------------------------------------------------------
+
+
+A list of errors (accuracy values), separated by whitespace, one for each of the data points listed in the cross section independent variable data series (e.g. wavenumber)
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXLinearA0
+-------------------------------------------------------------------
+
+
+The coefficient a0 in the linear series X_i = a0 + a1.i giving the independent variable against which the cross section is given when this data series is an evenly-spaced series of values.
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXName
+-------------------------------------------------------------------
+
+
+The name of the independent variable against which the cross section is measured (e.g. wavenumber)
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionXUnit
+-------------------------------------------------------------------
+
+
+The units of the independent variable against which the cross section is measured (e.g. 1/cm)
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionY
+-------------------------------------------------------------------
+
+
+A whitespace-delimited list of data points comprising the cross section
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYDataFile
+-------------------------------------------------------------------
+
+
+Datafile containing Y data. 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYError
+-------------------------------------------------------------------
+
+
+A single error (accuracy) value applying to each and every data point of the cross section
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYErrorList
+-------------------------------------------------------------------
+
+
+A white-space delimited list of error (accuracy) values for each data point given for the cross section
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYLinearA1
+-------------------------------------------------------------------
+
+
+The coefficient a1 in the linear series Y_i = a0 + a1.i giving the independent variable against which the cross section is given when this data series is an evenly-spaced series of values
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYName
+-------------------------------------------------------------------
+
+
+Name of the Cross Section parameter given (e.g. 'sigma')
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransCrossSectionYUnit
+-------------------------------------------------------------------
+
+
+Units of the cross section (e.g. 'Mb', 'arbitrary', 'km/mol')
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 RadTransEffectiveLandeFactor
 -------------------------------------------------------------------
 
@@ -5684,21 +6122,6 @@ Has **DataType** suffixes support
 
 
 
-RadTransFinalStateRef
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
 RadTransFrequency
 -------------------------------------------------------------------
 
@@ -5716,7 +6139,7 @@ Has **DataType** suffixes support
 
 
 
-RadTransInitialStateRef
+RadTransLowerStateRef
 -------------------------------------------------------------------
 
 
@@ -5735,16 +6158,16 @@ RadTransProbabilityA
 -------------------------------------------------------------------
 
 
+The Einstein coefficient for spontaneous radiative de-excitation (emission) A.
 
-
-
+**Units:** 1/s
 
 **Type:** floating-point number
 
 Has **DataType** suffixes support
 
 
-**Constraints:** 
+**Constraints:** >= 0
 
 
 
@@ -5769,16 +6192,16 @@ RadTransProbabilityLineStrength
 -------------------------------------------------------------------
 
 
+Line profile-integrated absorption for transition between two energy levels. Line strength K = h&nu; / 4&pi; (n<sub>1</sub> B<sub>12</sub> - n<sub>2</sub> B<sub>21</sub>)
 
-
-
+**Units:** 1/cm
 
 **Type:** floating-point number
 
 Has **DataType** suffixes support
 
 
-**Constraints:** 
+**Constraints:** >0
 
 
 
@@ -5863,6 +6286,21 @@ RadTransRefs
 
 
 
+RadTransShifting
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 RadTransShiftingComment
 -------------------------------------------------------------------
 
@@ -5908,7 +6346,7 @@ RadTransShiftingMethod
 
 
 
-RadTransShiftingParamAccCalib
+RadTransShiftingName
 -------------------------------------------------------------------
 
 
@@ -5923,225 +6361,17 @@ RadTransShiftingParamAccCalib
 
 
 
-RadTransShiftingParamAccComment
+RadTransShiftingParam
 -------------------------------------------------------------------
 
 
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccMethod
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccQuality
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** integer number
-
-
-**Constraints:** >=0
-
-
-
-RadTransShiftingParamAccRef
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatHigh
--------------------------------------------------------------------
-
-
-
+Shifting parameter value
 
 
 
 **Type:** floating-point number
 
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatHighConfidence
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatHighRelative
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatLow
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatLowConfidence
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatLowRelative
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatisticalConfidence
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccStatisticalRelative
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccSystematicConfidence
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamAccSystematicRelative
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamComment
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
+Has **DataType** suffixes support
 
 
 **Constraints:** 
@@ -6270,112 +6500,7 @@ RadTransShiftingParamFitParameterName
 
 
 
-RadTransShiftingParamMethod
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
 RadTransShiftingParamName
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamRef
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamValue
--------------------------------------------------------------------
-
-
-Shifting parameter value
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamValue
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamValueUnits
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamValueUnits
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-RadTransShiftingParamValueUnits
 -------------------------------------------------------------------
 
 
@@ -6410,6 +6535,21 @@ RadTransSpeciesRef
 
 
 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransUpperStateRef
+-------------------------------------------------------------------
+
+
+The upper state for the transition
 
 
 
@@ -6683,7 +6823,7 @@ SolidRef
 
 
 
-SolidStateID
+SolidSpeciesID
 -------------------------------------------------------------------
 
 
@@ -6725,6 +6865,36 @@ Type of publication, e.g. journal, book etc.
 
 
 **Constraints:** Journal | Book | Proceedings | On-line
+
+
+
+SourceComments
+-------------------------------------------------------------------
+
+
+Comments and notes connected with a Source (reference)
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+SourceDOI
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
 
 
 
@@ -6845,19 +7015,4 @@ Publication Year
 
 
 **Constraints:** >0
-
-
-
-li
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
 

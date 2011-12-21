@@ -93,7 +93,7 @@ Solids
 -------------------------------------------------------------------
 
 
-request soldis only.
+Restrict the search to databases containing information about solids.
 
 
 Sources
