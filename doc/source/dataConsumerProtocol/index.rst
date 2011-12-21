@@ -1,8 +1,8 @@
-.. _dataAccessProtocol-index:
-.. |dataAccessProtocol-version| replace:: 11.05
+.. _dataConsumerProtocol-index:
+.. |dataConsumerProtocol-version| replace:: 11.12
 
 ==============================================================================================
-Data access protocol [v |dataAccessProtocol-version|] [r |release|]
+Data consumer protocol [v |dataConsumerProtocol-version|] [r |release|]
 ==============================================================================================
 
 .. toctree::

@@ -85,6 +85,13 @@ XSAMS Data consumer service
    
    dataConsumerProtocol/index
 
+XSAMS consumers
+----------------
+.. toctree::
+   :maxdepth: 1
+
+   dataConsumerProtocol/index
+
 Downloads
 ----------
 
