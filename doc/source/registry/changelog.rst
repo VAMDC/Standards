@@ -1,4 +1,4 @@
-.. _changelog:
+.. _registryChangelog:
 
 Change log for registry guide
 =============================

@@ -75,16 +75,16 @@ When responding to an HTTP request for the primary result, the application may c
 
 The HTTP response to a request for the primary result must be one of the following.
 
-* Status code 200,"success", with the result as the body of the response. This applies to uncached results.
+*	Status code 200,"success", with the result as the body of the response. This applies to uncached results.
 
-* Status code 201, "created", with the ``Location`` header listing the URL for the cached result. The body of the response must be a web page containing a link to the cached resource (web browsers do not deal with 201 responses automatically). This response indicates that the application has just created a new copy of the result in the cache.
+*	Status code 201, "created", with the ``Location`` header listing the URL for the cached result. The body of the response must be a web page containing a link to the cached resource (web browsers do not deal with 201 responses automatically). This response indicates that the application has just created a new copy of the result in the cache.
 
-* Status code 303, "see other" with the ``Location`` header listing the URL for the cached result. No body is needed with this response (web browsers will automatically redirect the user to the stated location).
+*	Status code 303, "see other" with the ``Location`` header listing the URL for the cached result. No body is needed with this response (web browsers will automatically redirect the user to the stated location).
 
-* Status code 400, "bad request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was
-inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
+*	Status code 400, "bad request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was
+	inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
 
-* Status code 500, "internal server error", 502, "bad gateway", 503 "unavailable" or 504, "gateway timeouts", indicating a problem inside the application. This code indicates that the request was correct but the application failed to process it. Requests receiving this response might be processed correctly at some later date.
+*	Status code 500, "internal server error", 502, "bad gateway", 503 "unavailable" or 504, "gateway timeouts", indicating a problem inside the application. This code indicates that the request was correct but the application failed to process it. Requests receiving this response might be processed correctly at some later date.
 
 
 VOSI capabilities

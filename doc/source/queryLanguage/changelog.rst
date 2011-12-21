@@ -1,4 +1,4 @@
-.. _changelog:
+.. _queryLangChangelog:
 
 Change log for query language
 =============================

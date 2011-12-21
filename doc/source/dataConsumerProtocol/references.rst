@@ -1,4 +1,4 @@
-.. _dataAccessProtocol-references:
+.. _dataConsumerProtocol-references:
 
 References
 ==========================

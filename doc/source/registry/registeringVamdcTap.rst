@@ -18,7 +18,7 @@ The registration process is as follows:
 
 3. Ask the registry to load VOSI data from your service. You invoke this from the registry's web user-interface (see :ref:`webAdministration`) and the registry reads the capability data described below. You have to provide the URL for the VOSI data. In a typical VAMDC-TAP service this will be a URL ending in ``tap/capabilities``; e.g.::
 
-  http://vald.astro.uu.se/tap/capabilities
+		http://vald.astro.uu.se/tap/capabilities
 
 
 Structure of registration document (capabilities)

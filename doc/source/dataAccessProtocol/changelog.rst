@@ -1,4 +1,4 @@
-.. _changelog:
+.. _DataAccesschangelog:
 
 Change log for data-access protocol
 ===================================

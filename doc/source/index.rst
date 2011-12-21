@@ -44,9 +44,9 @@ Data model
    
 * VAMDC-XSAMS schema files are available for download below.
 
-* VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.2>`_ in the browser or downloaded from below.
+* VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-0.3>`_ in the browser or downloaded from below.
 
-* Case-By-Case schema documentation can be `viewed <http://www.vamdc.eu/documents/cbc-0.2>`_ in the browser or downloaded from below.
+* Case-By-Case schema documentation can be `viewed <http://www.vamdc.eu/documents/cbc-0.3>`_ in the browser or downloaded from below.
 
 
 Registry
@@ -70,29 +70,47 @@ InChI Generation
    :maxdepth: 1
 
    inchi/index
+   
+Node Implementation Guide
+-----------------------------
+.. toctree::
+   :maxdepth: 1
+   
+   nodeguidelines/index
+   
+XSAMS Data consumer service
+----------------------------
+.. toctree::
+   :maxdepth: 1
+   
+   dataConsumerProtocol/index
 
 Downloads
 ----------
 
 Below are links to documents available for download.
 
-=============================       ========================================================================= 
-document                            release |release|
-=============================       ========================================================================= 
-data access protocol                `v11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 
-query language                      `v11.05 <http://www.vamdc.org/documents/querylanguage_v11.05.pdf>`__    
-dictionary                          `v11.05 <http://www.vamdc.org/documents/dictionary_v11.05.pdf>`__ 
-VAMDC-XSAMS schema                  `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2>`__ 
-VAMDC-XSAMS schema doc              `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.2.tar.bz2>`__ 
-VAMDC-XSAMS reference guide         `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`__ 
-VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__ 
-Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__ 
-registry guide                      `v11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__ 
-=============================       ========================================================================= 
+=============================       =========================================================================		=========================================================================
+document                            release 11.05									release |release|
+=============================       =========================================================================		========================================================================= 
+data access protocol                `v11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 			`v11.12 <http://www.vamdc.org/documents/vamdc-tap_v11.12.pdf>`__
+data consumer protocol													`v11.12 <http://www.vamdc.org/documents/vamdc-consumer_v11.12.pdf>`__
+query language                      `v11.05 <http://www.vamdc.org/documents/querylanguage_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/querylanguage_v11.12.pdf>`__
+dictionary                          `v11.05 <http://www.vamdc.org/documents/dictionary_v11.05.pdf>`__ 			`v11.12 <http://www.vamdc.org/documents/dictionary_v11.12.pdf>`__
+VAMDC-XSAMS schema                  `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2>`__ 			`v0.3 <http://www.vamdc.org/downloads/vamdc-xsams-v0.3.tar.bz2>`__
+VAMDC-XSAMS schema doc              `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.2.tar.bz2>`__		`v0.3 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.3.tar.bz2>`__
+VAMDC-XSAMS reference guide         `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`__		`v0.3 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.3.pdf>`__
+VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__		
+Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__				`v0.3 <http://www.vamdc.org/documents/cbc_v0.3.pdf>`__
+registry guide                      `v11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/registry-guide_v11.12.pdf>`__
+node implementation guide												`v11.12 <http://www.vamdc.org/documents/nodeImpl-guide_v11.12.pdf>`__
+=============================       ========================================================================= 		========================================================================= 
 
 
 Changelog
 -------------------
 
 * 2011-05-27: First release of standards.  Version 11.05
+
+* 2011-12-21: Second release of standards. Version 11.12
 
