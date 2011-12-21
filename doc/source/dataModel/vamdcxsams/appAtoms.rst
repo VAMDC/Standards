@@ -284,8 +284,8 @@ Atomic Number       Symbol          Name                    Atomic Mass Number  
 108                 Hs                  Hassium                                 
 109                 Mt                  Meitnerium                              
 110                 Ds                  Darmstadtium                            
-111                 Rg                  Roentgenium                             
-112                 Uub                 Ununbium                                
+111                 Rg                  Roentgenium   
+112                 Cn                  Copernicium                               
 113                 Uut                 Ununtrium                               
 114                 Uuq                 Ununquadium                             
 115                 Uup                 Ununpentium                             
