@@ -110,7 +110,7 @@ VAMDC-XSAMS reference guide         `v0.2 <http://www.vamdc.org/documents/vamdc-
 VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__		
 Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__				
 registry guide                      `v11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/registry-guide_v11.12.pdf>`__
-node implementation guide												`v11.12 <http://www.vamdc.org/documents/nodeImpl-guide_v11.12.pdf>`__
+node implementation guide												`v11.12 <http://www.vamdc.org/documents/nodeguidelines_v11.12.pdf>`__
 =============================       ========================================================================= 		========================================================================= 
 
 
