@@ -7,11 +7,11 @@ The Cases
 The identified cases are described in the following section; some examples are given below. It should
 be noted that the rovibronic states of different electronic states of a molecule
 may be described using different cases. For example, the ground, :math:`X^2\Pi`
-electronic state of :math:`\mathrm{NO}` may be described within the ``hunda``
+electronic state of **NO** may be described within the ``hunda``
 case whereas the excited, :math:`A^2\Sigma^+` electronic state would be better
 described using the ``hundb`` case. The electronic state is identified by its
 single-letter spectroscopic symbol (:math:`X`, :math:`A`, :math:`a`, :math:`B`,
-etc.)    There follows a list of the cases identified in version 0.2.1 of XSAMS
+etc.)    There follows a list of the cases identified in version 0.3 of XSAMS
 with some examples:    
 
 0.  General case for arbitrary quantum numbers and symmetry (``gen``)
