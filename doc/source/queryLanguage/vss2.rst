@@ -25,7 +25,7 @@ In the following definitions, VSS2 queries are assumed to be submitted by a clie
 Superset of VSS1
 ~~~~~~~~~~~~~~~~
 
-VSS2 is a superset of VAMDC SQL Subset 1 (VSS1). It several aspects to VSS1:
+VSS2 is a superset of VAMDC SQL Subset 1 (VSS1). It adds several aspects to VSS1:
 	* ability to specify the set of XSAMS branches to be returned, like Molecules, States, etc.
 	* ability to group restrictables related to different transition's states and different products/reactants of the same reaction.
 	
@@ -106,7 +106,7 @@ VSS2 queries must not contain the JOIN keyword.
 Column names used as operands in a VSS2 query must be terms taken from the VAMDC dictionary.
 Column names may be written in any mix of upper and lower case and query processors must treat all variations of case as equivalent.
 
-Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the initial and final states of an electronic transition. The qualified name is written with the context name as a prefix to the restrictable name, separated by a full stop, e.g. ``final.StateEnergy``. The following contexts are defined in VSS2.
+Column names appearing in the WHERE clause must be taken from the Restrictables dictionary. These names may be qualified by a context, e.g. to distinguish between the upper and lower states of an electronic transition. The qualified name is written with the context name as a prefix to the restrictable name, separated by a full stop, e.g. ``upper.StateEnergy``. The following contexts are defined in VSS2.
 
 * ``reactantx`` (where x is any single character) associates column names with the nth reactant in a chemical network. E.g. ``reactant1.MoleculeInchiKey``.
 
@@ -114,7 +114,7 @@ Column names appearing in the WHERE clause must be taken from the Restrictables 
 
 * ``collider`` associates column names with the incident particle in a collision. E.g. ``collider.AtomSymbol``.
 
-* ``target`` associates column names with the target particle in a collision. E.g. ``target.MoleculeStateEnergy``.
+* ``target`` associates column names with the target particle in a collision. E.g. ``target.StateEnergy``.
 
 * ``upper`` associates column names with the higher-energy state of a transition. E.g. ``upper.StateEnergy``.
 
