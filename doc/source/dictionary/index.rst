@@ -8,6 +8,7 @@ Dictionaries  [v |dictionary-version|] [r |release|]
 .. toctree::
    :maxdepth: 1
 
+   changelog
    keywords
    requestables
    restrictables
