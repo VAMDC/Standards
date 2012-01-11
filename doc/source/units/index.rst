@@ -1,5 +1,5 @@
 .. _units-index:
-.. |units-version| replace:: 11.05
+.. |units-version| replace:: 11.12
 
 ==============================================================================================
 Unit Conversion Table  [v |units-version|] [r |release|]
