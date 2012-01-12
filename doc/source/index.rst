@@ -107,8 +107,8 @@ dictionary                          `v11.05 <http://www.vamdc.org/documents/dict
 VAMDC-XSAMS schema                  `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-v0.2.tar.bz2>`__ 			`v0.3 <http://www.vamdc.org/downloads/vamdc-xsams-v0.3.tar.bz2>`__
 VAMDC-XSAMS schema doc              `v0.2 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.2.tar.bz2>`__		`v0.3 <http://www.vamdc.org/downloads/vamdc-xsams-doc-v0.3.tar.bz2>`__
 VAMDC-XSAMS reference guide         `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-guide_v0.2.pdf>`__		`v11.12 <http://www.vamdc.org/documents/vamdc-xsams-guide_v11.12.pdf>`__
-VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__		
-Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__				
+VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__		included in the ref. guide
+Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__				`view v.0.3 <http://www.vamdc.eu/documents/cbc-0.3>`
 registry guide                      `v11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/registry-guide_v11.12.pdf>`__
 node implementation guide												`v11.12 <http://www.vamdc.org/documents/nodeguidelines_v11.12.pdf>`__
 =============================       ========================================================================= 		========================================================================= 
