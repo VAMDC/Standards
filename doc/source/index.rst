@@ -3,12 +3,7 @@
 ==============================================================================================
 Documenting VAMDC standards
 ==============================================================================================
-.. warning::
-
-    This is the development version of the standards, due to be released at the end of July 2011.
-    
-    Visit http://www.vamdc.org/documents/standards/ for the official standards.
-    
+  
     
 
 VAMDC documentation and software versioning policy
@@ -71,13 +66,6 @@ InChI Generation
 
    inchi/index
    
-Node Implementation Guide
------------------------------
-.. toctree::
-   :maxdepth: 1
-   
-   nodeguidelines/index
-   
 XSAMS Data consumer service
 ----------------------------
 .. toctree::
@@ -85,21 +73,14 @@ XSAMS Data consumer service
    
    dataConsumerProtocol/index
 
-XSAMS consumers
-----------------
-.. toctree::
-   :maxdepth: 1
-
-   dataConsumerProtocol/index
-
 Downloads
 ----------
 
 Below are links to documents available for download.
 
-=============================       =========================================================================		=========================================================================
+==============================       =========================================================================		=========================================================================
 document                            release 11.05									release |release|
-=============================       =========================================================================		========================================================================= 
+==============================       =========================================================================		========================================================================= 
 data access protocol                `v11.05 <http://www.vamdc.org/documents/vamdc-tap_v11.05.pdf>`__ 			`v11.12 <http://www.vamdc.org/documents/vamdc-tap_v11.12.pdf>`__
 data consumer protocol													`v11.12 <http://www.vamdc.org/documents/xsams-consumer_v11.12.pdf>`__
 query language                      `v11.05 <http://www.vamdc.org/documents/querylanguage_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/querylanguage_v11.12.pdf>`__
@@ -110,8 +91,8 @@ VAMDC-XSAMS reference guide         `v0.2 <http://www.vamdc.org/documents/vamdc-
 VAMDC-XSAMS change log              `v0.2 <http://www.vamdc.org/documents/vamdc-xsams-changelog_v0.2.pdf>`__		included in the XSAMS ref. guide
 Case-By-Case schema doc             `v0.2 <http://www.vamdc.org/documents/cbc_v0.2.pdf>`__				`view v.0.3 <http://www.vamdc.eu/documents/cbc-0.3>`__
 registry guide                      `v11.05 <http://www.vamdc.org/documents/registry-guide_v11.05.pdf>`__		`v11.12 <http://www.vamdc.org/documents/registry-guide_v11.12.pdf>`__
-node implementation guide												`v11.12 <http://www.vamdc.org/documents/nodeguidelines_v11.12.pdf>`__
-=============================       ========================================================================= 		========================================================================= 
+Species identification (InChI)												`v11.12 <http://www.vamdc.org/documents/VAMDC-InChI_v11.12.pdf>`__
+==============================       ========================================================================= 		========================================================================= 
 
 
 Changelog
