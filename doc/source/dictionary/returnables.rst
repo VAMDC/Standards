@@ -32,21 +32,15 @@ following words can also be used as Returnables, even though they are not listed
 * SomeKeywordRef
 * SomeKeywordComment
 * SomeKeywordMethod
-* SomeKeywordAccuracyCalibration
-* SomeKeywordAccuracyQuality
-* SomeKeywordAccuracySystematic
-* SomeKeywordAccuracySystematicConfidence
-* SomeKeywordAccuracySystematicRelative
-* SomeKeywordAccuracyStatistical
-* SomeKeywordAccuracyStatisticalConfidence
-* SomeKeywordAccuracyStatisticalRelative
-* SomeKeywordAccuracyStatLow
-* SomeKeywordAccuracyStatLowConfidence
-* SomeKeywordAccuracyStatLowRelative
-* SomeKeywordAccuracyStatHigh
-* SomeKeywordAccuracyStatHighConfidence
-* SomeKeywordAccuracyStatHighRelative
-
+* SomeKeywordAccuracy
+* SomeKeywordAccuracyConfidence
+* SomeKeywordAccuracyRelative
+* SomeKeywordAccuracyType
+* SomeKeywordEval
+* SomeKeywordEvalMethod
+* SomeKeywordEvalRecommended
+* SomeKeywordEvalRef
+* SomeKeywordEvalComment
 
 The list of Returnables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
