@@ -316,10 +316,10 @@ PrimaryType
 	.. image:: images/PrimaryType.png
 	
 	This is the fundamental elementary type used to built other types as
-	extensions. It contains:
+	extensions. It may contain:
 		
 	*	optional **methodRef** attribute of type :ref:`MethodRefType`,
-	*	one or more **SourceRef** elements, containing source identifiers,
+	*	list of **SourceRef** elements, containing source identifiers,
 	*	optional **Comments** element for arbitrary comments.
 	
 
