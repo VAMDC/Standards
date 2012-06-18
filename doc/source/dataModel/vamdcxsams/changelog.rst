@@ -7,6 +7,36 @@ This section describes the changes between VAMDC-XSAMS versions.
 For a complete changelog, describing the difference between IAEA XSAMS and VAMDC XSAMS, refer to 
 a separate Changelog document _[VAMDC-XSAMS-LOG]
 
+Changes between VAMDC-XSAMS 0.3 and 1.0
+
+	#.	fixed bug in J for open-shell cases lpos and ltos, which should be ctypes:AMType
+	
+	#.	BasisStates now given once, outside each MolecularState and referenced in StateExpansion, which gives the coefficients only
+	
+	#.	Add extra process codes suggested by MLD
+	
+	#.	Move process codes to typesAttributes, add ProcessClass to radiative
+	
+	#.	Add accuracy and evaluation to datasets
+	
+	#.	remove primary type from datasettype
+	
+	#.	add evaluation to fitdata and tabulateddata
+	
+	#.	remove physical uncertainity from fitdata and tabulateddata
+	
+	#.	change DataDescription to Description in dataseriestype
+	
+	#.	Update annotation of dataDescription attribute
+	
+	#.	Particle name is now mandatory
+	
+	#.	Implement vacuum flag, environment reference, airtovacuum conversion factor for wavelength
+	
+	#.	Add BranchingRatio element to collisions
+	
+	#.	Use stateRef for EnergyOrigin
+	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3
 --------------------------------------------------
