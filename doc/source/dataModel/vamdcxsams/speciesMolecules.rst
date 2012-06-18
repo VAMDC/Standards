@@ -12,13 +12,21 @@ Molecules
 
 Molecule
 -----------
+
+        .. image:: images/molecules/Molecule.png
+	
 	This element is defined as **MoleculeType**, which is an  extension of :ref:`PrimaryType`. 
 	It provides all information  on  molecular chemical species through  **MolecularChemicalSpecies**
-	of type **MolecularChemicalSpeciesType** and one or more elements **MolecularState** of type **MolecularStateType**. 
-	These molecular species may be involved in various processes that are described in the **Processes** section.
-	Referencing is done either by **speciesID** or **stateID** attributes, or both.
+	of type **MolecularChemicalSpeciesType**.
 	
-	.. image:: images/molecules/Molecule.png
+	Molecular states are described by one or more elements **MolecularState** of type **MolecularStateType**.
+	Complex states can be represented as the superposition of basis states, all of them enumerated 
+	in the root of molecule element under :ref:`BasisStates`.
+	
+	These molecular species may be involved in various processes that are described in the **Processes** section.
+        Referencing is done either by **speciesID** or **stateID** attributes, or both.
+        
+        
 
 .. _MolecularChemicalSpecies:
 
@@ -249,30 +257,47 @@ Concept of cases
 	is designed to provide a straightforward and flat data structure for representing 
 	the quantum numbers and symmetries that denote a molecular state. The reader is the
 	refered to the [case-by-case]_ documentation for full description of the various cases.
+
+.. _Case:
+
+Case
+--------
 	
-
-.. _StateExpansion:
-
-StateExpansion
-'''''''''''''''''
-
 	Each **MolecularState** has Case element of type **cases:BaseCase** from separate namespace.
 	
-	.. image:: images/molecules/StateExpansion.png
+	**BaseCase** type defines the single attribute, *caseID*, that denotes the case used.
+	
+	.. image:: images/molecules/Case.png
 		:alt: case link to the main schema
 
-.. _BaseCase:
+		
+        Each specific case, in turn, extends that **BaseCase** type, defining specific *caseID* attribute value
+        and adding **QNs** element that contains a sequence of quantum numbers and symmetries.
 
-BaseCase
-'''''''''''
-
-	**BaseCase** type defines the single attribute, *caseID*, that denotes the case used.
+	
 		
 	.. image:: images/molecules/caseExample.png
 		:alt: case definition example
 		
-	Each specific case, in turn, extends that **BaseCase** type, defining specific *caseID* attribute value
-	and adding **QNs** element that contains a sequence of quantum numbers and symmetries.
+
+.. _BasisStates:
+
+BasisStates
+----------------------
+
+        In a case when molecule state needs to be described as a superposition of basis states, 
+        **StateExpansion** element of :ref:`MolecularState` needs to be used. 
+        It contains at least one **Coeff** element, extending *xs:double* by adding a reference to the
+        basis state.
+        
+        .. image:: images/molecules/StateExpansion.png
+        
+        BasisState, extending :ref:`PrimaryType`, contains at least one :ref:`Case` element and a basisStateID
+        attribute
+        
+        .. image:: images/molecules/BasisStates.png
+
+
 
 
 Specific XML Types
