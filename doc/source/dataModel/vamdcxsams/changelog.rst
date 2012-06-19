@@ -9,16 +9,18 @@ a separate Changelog document _[VAMDC-XSAMS-LOG]
 
 Changes between VAMDC-XSAMS 0.3 and 1.0
 
-        #.      Add extra process codes suggested by MLD
+        #.      Added extra :ref:`XSAMSProcessCodes` suggested by MLD
         
-        #.      Move process codes to typesAttributes.xsd, add ProcessClass element to radiative transitions
+        #.      Move process codes to typesAttributes.xsd
         
-        #.      BasisStates are now given once at the root of the Molecule element and referenced in StateExpansion, 
+        #.      Added ProcessClass element to :ref:`radiative` transitions
+        
+        #.      :ref:`BasisStates` are now given once at the root of the Molecule element and referenced in StateExpansion, 
                 which gives the coefficients only.
        
-        #.      BasisStates have their own stateIDs, starting from **SB**
+        #.      :ref:`BasisStates` have their own stateIDs, starting from **SB**
         
-        
+        #.      Add accuracy and evaluation to :ref:`DataSet`
 
 	#.	fixed bug in J for open-shell cases lpos and ltos, which should be ctypes:AMType
 	

@@ -26,7 +26,7 @@ CollisionalTransition
 	.. image:: images/collisions/CollisionalTransition.png
 	
 	Element **CollisionalTransition**, defined by type **CollisionalTransitionType**,
-	extends :ref:`PrimaryType`, adding following attribures and elements:
+	extends :ref:`PrimaryType`, adding following attributes and elements:
 
 	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
 	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
@@ -74,10 +74,10 @@ DataSet
 	or as the parameters values and validity limits of a fit function 
 	(**FitData** element).  The fit function is defined
 	in the :ref:`Functions` branch.
-	Extending :ref:`PrimaryType`, it adds following attributes and elements:
+	DataSet element has the following elements and attributes:
 	
-	*	string attribute **dataDescription**, that specifies the type of data.
-		Allowed values are:
+	*	string attribute **dataDescription** specifying the type of data in dataset.
+		Possible values are:
 		
 		- crossSection
 		- collisionStrength
@@ -119,9 +119,8 @@ FitData
 	*	mandatory **FitParameters** element, defined by :ref:`FitParametersType`,
 		fully describing the set of parameters needed to calculate function value;
 	*	optional **FitAccuracy** string element, filled in free format,
-	*	optional **PhysicalUncertainty** string element, filled in free format,
 	*	optional **ProductionDate** element of type **xs:date**, that may keep the production date of the fit.
-	
+	*       optional list of **Evaluation** elements, defined by :ref:`EvaluationType` allowing to mark recommended datasets
 	
 .. _TabulatedData:
 
@@ -131,7 +130,7 @@ TabulatedData
 	.. image:: images/collisions/TabulatedData.png
 	
 	Extending the base :ref:`SimpleDataTableType`, it adds the elements
-	:ref:`ReferenceFrame`, **PhysicalUncertainty** and **ProductionDate** (see
+	:ref:`ReferenceFrame`, **ProductionDate** and **Evaluation** (see
 	description of :ref:`FitData` element for definitions).
 	
 
