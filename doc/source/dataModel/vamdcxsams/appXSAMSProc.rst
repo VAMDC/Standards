@@ -126,19 +126,19 @@ sope    Penetration             The penetration of a reactant into a solid, char
 States class involved in process
 ------------------------------
 
-======  =====================   =====================================================================================
-Code     Name                          Description
-======  =====================   =====================================================================================
+======  =======================         =====================================================================================
+Code     Name                               Description
+======  =======================         =====================================================================================
 
-rota    rotational process      characterizes processes involving rotationally excited states
-vibr    vibrational process     characterizes processes involving vibrationally excited states
-rvib    ro-vibrational process  characterizes processes involving ro-vibrationally excited states
-hype    hyperfine process       characterizes processes involving hyperfine states
-fine    fine process            characterizes processes involving fine states
-tors    torsional process       characterizes processes involving torsionally excited states
-rtor    ro-torsional process    characterizes processes involving ro-torsionally excited states
+rota    rotational process              characterizes processes involving rotationally excited states
+vibr    vibrational process             characterizes processes involving vibrationally excited states
+rvib    ro-vibrational process          characterizes processes involving ro-vibrationally excited states
+hype    hyperfine process               characterizes processes involving hyperfine states
+fine    fine process                    characterizes processes involving fine states
+tors    torsional process               characterizes processes involving torsionally excited states
+rtor    ro-torsional process            characterizes processes involving ro-torsionally excited states
 
-======  =====================   =====================================================================================
+======  =======================         =====================================================================================
 
 
 Combination of Processes
