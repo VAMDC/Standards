@@ -20,30 +20,18 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
        
         #.      :ref:`BasisStates` have their own stateIDs, starting from **SB**
         
-        #.      Add accuracy and evaluation to :ref:`DataSet`
+        #.      Added evaluation to :ref:`DataSet` children, remove extension of :ref:`PrimaryType`
 
+        #.      removed **PhysicalUncertainity** from :ref:`fitdat`a and tabulateddata`
+        
 	#.	fixed bug in J for open-shell cases lpos and ltos, which should be ctypes:AMType
 	
+	#.      change DataDescription element name into **Description** in :ref:`dataSeriesType`
 	
+	#.	:ref:`Particle` name attribute is now mandatory
 	
-	
-
-	
-	#.	Add accuracy and evaluation to datasets
-	
-	#.	remove primary type from datasettype
-	
-	#.	add evaluation to fitdata and tabulateddata
-	
-	#.	remove physical uncertainity from fitdata and tabulateddata
-	
-	#.	change DataDescription to Description in dataseriestype
-	
-	#.	Update annotation of dataDescription attribute
-	
-	#.	Particle name is now mandatory
-	
-	#.	Implement vacuum flag, environment reference, airtovacuum conversion factor for wavelength
+	#.	Implement vacuum flag, environment reference, 
+	        airtovacuum conversion factor for transition wavelength.
 	
 	#.	Add BranchingRatio element to collisions
 	

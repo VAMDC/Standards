@@ -54,10 +54,27 @@ EnergyWavelength
 	.. image:: images/radiative/EnergyWavelength.png
 	
 	Extension of the :ref:`PrimaryType`, may contain multiple **Wavenumber**, **Wavelength**, **Energy** 
-	or **Frequency** elements, each of :ref:`DataType`. Exact nature of parameter must be determined through 
-	:ref:`Method`, with help of :ref:`PrimaryType`'s method reference. Method's **Category** element takes in this
+	or **Frequency** elements. Exact nature of parameter must be determined through 
+	:ref:`Method`, with help of :ref:`PrimaryType`'s method reference. 
+	Method's **Category** element takes in this
 	case values in (*experiment*, *theory*, *ritz*).
 	
+	**Wavenumber**, **Energy** and **Frequency** elements are each of :ref:`DataType`.
+	
+	Wavelength element is desribed by wlType. Extending :ref:`DataType`, 
+	it adds following optional elements and attributes:
+	
+        *       boolean **vacuum** attribute, defaulting to *true*, indicating if the value is for vacuum wavelength.
+        
+        *       **envRef** attribute, providing the reference to :ref:`Environment` describing the atmosphere at which the
+                wavelength was determined.
+        
+        *       **AirToVacuum** element of :ref:`DataType`, providing the best available conversion multiplier to turn 
+                reported value from air into vacuum wavelength.
+                This element should be provided if the **vacuum** attribute has value *false*.
+                
+        .. image:: images/radiative/Wavelength.png
+        
 
 .. _Probability:
 
