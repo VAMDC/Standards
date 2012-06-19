@@ -486,7 +486,7 @@ DataSeriesType
 		parameter name;
 	*	optional attribute **units** of :ref:`UnitsType` to define the data 
 		units;
-	*	optional string **DataDescription** element that may contain a verbose 
+	*	optional string **Description** element that may contain a verbose 
 		description of data stored in the column;
 	*	mandatory choice of 
 	
