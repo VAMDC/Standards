@@ -3,9 +3,6 @@
 XSAMS Process Codes
 =================================
 
-Version 0.3,
-October 2011
-
 Introduction
 ------------------
 
