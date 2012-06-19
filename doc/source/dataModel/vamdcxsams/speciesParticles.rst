@@ -3,8 +3,7 @@
 Species.Particles
 ========================
 
-	Describes a number of *elementary* particles, namely, **electron**, **photon**,
-	**muon**, and **positron**, if such a description is essential for a particular
+	Describes a number of *elementary* particles, if such a description is essential for a particular
 	process. An example can be provided by photoionization.
 
 .. _Particle:
@@ -16,7 +15,7 @@ Particle
 
 	If a particle is needed in some of the processes,
 	then it must have a **speciesID** (:ref:`SpeciesIDType`) identifier to enable referencing it.
-	The attribute **name** of the type is optional.
+	The attribute **name** of the type is mandatory.
 	It is defined as a restriction of String, that may take following values:
 	
 	*	photon
