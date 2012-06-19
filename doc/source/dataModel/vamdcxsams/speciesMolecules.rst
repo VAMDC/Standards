@@ -285,7 +285,7 @@ Case
 BasisStates
 ----------------------
 
-        In a case when molecule state needs to be described as a superposition of basis states, 
+        In a case when molecular state needs to be described as a superposition of basis states, 
         **StateExpansion** element of :ref:`MolecularState` needs to be used. 
         It contains at least one **Coeff** element, extending *xs:double* by adding a reference to the
         basis state.
@@ -293,7 +293,8 @@ BasisStates
         .. image:: images/molecules/StateExpansion.png
         
         BasisState, extending :ref:`PrimaryType`, contains at least one :ref:`Case` element and a basisStateID
-        attribute
+        attribute. BasisStateID/BasisStateRef id/idref pair must have a prefix **SB** and normally
+        should not be referenced from processes block.
         
         .. image:: images/molecules/BasisStates.png
 
