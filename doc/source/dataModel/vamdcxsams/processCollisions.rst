@@ -54,6 +54,11 @@ CollisionalTransition
 	
 	*	optional **Threshold** element, of :ref:`DataType`, giving the reaction threshold, i.e. the minimum energy required to initiate a reaction.
 		This kind of data is needed in using data such as rate coefficients.
+		
+	*       optional **BranchingRatio** element of :ref:`DataType`. In case of chemical reactions with the same set of
+	        reactants and different products, this element may be used to indicate the relative probability of reaction.
+	        The sum of all **BranchingRatio** values for a given set of reactants must be equal to 1.
+	
 	*	mandatory **DataSets** element, that provides numerical data for a specific reaction.
 		It is an unbounded sequence of **DataSet** elements, therefore different datasets may be provided for
 		the same reaction.  Datasets differ at this level by their **dataDescription** attribute, such as

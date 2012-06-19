@@ -31,7 +31,7 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.	:ref:`Particle` name attribute is now mandatory
 	
 	#.	Implement vacuum flag, environment reference, 
-	        airtovacuum conversion factor for transition wavelength.
+	        airtovacuum conversion factor for transition **Wavelength** element in :ref:`EnergyWavelength`
 	
 	#.	Add BranchingRatio element to collisions
 	
