@@ -30,12 +30,12 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	
 	#.	:ref:`Particle` name attribute is now mandatory
 	
-	#.	Implement vacuum flag, environment reference, 
+	#.	Implemented vacuum flag, environment reference, 
 	        airtovacuum conversion factor for transition **Wavelength** element in :ref:`EnergyWavelength`
 	
-	#.	Add BranchingRatio element to collisions
+	#.	Added BranchingRatio element to :ref:`collision`
 	
-	#.	Use stateRef for EnergyOrigin
+	#.	Use stateRef for energyOrigin attribute of StateEnergy in :ref:`MolecularStateCharacterisation`
 	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3

@@ -210,10 +210,12 @@ MolecularStateCharacterisation
 	Following optional elements are defined:
 	
 	*	**StateEenrgy**, of type **StateEnergyType**. Defined as an extension of :ref:`DataType` with
-		an additional optional string attribute **energyOrigin**. **energyOrigin** should contain a human
-		readable string indicating the nature of the origin taken for the energy
-		scale. For example, **energyOrigin**  might be *ground electronic*,
-		*vibrational*, *rotational* state or could be *ionization energy* or *dissociation energy*.
+		an additional mandatory attribute **energyOrigin**, containing a reference to the state 
+		defining zero point of energy. That state in turn must have **StateEnergy** equal to zero and containing
+		reference to itself.
+		
+		.. image:: images/molecules/StateEnergy.png
+		
 		By physical meaning, state energy is the eigenvalue of the hamiltonian describing the species.
 		
 	*	**TotalStatisticalWeight** positive integer element, keeps statistical weight associated to the level,
