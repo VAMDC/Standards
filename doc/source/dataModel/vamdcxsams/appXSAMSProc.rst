@@ -129,7 +129,6 @@ States class involved in process
 ======  =======================         =====================================================================================
 Code     Name                               Description
 ======  =======================         =====================================================================================
-
 rota    rotational process              characterizes processes involving rotationally excited states
 vibr    vibrational process             characterizes processes involving vibrationally excited states
 rvib    ro-vibrational process          characterizes processes involving ro-vibrationally excited states
