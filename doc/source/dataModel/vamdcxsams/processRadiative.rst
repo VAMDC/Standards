@@ -33,6 +33,9 @@ RadiativeTransition
 	*	list of :ref:`Probability` elements of type **RadiativeTransitionProbabilityType**.
 		Different values of probabilities may be due to different multipole orders
 		(e.g., M1 and E2 may be possible for the same initial and final states).
+	*       :ref:`ProcessClass` element, having similar meaning as in :ref:`Collision` and intended to define
+	        a class to which the transition belongs. As an example one can think of marking transitions with 
+	        hyperfine structure resolved.
 	*	multiple :ref:`SatelliteLine` elements,
 	*	multiple :ref:`Broadening` elements,
 	*	list of :ref:`Shifting` elements.
