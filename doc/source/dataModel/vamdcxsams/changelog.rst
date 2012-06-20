@@ -37,7 +37,7 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	
 	#.	Use stateRef for energyOrigin attribute of StateEnergy in :ref:`MolecularStateCharacterisation`
 	
-	#.      Added pressure-neutral and pressure-charged :ref:`broadening` names
+	#.      Added **pressure-neutral** and **pressure-charged** :ref:`broadening` names
 	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3
