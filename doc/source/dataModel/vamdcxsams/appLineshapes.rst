@@ -5,10 +5,14 @@ Lineshapes dictionary
 
     Possible broadening and shifting names, lineshapes, parameters are listed below.
     The list is incomplete, it will be expanded before the release and extended later based on user requests and feedback.
-
+    
 Broadening names
 ------------------
     -   **pressure** for collisional broadening processes
+    
+    -   **pressure-neutral** for collisional broadening with neutral perturbers
+    
+    -   **pressure-charged** for collisional broadening with charged(ionized) perturbers
     
     -   **doppler** for Doppler broadening
     

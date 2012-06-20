@@ -18,7 +18,7 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
         #.      :ref:`BasisStates` are now given once at the root of the Molecule element and referenced in StateExpansion, 
                 which gives the coefficients only.
        
-        #.      :ref:`BasisStates` have their own stateIDs, starting from **SB**
+        #.      :ref:`BasisStates` have their own stateIDs, starting with **SB**
         
         #.      Added evaluation to :ref:`DataSet` children, remove extension of :ref:`PrimaryType`
 
@@ -36,6 +36,8 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.	Added BranchingRatio element to :ref:`collision`
 	
 	#.	Use stateRef for energyOrigin attribute of StateEnergy in :ref:`MolecularStateCharacterisation`
+	
+	#.      Added pressure-neutral and pressure-charged :ref:`broadening` names
 	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3
