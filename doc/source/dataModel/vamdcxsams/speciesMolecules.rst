@@ -225,9 +225,10 @@ MolecularStateCharacterisation
 	*	**NuclearStatisticalWeight** positive integer element, the same as **TotalStatisticalWeight** 
 		but for nuclear spins only.
 		
-	*	**NuclearSpinIsomer**, a string indicating the type of nuclear spin symmetry. Possible
-		values can be *para*, *ortho*, *meta*, *A*, *E*. This element is a comfort element very often used to
-		classify levels.
+	*	**NuclearSpinIsomer**, element consisting of a string indicating the type of nuclear spin symmetry
+	        and an attribute **lowestEnergyStateRef** to give a reference to the state of the same symmetry type, having
+	        the lowest energy value. Possible values for the symmetry can be *para*, *ortho*, *meta*, *A*, *E*. 
+	        This element is a comfort element very often used to classify levels.
 		
 	*	**Lifetime**, of type **LifeTimeType**. Defined as an extension of :ref:`DataType` with
 		an additional mandatory attribute **decay** that may take values *total*, *totalRadiative*, *totalNonRadiative*,
