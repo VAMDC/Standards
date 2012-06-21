@@ -94,6 +94,9 @@ DataSet
 		- particleReflectionCoefficient
 		- energyReflectionCoefficient
 		- meanPenetrationDepth
+		- energySpectrum
+		- massSpectrum
+		- braggCurve
 		
 	*	optional list of :ref:`FitData` elements
 	*	optional list of :ref:`TabulatedData` elements 
