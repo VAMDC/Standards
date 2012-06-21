@@ -22,7 +22,7 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
         
         #.      Added evaluation to :ref:`DataSet` children, remove extension of :ref:`PrimaryType`
 
-        #.      removed **PhysicalUncertainity** from :ref:`fitdat`a and tabulateddata`
+        #.      removed **PhysicalUncertainity** from :ref:`fitdata` and :ref:`tabulateddata`
         
 	#.	fixed bug in J for open-shell cases lpos and ltos, which should be ctypes:AMType
 	
@@ -38,6 +38,9 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.	Use stateRef for energyOrigin attribute of StateEnergy in :ref:`MolecularStateCharacterisation`
 	
 	#.      Added **pressure-neutral** and **pressure-charged** :ref:`broadening` names
+	
+	#.      Added **energySpectrum**, **massSpectrum**, **braggCurve** to the possible values of *dataDescription*
+	        in :ref:`DataSet`
 	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3

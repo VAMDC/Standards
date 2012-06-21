@@ -192,10 +192,11 @@ MolecularState
 	*	optional **Parity** element, that gives the total parity of the level.
 		It is of type :ref:`ParityType`, a token taking the values *odd* or *even*. 
 
-	*	optional **Case** element of type :ref:`BaseCase`, that is a container for [case-by-case]_ definition of quantum numbers.
-		`BaseCase` is explained below.
+	*	optional **Case** element of type **BaseCase**, that is a container for [case-by-case]_ 
+	        definition of quantum numbers.
+		Logic of :ref:`Case` is explained below.
 	
-	*	optional :ref:`StateExpansion` element that allows to describe the state as a superposition of
+	*	optional StateExpansion element that allows to describe the state as a superposition of
 		basis quantum numbers sets, each set with it's own coefficient.
 
 .. _MolecularStateCharacterisation:

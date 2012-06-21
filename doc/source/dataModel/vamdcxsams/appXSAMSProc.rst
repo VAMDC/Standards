@@ -124,7 +124,7 @@ sope    Penetration             The penetration of a reactant into a solid, char
 
 
 States class involved in process
-------------------------------
+------------------------------------
 
 ======  =======================         =====================================================================================
 Code     Name                               Description
