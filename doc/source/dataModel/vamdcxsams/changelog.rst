@@ -4,8 +4,8 @@ Changelog
 ================
 
 This section describes the changes between VAMDC-XSAMS versions.
-For a complete changelog, describing the difference between IAEA XSAMS and VAMDC XSAMS, refer to 
-a separate Changelog document _[VAMDC-XSAMS-LOG]
+For a complete changelog, describing the difference between IAEA XSAMS and first release of VAMDC XSAMS (v0.2), refer to 
+a separate Changelog document [VAMDC-XSAMS-LOG]_
 
 Changes between VAMDC-XSAMS 0.3 and 1.0
 
