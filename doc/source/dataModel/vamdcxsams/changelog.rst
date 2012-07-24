@@ -18,7 +18,7 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
         #.      :ref:`BasisStates` are now given once at the root of the Molecule element and referenced in StateExpansion, 
                 which gives the coefficients only.
        
-        #.      :ref:`BasisStates` have their own stateIDs, starting with **SB**
+        #.      :ref:`BasisStates` have their own stateIDs, starting with **SB** prefix
         
         #.      Added evaluation to :ref:`DataSet` children, remove extension of :ref:`PrimaryType`
 
@@ -47,6 +47,8 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.	**OrdinaryStructuralformula** element of :ref:`MolecularChemicalSpecies` is made optional
 	
 	#.	added **VAMDCSpeciesID** element to :ref:`MolecularChemicalSpecies` description
+	
+	#.	Some of the cases in :ref:`CaseByCase` are updated.
 	
 	        
 	
