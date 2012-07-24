@@ -202,7 +202,7 @@ MolecularState
 .. _MolecularStateCharacterisation:
 
 MolecularStateCharacterisation
------------------------------------
++++++++++++++++++++++++++++++++++++
 
 	.. image:: images/molecules/MolStaChar.png
 	
@@ -215,7 +215,10 @@ MolecularStateCharacterisation
 		defining zero point of energy. That state in turn must have **StateEnergy** equal to zero and containing
 		reference to itself.
 		
-		.. image:: images/molecules/StateEnergy.png
+		In case zero-point energy is a dissociation limit or another quantity not described by
+		quantum numbers, an empty **MolecularState** element should be added containing **stateID** attribute and 
+		verbose description of that zero-point energy reference in **Description** element. Bibliography may
+		be added to such element.
 		
 		By physical meaning, state energy is the eigenvalue of the hamiltonian describing the species.
 		
@@ -225,10 +228,8 @@ MolecularStateCharacterisation
 	*	**NuclearStatisticalWeight** positive integer element, the same as **TotalStatisticalWeight** 
 		but for nuclear spins only.
 		
-	*	**NuclearSpinIsomer**, element consisting of a string indicating the type of nuclear spin symmetry
-	        and an attribute **lowestEnergyStateRef** to give a reference to the state of the same symmetry type, having
-	        the lowest energy value. Possible values for the symmetry can be *para*, *ortho*, *meta*, *A*, *E*. 
-	        This element is a comfort element very often used to classify levels.
+	*	**NuclearSpinIsomer**, element describing state nuclear spin isomer.
+		See :ref:`NuclearSpinIsomer` sub-section for details.
 		
 	*	**Lifetime**, of type **LifeTimeType**. Defined as an extension of :ref:`DataType` with
 		an additional mandatory attribute **decay** that may take values *total*, *totalRadiative*, *totalNonRadiative*,
@@ -253,6 +254,34 @@ MolecularStateCharacterisation
 		CDMS database provides such **PseudoStatisticalWeight**.
 		
 
+.. _NuclearSpinIsomer:
+
+Nuclear spin isomer
++++++++++++++++++++++++
+
+	.. image:: images/molecules/NuclearSpinIsomer.png
+		
+	Providing an extension of :ref:`PrimaryType`, NuclearSpinIsomer is used to describe 
+	the molecular state nuclear spin isomer. It employs following elements and attributes:
+		
+	*	a mandatory attribute **lowestEnergyStateRef** of :ref:`statereftype` to give a reference to the state 
+		of the same symmetry type, having the lowest energy value.
+
+	*	optional **Name** element that may contain one of *para*, *ortho* or *meta* values.
+	
+	*	optional **LowestRoVibSym** element, providing the symmetry species of the rovibronic
+		wavefunction of the lowest state of the nuclear spin isomer, in turn having an attribute
+		**group** to indicate the symmetry group that the species applies to.
+		
+	An example of nuclear spin isomer identification would be::
+	
+		<NuclearSpinIsomer>
+			<Name>para</Name>
+			<LowestRoVibSym group="G36">A1</LowestRoVibSym>
+		<NuclearSpinIsomer>
+		
+	
+	
 .. _CaseByCase:
 
 Concept of cases

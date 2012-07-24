@@ -42,8 +42,9 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.      Added **energySpectrum**, **massSpectrum**, **braggCurve** to the possible values of *dataDescription*
 	        in :ref:`DataSet`
 	
-	#.      Added a mandatory attribute **lowestEnergyStateRef** to the :ref:`MolecularStateCharacterisation` 
-	        **NuclearSpinIsomer** element
+	#.      More complete molecular nuclear spin isomer description in :ref:`NuclearSpinIsomer`
+	
+	        
 	
 
 Changes between VAMDC-XSAMS version 0.2 and 0.3
