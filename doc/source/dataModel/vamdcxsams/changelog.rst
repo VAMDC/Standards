@@ -44,6 +44,10 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	
 	#.      More complete molecular nuclear spin isomer description in :ref:`NuclearSpinIsomer`
 	
+	#.	**OrdinaryStructuralformula** element of :ref:`MolecularChemicalSpecies` is made optional
+	
+	#.	added **VAMDCSpeciesID** element to :ref:`MolecularChemicalSpecies` description
+	
 	        
 	
 

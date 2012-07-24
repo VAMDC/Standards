@@ -46,7 +46,7 @@ MolecularChemicalSpecies
 
 	MolecularChemicalSpecies element has following child elements defined:
 
-	*	**OrdinaryStructuralformula** mandatory element, of type :ref:`ReferencedTextType`.
+	*	**OrdinaryStructuralformula** optional element, of type :ref:`ReferencedTextType`.
 		Standard formula describing the chemical complex written in Latex (molecule or molecular ion). 
 		For the time being, the **ordinaryStructuralformula** element can not be used for search, because
 		a worldwide consensus among molecular physicists is not reached yet.
@@ -112,9 +112,14 @@ MolecularChemicalSpecies
 	*	**CASRegistryNumber** optional element of type :ref:`ReferencedTextType` that
 		provides the CAS Registry Number.
 
-	*	String **CNPIGroup** element, describing the Complete Nuclear Permutation Inversion Group.
+	*	optional string **CNPIGroup** element, describing the Complete Nuclear Permutation Inversion Group.
 		Should contain LaTeX representation of the CNPI group symbol.
 
+	*	optional string **VAMDCSpeciesID** element, VAMDC-specific unique species identifier from a 
+		VAMDC species database. Inchikey-based format, taking into account conformation and other
+		meaningful species distinction, not described by inchi standard. Format and database access are
+		described elsewhere in VAMDC documentation.
+	
 	*	**PartitionFunction** element that may contain a temperature dependence of molecule partition function
 		in a form of a list of points. May be specified multiple times.
 		
