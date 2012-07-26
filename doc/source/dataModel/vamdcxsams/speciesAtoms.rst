@@ -73,6 +73,9 @@ Ion
 AtomicState
 ----------------
 
+
+	.. image:: images/atoms/AtomicState.png
+
 	AtomicState element of type **AtomicStateType**, again extending :ref:`PrimaryType`, holds
 	all information about specific atomic states and defines following attributes and elements:
 	
@@ -86,7 +89,18 @@ AtomicState
 	*	optional :ref:`AtomicComposition` element of type **AtomicCompositionType** that may contain 
 		wavefunction expansion in a specific basis.
 	
-	.. image:: images/atoms/AtomicState.png
+	An atomic state is the superposition of the quantum state for each electron in the atom. 
+	The quantum numbers for individual electron, or for groups of equivalent electrons, are written 
+	in the Component elements within the AtomicComposition element. 
+	Quantum numbers describing the atomic state as a whole are written in the AtomicQuantumNumbers element.
+
+	To identify a state fully by its quantum numbers we need the electronic configuration, 
+	the coupling term for spin-orbit interactions, 	the total angular momentum, 
+	the overall parity and the magnetic quantum number. 
+	The configuration and coupling term are part of the AtomicComposition; the total angular momentum, 
+	magnetic quantum number and the parity are part of the AtomicQuantumNumbers.
+
+	
 	
 	
 .. _AtomicNumericalData:
@@ -350,11 +364,6 @@ Example from VALD database for :math:`\mathrm{Fe}^{2+}`, with two states present
               </AtomicQuantumNumbers>
               <AtomicComposition>
                 <Component>
-                  <Configuration>
-                    <AtomicCore>
-                      <Term/>
-                    </AtomicCore>
-                  </Configuration>
                   <Term>
                     <LS>
                       <L>
@@ -386,11 +395,6 @@ Example from VALD database for :math:`\mathrm{Fe}^{2+}`, with two states present
               </AtomicQuantumNumbers>
               <AtomicComposition>
                 <Component>
-                  <Configuration>
-                    <AtomicCore>
-                      <Term/>
-                    </AtomicCore>
-                  </Configuration>
                   <Term>
                     <LS>
                       <L>
@@ -407,3 +411,87 @@ Example from VALD database for :math:`\mathrm{Fe}^{2+}`, with two states present
           </Ion>
         </Isotope>
       </Atom>
+
+      
+      
+Chianti example
+'''''''''''''''''''''
+
+In the following example, the quantum description is sufficient to identify the energy level 
+but not the states within each level; the magnetic quantum-number is not given. 
+I.e. the description ignores the Zeeman splitting of energy levels in a magnetic field.
+
+The electronic configuration is specified as an iso-electronic core and a shell of valence electrons. 
+The core, [Ne] in this case, contains electrons whose quantum numbers match those in a Neon atom in its 
+ground state. The core consists entirely of full shells and hence its equivalent atom is one of the noble 
+gases. The valence shell is denoted by a list of Shell elements, each one describing a sub-shell 
+or equivalent electrons.
+
+The spin-orbit coupling is given in the Russell-Saunders (LS) scheme, by a Term element. The coupling 
+is described for the entire state by a single term, so the state is considered to have a single Component.
+
+The parity of the state is not given explicitly, but is can be determined from the 
+orbital angular moment of the electrons in the valence shell. 
+In the state shown, the sum of these momenta is an odd number so the parity is odd.
+
+From the given mark-up, the state can be identified and matched as  [Ne] :math:`3s^{1} 3p^{1} 3P^{o}_{0.0}` ::
+
+
+      <Atom>
+        <ChemicalElement>
+          <NuclearCharge>22</NuclearCharge>
+          <ElementSymbol>Ti</ElementSymbol>
+        </ChemicalElement>
+        <Isotope>
+          <Ion speciesID="Xchianti-10022">
+            <IonCharge>10</IonCharge>
+            <AtomicState stateID="Schianti-2010022">
+              <Description>3s 3p</Description>
+              <AtomicNumericalData>
+                <StateEnergy methodRef="Mchianti-EXP">
+                  <Value units="1/cm">173200.0</Value>
+                </StateEnergy>
+              </AtomicNumericalData>
+              <AtomicQuantumNumbers>
+                <TotalAngularMomentum>0.0</TotalAngularMomentum>
+              </AtomicQuantumNumbers>
+              <AtomicComposition>
+                <Component>
+                  <Configuration>
+                    <AtomicCore>
+                      <ElementCore>Ne</ElementCore>
+                      <Term/>
+                    </AtomicCore>
+                    <Shells>
+                      <Shell>
+                        <PrincipalQuantumNumber>3</PrincipalQuantumNumber>
+                        <OrbitalAngularMomentum>
+                          <Value>0</Value>
+                        </OrbitalAngularMomentum>
+                        <NumberOfElectrons>1</NumberOfElectrons>
+                        <ShellTerm/>
+                      </Shell>
+                      <Shell>
+                        <PrincipalQuantumNumber>3</PrincipalQuantumNumber>
+                        <OrbitalAngularMomentum>
+                          <Value>1</Value>
+                        </OrbitalAngularMomentum>
+                        <NumberOfElectrons>1</NumberOfElectrons>
+                        <ShellTerm/>
+                      </Shell>
+                    </Shells>
+                  </Configuration>
+                  <Term>
+                    <LS>
+                      <L>
+                        <Value>1</Value>
+                      </L>
+                      <S>1.0</S>
+                    </LS>
+                  </Term>
+                </Component>
+              </AtomicComposition>
+            </AtomicState>
+            …
+            
+            

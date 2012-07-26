@@ -42,7 +42,8 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
 	#.      Added **energySpectrum**, **massSpectrum**, **braggCurve** to the possible values of *dataDescription*
 	        in :ref:`DataSet`
 	
-	#.      More complete molecular nuclear spin isomer description in :ref:`NuclearSpinIsomer`
+	#.      More complete molecular nuclear spin isomer description in :ref:`NuclearSpinIsomer`,
+		both for molecular states and partition functions.
 	
 	#.	**OrdinaryStructuralformula** element of :ref:`MolecularChemicalSpecies` is made optional
 	

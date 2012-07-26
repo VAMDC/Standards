@@ -88,7 +88,9 @@ MolecularChemicalSpecies
 		whose formula is $t/c-HCOOH$ (:math:`t/c-HCOOH`).
 		This is useful for a primary search of resources.
 
-	*	**IonCharge** optional integer element. It gives the charge of the molecular ion. Examples: **+1** or **-1**
+	*	**IonCharge** optional integer element. It gives the charge of the molecular ion. 
+		Examples: **+1** or **-1**. It can be omitted for non-ionized molecules, but always should be
+		included for molecular ions.
 
 	*	**ChemicalName** element of type :ref:`ReferencedTextType`,
 		a string (with reference) giving the name of the chemical complex. The **ChemicalName**
@@ -127,10 +129,10 @@ MolecularChemicalSpecies
 		
 		Extending :ref:`PrimaryType`, it has:
 		
-		-	**nuclearSpinIsomer** optional attribute to define nuclear spin isomer,
-			the same way as in :ref:`MolecularStateCharacterisation`.
 		-	**T** element of type :ref:`DataSeriesType` to define temperature points
 		-	**Q** element of type :ref:`DataSeriesType` to define partition function values
+		-	**NuclearSpinIsomer** optional element to define nuclear spin isomer,
+			see :ref:`NuclearSpinIsomer` for detailed description.
 	
 	*	**MoleculeStructure** optional element that is a link to [CML]_ description of molecular structure.
 		Extending :ref:`PrimaryType`, it defines additionally 
@@ -215,7 +217,7 @@ MolecularStateCharacterisation
 	quantities related to the molecular state apart from it's quantum numbers.
 	Following optional elements are defined:
 	
-	*	**StateEenrgy**, of type **StateEnergyType**. Defined as an extension of :ref:`DataType` with
+	*	**StateEnergy**, of type **StateEnergyType**. Defined as an extension of :ref:`DataType` with
 		an additional mandatory attribute **energyOrigin**, containing a reference to the state 
 		defining zero point of energy. That state in turn must have **StateEnergy** equal to zero and containing
 		reference to itself.
@@ -269,21 +271,29 @@ Nuclear spin isomer
 	Providing an extension of :ref:`PrimaryType`, NuclearSpinIsomer is used to describe 
 	the molecular state nuclear spin isomer. It employs following elements and attributes:
 		
-	*	a mandatory attribute **lowestEnergyStateRef** of :ref:`statereftype` to give a reference to the state 
-		of the same symmetry type, having the lowest energy value.
+	*	mandatory attribute **lowestEnergyStateRef** of :ref:`statereftype` to give a reference 
+		to the state of the same symmetry type, having the lowest energy value.
 
-	*	optional **Name** element that may contain one of *para*, *ortho* or *meta* values.
+	*	optional **Name** element that may contain one of *para*, *ortho*, *meta*, *A* or *E* values.
 	
 	*	optional **LowestRoVibSym** element, providing the symmetry species of the rovibronic
 		wavefunction of the lowest state of the nuclear spin isomer, in turn having an attribute
 		**group** to indicate the symmetry group that the species applies to.
-		
-	An example of nuclear spin isomer identification would be::
 	
-		<NuclearSpinIsomer>
+	**SourceRef** element derived from PrimaryType may be used to give a bibliography reference for the
+	complete description of nuclear spin isomers for complex molecules.
+	
+	Few examples of nuclear spin isomer identification would be::
+	
+		<NuclearSpinIsomer lowestEnergyStateRef="S-H2-1">
 			<Name>para</Name>
-			<LowestRoVibSym group="G36">A1</LowestRoVibSym>
-		<NuclearSpinIsomer>
+			<LowestRoVibSym group="D{\infty}h(M)">\Sigma g+</LowestRoVibSym>
+		</NuclearSpinIsomer>
+		
+		<NuclearSpinIsomer lowestEnergyStateRef="S-CH3Cl-1">
+			<Name>A</Name>
+			<LowestRoVibSym group="C3v(M)">A1</LowestRoVibSym>
+		</NuclearSpinIsomer>
 		
 	
 	
@@ -326,7 +336,7 @@ BasisStates
         In a case when molecular state needs to be described as a superposition of basis states, 
         **StateExpansion** element of :ref:`MolecularState` needs to be used. 
         It contains at least one **Coeff** element, extending *xs:double* by adding a reference to the
-        basis state.
+        basis state. A sum of all **Coeff** values for one **StateExpansion** should always be equal to 1
         
         .. image:: images/molecules/StateExpansion.png
         
@@ -344,10 +354,11 @@ Specific XML Types
 
 	Here, specific XML types, used only in Species.Molecules are described.
 	
-.. _ReferencedTextType:
+
+.. _referencedtexttype:
 
 ReferencedTextType
-''''''''''''''''''''
+++++++++++++++++++++++
 	
 	An extension of :ref:`PrimaryType` that has additional string **Value** element,
 	is used to define strings with :ref:`Source` reference.
@@ -358,7 +369,7 @@ ReferencedTextType
 .. _CharacterisationType:
 
 CharacterisationType
-''''''''''''''''''''''''''
++++++++++++++++++++++++++
 
 	.. image:: images/molecules/CharacType.png
 	
@@ -374,7 +385,7 @@ CharacterisationType
 .. _NormalModes:
 
 NormalModes
-''''''''''''''''''''''''
+++++++++++++++++++++
 
 	To represent vibrational normal modes of molecules, **NormalModes** element is used.
 	
@@ -404,7 +415,7 @@ NormalModes
 		
 	
 Example:
-```````````````
+'''''''''''''
 	
 	Example XML block for **NormalModes** would look like::
 	
