@@ -9,4 +9,5 @@ Data consumer protocol [v |dataConsumerProtocol-version|] [r |release|]
    :maxdepth: 2
    
    dataconsumer
+   changelog
    references

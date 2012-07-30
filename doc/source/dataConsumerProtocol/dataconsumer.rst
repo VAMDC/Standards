@@ -1,8 +1,8 @@
 .. _xsamsconsumer:
 
-======================================================
-Uniform protocol for a web application consuming XSAMS
-======================================================
+========================================================
+Uniform protocol for a web application processing XSAMS
+========================================================
 
 Applications to process data in XSAMS format may be made available as web sites, which makes them accessible for interactive use, or as web services, making them accessible to scripts and other software. This standard prescribes a form for these web applications that includes both the interactive web-site and scriptable web-service.
 
@@ -10,7 +10,7 @@ Web applications conforming to this standard can be registered in the VAMDC regi
 
 Conforming web applications can read data either from a URL (e.g. the portal passes a
 data-extract URL leading to a VAMDC database) or from an uploaded file (e.g. a user loads 
-data from a file on his desktop).
+data from a file on his computer).
 
 
 General nature of the web application
@@ -22,7 +22,7 @@ All the required web-resources must be available via HTTP v1.1.
 
 None of the required web-resources use the Simple Object Access Protocol (SOAP). All these resources follow the paradigm Representational State Transfer (REST).
 
-The core of the application is a web resource called, in this standard, its primary result. This resource represents the result of the application's processing of one or more XSAMS inputs. The application must have exactly one primary result, implying that all the inputs are combined.
+The core of the application is a web resource called, in this standard, its primary result. This resource represents the result of the application's processing of one or more XSAMS input documents. The application must have exactly one primary result, implying that all the inputs are combined.
 
 The primary result may be machine-readable (e.g. a transformation of the XSAMS input into HITRAN's legacy format) or human readable (i.e. a web page). If human readable, it may well link to further pages showing related results (e.g. the primary result might be a web page showing a table of atomic states, with links to the details of each state). A machine-readable result may also contain links, but this standard does not define how the links are accessed. Hence, a generic client, such as the VAMDC portal, would not know how to follow the links.
 
@@ -32,7 +32,7 @@ To make the application accessible from web browsers, the application must also 
 
 Applications following this standard are expected to be registered, so they must provide a  "VOSI capabilities" resource to convey registration details to the VAMDC registry.
 
-Some of the registration details are repeated, in human-readable form, on an information page.
+Some of the registration details are repeated, in human-readable format, on the form.
 
 The application should also provide a "VOSI availability" resource to allow checking of the system.
 
@@ -40,16 +40,20 @@ The application should also provide a "VOSI availability" resource to allow chec
 Details of the web resources
 ============================
 
-The form
---------
+The root resource
+-------------------
 
-The form must be the root resource of the application. It must be available via HTTP GET.
+The root resource of the application must be available via HTTP GET and must contain a browser-accessible 
+html form and a short verbose description of the XSAMS processor service.
 
 The form must allow the user to specify the input data either by giving URLs (which the user might copy and paste from some other UI) or by uploading files from the desktop. Both modes must be available.
 
 The appearance and behaviour of the form should be fixed. It should not vary according to parameters in the URL that displays it, or in response to information cached in the user's browser session. If the form is made adaptable via parameters or responsive to session history, then it must be useable in the absence of this information.
 
-The author of the application may choose freely the content of the form provided that it meets the requirements above. 
+The form must give a general description of the processing that will be applied to incoming XSAMS documents. This description may be given either in form of a link to another page or in form of a paragraph on the root page.
+
+The author of the application may choose freely the content of the form provided that it meets the requirements above.
+
 
 
 The primary result
@@ -59,32 +63,76 @@ The primary result is at the URL /service relative to the root URL.
 
 In a given application, the primary result may have any MIME-type, but it must always have the same MIME-type in that application.
 
+Submitting XSAMS documents
+++++++++++++++++++++++++++++++
+
 The primary result must accept all of the following ways to specify the input data.
 
 * In HTTP GET, via the parameter called ``url``, embedded in the URL used to call the application. The value of this parameter is the URL leading to the XSAMS data, and that URL must be in the HTTP scheme. The URL for the input data must be URL encoded before embedding in the URL for the primary result. (This necessary encoding makes it infeasible for a user to simply type the URL in a browser's address-bar, hence the need for the form to invoke the primary result.) The parameter may be repeated to specify more than one XSAMS document.
 
 * In HTTP POST, via the parameter called ``url`` as above, except that the parameter is written in the body of the request instead of embedding in the URL of the primary result.
 
-* In HTTP POST, via the parameter called ``upload``, written in the body of the request. The value of the parameter is the XSAMS document itself, packaged according to internet RFC 1867. This parameter may be repeated to upload multiple, XSAMS documents.
+* In HTTP POST, via the parameter called ``upload``, written in the body of the request. The value of the parameter is the XSAMS document itself, packaged according to internet RFC 1867. This parameter may be repeated to upload multiple XSAMS documents.
 
 The application is only required to process XSAMS inputs and should typically reject other types.
 
 The application may be written to process a single XSAMS document, a fixed number of documents, any number of documents up to a fixed limit, or any number without limit. If the request contains the wrong number of documents, then the application must reject the request.
 
-When responding to an HTTP request for the primary result, the application may choose whether to cache the result. If the result is not cached, the application must return it directly as the body of the response. If the result is cached, the cached version must be a new web-resource and the application must send an HTTP response redirecting the client to this latter resource.
 
-The HTTP response to a request for the primary result must be one of the following.
+Service response
++++++++++++++++++++++++
 
-*	Status code 200,"success", with the result as the body of the response. This applies to uncached results.
+To enable successful use of XSAMS Processor web service both as user-accessible and scriptable service,
+different response scenarios should be taken depending on the type of incoming request:
 
-*	Status code 201, "created", with the ``Location`` header listing the URL for the cached result. The body of the response must be a web page containing a link to the cached resource (web browsers do not deal with 201 responses automatically). This response indicates that the application has just created a new copy of the result in the cache.
+.. _Interactive:
 
-*	Status code 303, "see other" with the ``Location`` header listing the URL for the cached result. No body is needed with this response (web browsers will automatically redirect the user to the stated location).
+Interactive scenario
+``````````````````````
 
-*	Status code 400, "bad request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was
-	inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
+This scenario should be applied to requests, corresponding the following criterias:
+
+*	Request is HTTP POST, no HTTP Referer header is supplied (interaction with portal)
+*	Request is HTTP GET, POST or POST+UPLOAD, HTTP Referer header points to the root of the resource 
+	(user entered data using the ROOT resource)
+
+When responding to an HTTP request for the primary result in interactive mode, the application must immediately respond with a 303 result code redirecting user to a temporary resource, indicating XSAMS document download and processing progress.
+When download and processing of submitted document is done, client should be redirected to his final destination, the resource address pointing to the result of XSAMS document processing.
+
+The HTTP response to a request for the primary result must be one of the following:
+
+*	Status code 303, "see other" with the ``Location`` header listing the URL for the cached result. No body is needed with this response (web browsers will automatically redirect the user to the stated location). This must be the response for POST requests. Cached result provided in the ``Location`` header must be a semi-permanent URL to the result of XSAMS inputs processing. Cached document should not depend on browser cookies, session headers and any other hidden parameters that can not be embedded within the URL passed in ``Location`` header.
+
+*	Status code 400, "bad request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
 
 *	Status code 500, "internal server error", 502, "bad gateway", 503 "unavailable" or 504, "gateway timeouts", indicating a problem inside the application. This code indicates that the request was correct but the application failed to process it. Requests receiving this response might be processed correctly at some later date.
+
+
+
+Scriptable scenario
+``````````````````````
+
+This scenario should be applied to requests, corresponding the following criterias:
+
+*	Document is uploaded using HTTP POST UPLOAD, no HTTP Referer header is present (script uploads)
+*	Request is HTTP GET, no HTTP Referer header is present (script indicating URL to XSAMS as GET parameter)
+
+When responding to an HTTP request for the primary result in scriptable mode, the application should silently download and process XSAMS document, then immediately redirect to the transformation result.
+
+Status codes are the same as within the :ref:`interactive`.
+
+
+Caching policy
++++++++++++++++++
+
+When working in interactive mode, XSAMS Processor is naturally obliged to cache either incoming documents or intermediate transformation result, and re-apply final processing on every request, or, if result is static page, cache the result of the processing itself, immediately destroying incoming documents on the end of transformation.
+
+If processing is done in a streaming manner, only the result of processing may be cached.
+
+When employing a scriptable scenario, XSAMS Processor caching behaviour is not specified.
+
+Cache lifetime is defined by the XSAMS Processor developer/maintainer, it should be reasonably high for users to be able to come from the portal using the link to processing result, but not eternally since the disk capacity of the server running XSAMS Processor service is always limited.
+
 
 
 VOSI capabilities
@@ -94,6 +142,14 @@ The VOSI capabilities are a single XML-document at the URL /capabilities relativ
 The general rules for VOSI capabilities are defined by IVOA's VOSI standard. 
 
 For applications conforming to the current standard, there must be a capability following the schema ``http://www.vamdc.org/xml/XSAMS-consumer/v1.0``. Such a capability provides two access URLs, one for the form (of type ``WebBrowser``) and one for the primary result (of type ``ParamHTTP``).
+
+Capabilities must contain at least the following information:
+
+* URL for root resource
+
+* Version of this standard supported.
+
+* Number of XSAMS inputs required.
 
 The following code shows a sample capabilities-document, with the namespaces and locations of schema filled in::
 
@@ -135,44 +191,6 @@ The VOSI availability is a single XML-document at the URL /availability relative
 The general rules for VOSI availability are defined by IVOA's VOSI standard.
 
 
-Service information
--------------------
-
-The service information is a web page at the URL /info relative to the root resource. It repeats some of the information in the VOSI capabilities in human-readable form.
-
-The page must contain at least the following information.
-
-* Service name
-
-* Description of the work done by the service from a scientific point of view.
-
-* URL for root resource
-
-* Version of this standard supported.
-
-* Number of XSAMS inputs required.
-
-* Whether or not the primary result is cached.
-
-* How long results remain in the cache.
-
-
-Caching policy
-==============
-
-Caching of the primary result makes it easier to chain together application and makes interactive applications more responsive. The cost of caching is greater complexity and subtlety in the operation of the application.
-
-Applications may cache results implicitly or explicitly. Explicit caching exposed the cached copy as a new web-resource with its own URL. Implicit caching changes the behaviour of the primary result to use the cached copy. The author of an application may choose between implicit caching, explicit caching or no caching at all. The choice must be stated in the registration of the application.
-
-For explicit caching, the application returns status code 201 (or 303) for the request that creates the cached copy. The web resource for those cached results is then immutable. After some lifetime, chosen by the application author and stated in the application registration, the resource is deleted from the web application. Requesting the primary result again, for a given set of inputs, refreshes the cache.
-
-The 201, "created", and 303, "see other" status-codes have essentially the same effect. The only practical difference is that browsers redirect automatically to the indicated web-resource for the 303 code and not for the 201 code. Therefore, the 201 code is better when the application is intended for use from scripts and the 303 code when the application is only used from browsers.
-
-For implicit caching, the application must either maintain the freshness of the results (e.g. using HEAD requests on the URLs for the original data to detect updates), or must supply interactive controls to the user for refreshing the cache. Maintaing cache freshness is hard to implement reliably (and impossible in the case of data uploaded from file), so implicit caching is most applicable to interactive applications where the user can control the refreshing.
-
-Explicitly-cached data are, implicitly, available to any client or user; no access controls are applied. However, the application should not advertise the existence of these data to other users.
-
-
 Registration
 ============
 
@@ -180,7 +198,7 @@ The application should be registered in the VAMDC registry. This makes it visibl
 
 If registered, the registration-document type must be ``{http://www.ivoa.net/xml/VOResource/v1.0}Service`` as defined in the IVOA standard for registration. The registration must include the capability data taken from the VOSI-capabilities resource of the application, as detailed above.
 
-Generic UIs will typically present users with a list of XSAMS-consuming applications. The ``title`` element of the application's registration-document should be suitable to distinguish the application in such a list: it should state explicitly but tersely what the application does. 
+Generic UIs will typically present users with a list of XSAMS processor web services. The ``title`` element of the application's registration-document should be suitable to distinguish the application in such a list: it should state explicitly but tersely what the application does. More detailed description may be provided within the ``Description`` element of ``Contents`` block. This description may be presented to the end user before he submits XSAMS documents to the processor service.
 
 
 Closely-related applications
