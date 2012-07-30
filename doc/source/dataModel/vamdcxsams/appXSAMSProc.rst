@@ -133,6 +133,10 @@ rota    rotational process              characterizes processes involving transi
 vibr    vibrational process             characterizes processes involving transition between vibrational states
 rvib    ro-vibrational process          characterizes processes involving transition between ro-vibrational  states
 hype    hyperfine process               characterizes processes involving transition between hyperfine states
+hyp1	hyperfine 1 process		characterizes processes involving transition between hyperfine states
+					when 1 nuclear spin coupling is resolved
+hypN	hyperfine N process		characterizes processes involving transition between hyperfine states
+					when N nuclear spin couplings is resolved (here N is a digit in range 1-9)
 fine    fine process                    characterizes processes involving transition between fine states
 tors    torsional process               characterizes processes involving transition between torsional states
 rtor    ro-torsional process            characterizes processes involving transition between ro-torsional states

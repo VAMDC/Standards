@@ -30,20 +30,9 @@ CollisionalTransition
 
 	*	mandatory **id** attribute of type :ref:`ProcessIDType`,
 	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
-	*	optional element **ProcessClass** of type **ProcessClassType**, that describes the
-		collision process or particle surface interaction. It is a combination of
-		three optional elements:
-		
-		-	**UserDefinition** for arbitrary string description of process,
-		-	list of **Code** elements, defined by **CodeType**, identifying the process
-			using XSAMS-specific 4-letter :ref:`XSAMSProcessCodes`.
-			Taking examples for common processes, excitation has one value *exci* and dissociative
-			recombination has two values *diss* and *reco*.
-		-	list of **IAEACode** elements, defined by **IAEACodeType**, identifies the process 
-			using :ref:`IAEAcodes` from [IAEAProc]_. The initial purpose of IAEA codes was the development of
-			search engines for atomic and molecular data. Processes, represented with a
-			three-letter code, are classified in four categories: electron collisions,
-			photon collisions, heavy particle collisions and particle surface interactions
+	*	optional element :ref:`ProcessClass` defined by type **ProcessClassType**, that allows to 
+		define groups (classes) to which process belongs. See the referenced paragraph :ref:`ProcessClass`
+		for the complete description.
 	*	mandatory list of **Reactant** elements, defined by :ref:`SpeciesStateRefType`, 
 		having two or more elements,
 	*	optional list of **IntermediateState** elements, defined by :ref:`SpeciesStateRefType`.
@@ -65,6 +54,28 @@ CollisionalTransition
 		rate coefficients or cross sections for collisions,
 		reflection coefficients or mean penetration depth for PSI data, etc.
 
+
+.. _ProcessClass:
+
+ProcessClass
+--------------
+
+	.. image:: images/types/ProcessClass.png
+
+	ProcessClass block is used to characterize process by the group to which it belongs,
+	for example to indicate a chemical reaction, inelastic collision or hyperfine transition.
+	Main element ProcessClass has the following optional child elements:
+		
+	-	**UserDefinition** for arbitrary string description of process,
+	-	list of **Code** elements, defined by **CodeType**, identifying the process
+		using XSAMS-specific 4-letter :ref:`XSAMSProcessCodes`.
+		Taking examples for common processes, excitation has one value *exci* and dissociative
+		recombination has two values *diss* and *reco*.
+	-	list of **IAEACode** elements, defined by **IAEACodeType**, identifies the process 
+		using :ref:`IAEAcodes` from [IAEAProc]_. The initial purpose of IAEA codes was the development of
+		search engines for atomic and molecular data. Processes, represented with a
+		three-letter code, are classified in four categories: electron collisions,
+		photon collisions, heavy particle collisions and particle surface interactions
 
 
 .. _DataSet:
