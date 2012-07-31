@@ -206,7 +206,7 @@ the following script may be used::
 	#!/bin/bash
 	#XSAMS Processor service URL, ending with /service
 	PROCESSOR=$1
-	#URL to XSAMS document, either a VAMDC node output or just saved anywhere 
+	#URL to XSAMS document, either a VAMDC node output or just saved anywhere on internet
 	XSAMSURL=$2
 
 	LOCATION=`curl -v --get --data-urlencode "url=${XSAMSURL}" $PROCESSOR 2>&1 \
