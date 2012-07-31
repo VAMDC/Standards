@@ -223,6 +223,7 @@ the following script may be used::
 	curl --get --silent ${LOCATION}
 	
 The script accepts two parameters:
+
 *	First is XSAMS Processor URL, ending with /service . May need to be quoted.
 *	Second is URL to XSAMS document, either a VAMDC node output or just saved anywhere. May need to be quoted.
 
