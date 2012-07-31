@@ -83,56 +83,31 @@ Service response
 +++++++++++++++++++++++
 
 To enable successful use of XSAMS Processor web service both as user-accessible and scriptable service,
-different response scenarios should be taken depending on the type of incoming request:
+following response scenario should be taken, independently of the type of incoming request:
 
-.. _Interactive:
+*	When responding to an HTTP request (GET or POST) for the primary result, the application must immediately respond with a 302 result code, providing  in **Location** header a temporary resource URL from which the cached processing result must be downloaded later. Cached result provided in the ``Location`` header must be a semi-permanent URL to the result of XSAMS inputs processing. Cached document must not depend on browser cookies, session headers and any other parameters that are not embedded within the URL passed to the client in the ``Location`` header.
 
-Interactive scenario
-``````````````````````
+*	While result is not ready because XSAMS document either is not fully downloaded or not yet processed,
+	service must respond with status code 202 "Accepted" to all requests (GET or HEAD) to the temporary result URL. Get requests should receive an HTML document indicating XSAMS document download and processing progress.
+	
+*	When download and processing of submitted document is done, all requests (GET or HEAD) to the temporary result
+	URL must be responded with status code 200 "OK", with appropriate MIME-type header and, in case of a GET request, result of processing as a response body.
 
-This scenario should be applied to requests, corresponding the following criterias:
+Other status codes can be returned both for requests to primary result and cached result URLs:
 
-*	Request is HTTP POST, no HTTP Referer header is supplied (interaction with portal)
-*	Request is HTTP GET, POST or POST+UPLOAD, HTTP Referer header points to the root of the resource 
-	(user entered data using the ROOT resource)
+*	Status code 400, "Bad Request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
 
-When responding to an HTTP request for the primary result in interactive mode, the application must immediately respond with a 303 result code redirecting user to a temporary resource, indicating XSAMS document download and processing progress.
-When download and processing of submitted document is done, client should be redirected to his final destination, the resource address pointing to the result of XSAMS document processing.
-
-The HTTP response to a request for the primary result must be one of the following:
-
-*	Status code 303, "see other" with the ``Location`` header listing the URL for the cached result. No body is needed with this response (web browsers will automatically redirect the user to the stated location). This must be the response for POST requests. Cached result provided in the ``Location`` header must be a semi-permanent URL to the result of XSAMS inputs processing. Cached document should not depend on browser cookies, session headers and any other hidden parameters that can not be embedded within the URL passed in ``Location`` header.
-
-*	Status code 400, "bad request", with a web page explaining the the failure in the body of the response. This code implies that the application operated correctly but the request was inappropriate; e.g. a request containing the wrong number of inputs; or the wrong type of inputs or a URL for an input that cannot be read. Requests receiving this response should not be repeated by the client.
-
-*	Status code 500, "internal server error", 502, "bad gateway", 503 "unavailable" or 504, "gateway timeouts", indicating a problem inside the application. This code indicates that the request was correct but the application failed to process it. Requests receiving this response might be processed correctly at some later date.
-
-
-
-Scriptable scenario
-``````````````````````
-
-This scenario should be applied to requests, corresponding the following criterias:
-
-*	Document is uploaded using HTTP POST UPLOAD, no HTTP Referer header is present (script uploads)
-*	Request is HTTP GET, no HTTP Referer header is present (script indicating URL to XSAMS as GET parameter)
-
-When responding to an HTTP request for the primary result in scriptable mode, the application should silently download and process XSAMS document, then immediately redirect to the transformation result.
-
-Status codes are the same as within the :ref:`interactive`.
+*	Status code 500, "Internal Server Error", 502, "Bad Gateway", 503 "Unavailable" or 504, "Gateway Timeout", indicating a problem inside the application. This code indicates that the request was correct but the application failed to process it. Requests receiving this response might be processed correctly at some later date.
 
 
 Caching policy
 +++++++++++++++++
 
-When working in interactive mode, XSAMS Processor is naturally obliged to cache either incoming documents or intermediate transformation result, and re-apply final processing on every request, or, if result is static page, cache the result of the processing itself, immediately destroying incoming documents on the end of transformation.
+XSAMS Processor is naturally obliged to cache either XSAMS documents, intermediate or final transformation result, or both. If caching XSAMS documents, final processing must be re-applied on every request to the result URL. If result is static page, service may cache only the result of the processing itself, immediately destroying incoming XSAMS documents after the completion of processing.
 
 If processing is done in a streaming manner, only the result of processing may be cached.
 
-When employing a scriptable scenario, XSAMS Processor caching behaviour is not specified.
-
 Cache lifetime is defined by the XSAMS Processor developer/maintainer, it should be reasonably high for users to be able to come from the portal using the link to processing result, but not eternally since the disk capacity of the server running XSAMS Processor service is always limited.
-
 
 
 VOSI capabilities
@@ -204,20 +179,53 @@ Generic UIs will typically present users with a list of XSAMS processor web serv
 Closely-related applications
 ============================
 
-There may arise sets of applications with closely related functions; e.g., format converters for different output-formats. There is a natural instinct to combine these in one application where the outputs are distinguished by an extra parameter on the primary result that is specific to that combined application. This approach fails because the generic clients do not understand the special parameter.  An application must not rely on custom parameters on the primary result *if the values of those parameters must be chosen by the client*.
+There may arise sets of applications with closely related functions; e.g., format converters for different output-formats. There is a natural instinct to combine these in one application where the outputs are distinguished by an extra parameter on the primary result that is specific to that combined application. This approach fails because the generic clients do not understand the special parameter.  An application must not rely on custom parameters on the primary result.
 
 Two methods are allowed for combining applications: multiple registrations and onward links from web pages.
 
 Multiple registrations means that the complete set of web resources specified above is replicated for each kind of primary result, but the resources are served by the same web application. Each set of resources is registered separately and appears to clients as a separate application. E.g., for the format-converters, we might provide these resources::
 
-  converter?format=csv
-  converter/service?format=csv
-  converter/capabilities?format=csv
-  converter?format=lamda
-  converter/service?format=lambda
-  converter/capabilities?format=lambda
+  converter/csv/
+  converter/csv/service
+  converter/csv/capabilities
+  converter/lamda/
+  converter/lamda/service
+  converter/lamda/capabilities
   ...
 
-These URLs differ only in the parameters, but because they are all registered the clients do not need to choose the parameter values.
+These URLs differ only in one path component that can be treated by underlying web application as a parameter.
 
 Onward links means that the primary result is a web page and contains links to multiple, related results. This approach works only when the application is used interactively.
+
+Example command-line client script
+====================================
+
+To test the operation of processor service, or to integrate an existing service into some software as a data source,
+the following script may be used::
+
+	#!/bin/bash
+	#XSAMS Processor service URL, ending with /service
+	PROCESSOR=$1
+	#URL to XSAMS document, either a VAMDC node output or just saved anywhere 
+	XSAMSURL=$2
+
+	LOCATION=`curl -v --get --data-urlencode "url=${XSAMSURL}" $PROCESSOR 2>&1 \
+	| grep Location: \
+	| sed -e 's/<\ Location:\ //g' \
+	| sed -e 's/[\n\r]//g'`
+
+	while curl --head --silent ${LOCATION} | grep -q 202 
+	do
+		echo  "waiting for result from ${LOCATION}" 1>&2
+		sleep 1
+	done
+
+	curl --get --silent ${LOCATION}
+	
+The script accepts two parameters:
+*	First is XSAMS Processor URL, ending with /service . May need to be quoted.
+*	Second is URL to XSAMS document, either a VAMDC node output or just saved anywhere. May need to be quoted.
+
+The downloaded processing result is sent to the standard output.
+This script may be integrated as an input to some scientific tool, if there exists an on-line
+Processor service that converts XSAMS into the format of this tool.
