@@ -24,7 +24,8 @@ RadiativeTransition
 	
 	*	mandatory **id** attribute of type :ref:`ProcessIDType`;
 	*	optional **groupLabel** attribute of type *String*, used to indicate arbitrary process groups;
-	*	optional **process** attribute to reflect if the process is *excitation* or *deexcitation*;
+	*	optional **process** attribute to reflect if the process is *excitation* or *deexcitation*.
+		This attribute should always be provided and must be provided if other data in the document are associated with a specific direction of transition;
 	*	**UpperStateRef** of type :ref:`StateRefType`, reference to the upper state of the transition;
 	*	**LowerStateRef**, reference to the lower state of the transition, type :ref:`StateRefType`),
 	*	**SpeciesRef** element of type :ref:`SpeciesRefType`, that may be used in place of the previous two
@@ -103,7 +104,11 @@ Probability
 		and the first digit cannot be **0**.
 	*	**EffectiveLandeFactor** - Effective Lande factor, line intensity coefficient for magneto-sensitive atomic lines.
 
-	
+	if any of the probability data of a transition apply to a specific direction of transition 
+	(e.g. the weights in the WeightedOscillatorStrength can differ between absorption and emission depending 
+	on the degeneracies of the upper and lower states), then the direction of the transition must be indicated by 
+	setting the process attribute in the RadiativeTransition element. In this case, it may sometimes be necessary 
+	to write two RadiativeTransition elements, one for absorption and one for emission.
 	
 
 
