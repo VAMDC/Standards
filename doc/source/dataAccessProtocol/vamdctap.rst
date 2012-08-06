@@ -291,7 +291,7 @@ In Django node software implementation you will also find the following section 
 
 
 
-Quality Assurance Checklist
+Standard Compliance Checklist
 ------------------------------
 
 Each VAMDC node implementing VAMDC-TAP protocol must pass the requirements of the following checklist
@@ -302,21 +302,24 @@ included into 12.07 public system.
 #.	Node **must** return valid XSAMS documents as defined by the latest VAMDC-XSAMS standard in any case
 	when the response document is required.
 
-#.	When database contains no data corresponding the query, node **must** return HTTP 204 Status Code,
-	with empty response body, both for HEAD and GET requests.
+#.	When database contains no data corresponding the query, node **must** respond with HTTP 204 Status Code,
+	with empty response body, both for HEAD and GET requests to the /sync endpoint of VAMDC-TAP protocol.
 	
 #.	Node **must** respond to the vss2 query **SELECT SPECIES** with an XSAMS document containing only species
 	information about all molecules, atoms and particles contained in node database, without states and processes
 	data. Response should be given within a reasonable amount of time, no more than 30 seconds.
 	
 #.	Node **must** support gzip content encoding of transferred data, as defined in HTTP specification.
-	This is employed to preserve the bandwidth and speed up the transfer of data, since XSAMS documents compress very well.
+	This is employed to preserve the bandwidth and speed up the transfer of data, since XSAMS documents 
+	compress very well.
 	
-#.	Node **must** support HEAD requests to the TAP sync endpoint, giving reasonable values within VAMDC-COUNT-* 
-	headers. Response to HEAD requests should be generated within a reasonable amount of time, no more than 30 seconds. Values may be inaccurate, but should give a view on how much data will be returned by the node for GET request.
+#.	Node **must** support HTTP HEAD requests to the TAP sync endpoint, giving sensible values in VAMDC-COUNT-* 
+	headers. Response to HEAD requests should be generated within a reasonable amount of time, 
+	no more than 30 seconds. Values may be inaccurate, but should give a view on how much data will be 
+	returned by the node for GET request.
 
 #.	If node contains transitional data, it **must** support queries by **RadTransWavelength**, defining transition
-	wavelength in vacuum in Angstrems
+	wavelength in vacuum in Angstroms. Use of this keyword is a common convention for clients querying the transition data.
 
 #.	Node **must** provide sensible sample queries in Capabilities registration.
 
