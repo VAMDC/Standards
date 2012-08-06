@@ -33,6 +33,13 @@ Methods
 method information
 
 
+MoleculeBasisStates
+-------------------------------------------------------------------
+
+
+The basis states for a set of molecular states expressed as a linear combination on some basis
+
+
 MoleculeQuantumNumbers
 -------------------------------------------------------------------
 
@@ -75,11 +82,11 @@ Processes
 data for all available processes
 
 
-RadiativeCrossections
+RadiativeCrossSections
 -------------------------------------------------------------------
 
 
-
+Absorption (or emission?) cross sections as a function of wavelength or frequency-equivalent
 
 
 RadiativeTransitions

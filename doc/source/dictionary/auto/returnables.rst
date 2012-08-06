@@ -1,4 +1,19 @@
 
+	CollisionTabulatedDataYAccuracyMethod
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 AtomInchi
 -------------------------------------------------------------------
 
@@ -41,6 +56,21 @@ Ionization stage with 0 for neutral
 
 
 **Constraints:** >=0
+
+
+
+AtomIsoelectronicSequence
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
 
 
 
@@ -727,7 +757,7 @@ AtomStateRef
 -------------------------------------------------------------------
 
 
-A string key that references specific atomic state..
+The bibliographical references for a particular atomic state.
 
 
 
@@ -2313,6 +2343,81 @@ Atomic name
 
 
 
+BasisState
+-------------------------------------------------------------------
+
+
+A single basis state in the description of a molecular state as an expansion in some basis
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+BasisStateComment
+-------------------------------------------------------------------
+
+
+A comment relating to this basis state
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+BasisStateID
+-------------------------------------------------------------------
+
+
+The ID for this basis state
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+BasisStateMethod
+-------------------------------------------------------------------
+
+
+Method relating to this basis state
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+BasisStateRef
+-------------------------------------------------------------------
+
+
+A source (reference) for this basis state
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 CollisionCode
 -------------------------------------------------------------------
 
@@ -2883,6 +2988,186 @@ CollisionTabulatedDataX
 
 
 
+CollisionTabulatedDataXAccuracy
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyComment
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyErrorFile
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyErrorList
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyErrorListN
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyErrorValue
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyMethodRef
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyRelative
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXAccuracyType
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXDataFile
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXDataList
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXDataListN
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
 CollisionTabulatedDataXDescription
 -------------------------------------------------------------------
 
@@ -2898,7 +3183,7 @@ CollisionTabulatedDataXDescription
 
 
 
-CollisionTabulatedDataXError
+CollisionTabulatedDataXLinearSequenceIncrement
 -------------------------------------------------------------------
 
 
@@ -2913,7 +3198,22 @@ CollisionTabulatedDataXError
 
 
 
-CollisionTabulatedDataXN
+CollisionTabulatedDataXLinearSequenceInitial
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataXLinearSequenceN
 -------------------------------------------------------------------
 
 
@@ -2928,37 +3228,7 @@ CollisionTabulatedDataXN
 
 
 
-CollisionTabulatedDataXNegativeError
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
 CollisionTabulatedDataXParameter
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
-CollisionTabulatedDataXPositiveError
 -------------------------------------------------------------------
 
 
@@ -3003,6 +3273,186 @@ CollisionTabulatedDataY
 
 
 
+CollisionTabulatedDataYAccuracy
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyComment
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyErrorFile
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyErrorList
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyErrorListN
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyErrorValue
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyMethodRef
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyRelative
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYAccuracyType
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYDataFile
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYDataList
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYDataListN
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
 CollisionTabulatedDataYDescription
 -------------------------------------------------------------------
 
@@ -3018,7 +3468,7 @@ CollisionTabulatedDataYDescription
 
 
 
-CollisionTabulatedDataYError
+CollisionTabulatedDataYLinearSequenceIncrement
 -------------------------------------------------------------------
 
 
@@ -3033,7 +3483,7 @@ CollisionTabulatedDataYError
 
 
 
-CollisionTabulatedDataYNegativeError
+CollisionTabulatedDataYLinearSequenceInitial
 -------------------------------------------------------------------
 
 
@@ -3048,7 +3498,22 @@ CollisionTabulatedDataYNegativeError
 
 
 
-CollisionTabulatedDataYPositiveError
+CollisionTabulatedDataYLinearSequenceN
+-------------------------------------------------------------------
+
+
+Number of elements in Linear Sequence
+
+
+
+**Type:** integer number
+
+
+**Constraints:** 
+
+
+
+CollisionTabulatedDataYParameter
 -------------------------------------------------------------------
 
 
@@ -3110,26 +3575,11 @@ CollisionUserDefinition
 
 
 
-CollisionalTabulatedDataYN
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-
-**Constraints:** 
-
-
-
 CrossSectionBandCentre
 -------------------------------------------------------------------
 
 
-
+The centre wavenumber, wavelength, etc. of a feature in an tabulated cross section
 
 
 
@@ -3176,7 +3626,7 @@ CrossSectionBandModeDeltaVID
 -------------------------------------------------------------------
 
 
-
+ID of  a normal mode when referenced in the assignment of a band in an assigned cross section
 
 
 
@@ -3206,7 +3656,7 @@ CrossSectionBandModeName
 -------------------------------------------------------------------
 
 
-
+A string, optionally identifying a band in an assigned cross section, e.g. "asymmetric stretch"
 
 
 
@@ -3236,7 +3686,7 @@ CrossSectionBandWidth
 -------------------------------------------------------------------
 
 
-
+The width of an assigned feature in a tabulated cross section (in units of wavenumber, wavelength, etc.)
 
 
 
@@ -3268,7 +3718,7 @@ CrossSectionEnvironment
 -------------------------------------------------------------------
 
 
-
+Reference to an Environment ID describing the environment applicable to this cross section
 
 
 
@@ -3298,7 +3748,7 @@ CrossSectionID
 -------------------------------------------------------------------
 
 
-
+ID label for this cross section data
 
 
 
@@ -3313,7 +3763,7 @@ CrossSectionProcess
 -------------------------------------------------------------------
 
 
-
+???
 
 
 
@@ -3328,7 +3778,7 @@ CrossSectionSpecies
 -------------------------------------------------------------------
 
 
-
+A reference to the ID of a species contributing to this cross section
 
 
 
@@ -3343,7 +3793,7 @@ CrossSectionState
 -------------------------------------------------------------------
 
 
-
+???
 
 
 
@@ -3643,7 +4093,7 @@ EnvironmentID
 -------------------------------------------------------------------
 
 
-
+An ID of the form "Exxx" identifying this Environment
 
 
 
@@ -3658,7 +4108,7 @@ EnvironmentRef
 -------------------------------------------------------------------
 
 
-
+A reference to the ID, of the form 'Exxx', identifying the environment referenced here
 
 
 
@@ -3673,7 +4123,7 @@ EnvironmentSpecies
 -------------------------------------------------------------------
 
 
-
+A species contributing to an Environment
 
 
 
@@ -3688,7 +4138,7 @@ EnvironmentSpeciesConcentration
 -------------------------------------------------------------------
 
 
-
+The concentration of a species contributing to an Environment
 
 
 
@@ -3705,7 +4155,7 @@ EnvironmentSpeciesMoleFraction
 -------------------------------------------------------------------
 
 
-
+The mole fraction of a species contributing to an Environment
 
 
 
@@ -3722,7 +4172,7 @@ EnvironmentSpeciesName
 -------------------------------------------------------------------
 
 
-
+The name of a species contributing to an Environment
 
 
 
@@ -3737,7 +4187,7 @@ EnvironmentSpeciesPartialPressure
 -------------------------------------------------------------------
 
 
-
+The partial pressure of a species contributing to an Environment
 
 
 
@@ -3754,7 +4204,7 @@ EnvironmentSpeciesRef
 -------------------------------------------------------------------
 
 
-
+The reference to an ID of a species contributing to an Environment
 
 
 
@@ -3786,7 +4236,7 @@ EnvironmentTotalNumberDensity
 -------------------------------------------------------------------
 
 
-
+The total number density of particles comprising an Environment
 
 **Units:** 1/cm3
 
@@ -3820,7 +4270,7 @@ FunctionArgumentDescription
 -------------------------------------------------------------------
 
 
-
+Description of the function to an argument
 
 
 
@@ -3835,7 +4285,7 @@ FunctionArgumentLowerLimit
 -------------------------------------------------------------------
 
 
-
+The lower limit of validity for this argument to the fit or model function
 
 
 
@@ -3850,7 +4300,7 @@ FunctionArgumentName
 -------------------------------------------------------------------
 
 
-
+The name of this argument to the fit or model function
 
 
 
@@ -3865,7 +4315,7 @@ FunctionArgumentUnits
 -------------------------------------------------------------------
 
 
-
+The units of this argument to the fit or model function
 
 
 
@@ -3880,7 +4330,7 @@ FunctionArgumentUpperLimit
 -------------------------------------------------------------------
 
 
-
+The upper limit of validity for this argument to the fit or model function
 
 
 
@@ -3910,7 +4360,7 @@ FunctionDescription
 -------------------------------------------------------------------
 
 
-
+A description of this function
 
 
 
@@ -3940,7 +4390,7 @@ FunctionID
 -------------------------------------------------------------------
 
 
-
+A unique identifier for this function, of the form 'Fxxx'
 
 
 
@@ -3955,7 +4405,7 @@ FunctionName
 -------------------------------------------------------------------
 
 
-
+The name of this function
 
 
 
@@ -3970,7 +4420,7 @@ FunctionParameterDescription
 -------------------------------------------------------------------
 
 
-
+A description of this parameter to the fit or model function
 
 
 
@@ -3985,7 +4435,7 @@ FunctionParameterName
 -------------------------------------------------------------------
 
 
-
+A name of this parameter to the fit or model function
 
 
 
@@ -4000,7 +4450,7 @@ FunctionParameterUnits
 -------------------------------------------------------------------
 
 
-
+A units of this parameter to the fit or model function
 
 
 
@@ -4207,6 +4657,66 @@ MethodRef
 
 
 
+MoleculeBasisStates
+-------------------------------------------------------------------
+
+
+The basis states for a set of molecular states expressed as a linear combination on some basis
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeBasisStatesComment
+-------------------------------------------------------------------
+
+
+A Comment relating to this set of Basis states
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeBasisStatesMethod
+-------------------------------------------------------------------
+
+
+A Method relating to this set of Basis states
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeBasisStatesRef
+-------------------------------------------------------------------
+
+
+One or more source references relating to this set of Basis states
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 MoleculeCASRegistryNumber
 -------------------------------------------------------------------
 
@@ -4344,11 +4854,116 @@ Has **DataType** suffixes support
 
 
 
-MoleculeNormalModeHarmonicFrequency
+MoleculeNormalModeDisplacementVectorComment
+-------------------------------------------------------------------
+
+
+Comments concerning this normal mode's displacement vectors
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeDisplacementVectorMethod
 -------------------------------------------------------------------
 
 
 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeDisplacementVectorRef
+-------------------------------------------------------------------
+
+
+A reference to the atom in the molecule's structure to which this displacement vector applies
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeDisplacementVectorX3
+-------------------------------------------------------------------
+
+
+The x-component of this atom's displacement vector
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeDisplacementVectorY3
+-------------------------------------------------------------------
+
+
+The y-component of this atom's displacement vector
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeDisplacementVectorZ3
+-------------------------------------------------------------------
+
+
+The z-component of this atom's displacement vector
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeElectronicState
+-------------------------------------------------------------------
+
+
+A reference to the electronic state within which this normal mode applies
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeNormalModeHarmonicFrequency
+-------------------------------------------------------------------
+
+
+The harmonic frequency of a normal mode.
 
 **Units:** MHz
 
@@ -4361,11 +4976,26 @@ Has **DataType** suffixes support
 
 
 
+MoleculeNormalModeID
+-------------------------------------------------------------------
+
+
+The ID of this normal mode
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
 MoleculeNormalModeIntensity
 -------------------------------------------------------------------
 
 
-
+Normal mode intensity
 
 
 
@@ -4378,7 +5008,7 @@ Has **DataType** suffixes support
 
 
 
-MoleculeNuclearSpins
+MoleculeNormalModeMethod
 -------------------------------------------------------------------
 
 
@@ -4393,11 +5023,11 @@ MoleculeNuclearSpins
 
 
 
-MoleculeNuclearSpinsAtomArray
+MoleculeNormalModePointGroupSymmetry
 -------------------------------------------------------------------
 
 
-
+The symmetry species of this normal mode within the point group of the molecule in the specified electronic state
 
 
 
@@ -4408,7 +5038,7 @@ MoleculeNuclearSpinsAtomArray
 
 
 
-MoleculeNuclearSpinsBondArray
+MoleculeNormalModeRef
 -------------------------------------------------------------------
 
 
@@ -4427,7 +5057,7 @@ MoleculeOrdinaryStructuralFormula
 -------------------------------------------------------------------
 
 
-
+The ordinary structural formula, as it is usually written, for the molecule
 
 
 
@@ -4442,7 +5072,7 @@ MoleculeQNElecStateLabel
 -------------------------------------------------------------------
 
 
-
+A label identifying the molecule's electronic state, e.g. 'X', 'A', 'b'
 
 
 
@@ -4457,11 +5087,11 @@ MoleculeQNF
 -------------------------------------------------------------------
 
 
+The molecular state quantum number for total angular momentum including nuclear spin
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4472,11 +5102,11 @@ MoleculeQNF1
 -------------------------------------------------------------------
 
 
+The molecular state quantum number for angular momentum including hyperfine coupling with one nuclear spin, F1 = J + I1
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4487,7 +5117,7 @@ MoleculeQNF1nuclSpin
 -------------------------------------------------------------------
 
 
-
+Identifier for the nucleus coupling its spin to give F1: F1 = J + I1
 
 
 
@@ -4502,11 +5132,11 @@ MoleculeQNF2
 -------------------------------------------------------------------
 
 
+The molecular state quantum number for angular momentum including hyperfine coupling with the second of two nuclear spins: F2 = F1 + I2
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4517,7 +5147,7 @@ MoleculeQNF2nuclSpin
 -------------------------------------------------------------------
 
 
-
+Identifier for the second nucleus coupling its spin to give F2: F2 = F1 + I2
 
 
 
@@ -4532,11 +5162,11 @@ MoleculeQNFj
 -------------------------------------------------------------------
 
 
+The Fj quantum number, for some intermediate nuclear spin coupling: Fj = Fj-1 + Ij (j>1), or Fj = J + Ij (j=1)
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4547,11 +5177,11 @@ MoleculeQNFjj
 -------------------------------------------------------------------
 
 
+The integer j, identifying the order of this nuclear spin coupling where several nuclear spins couple: Fj = Fj-1 + Ij (j>1)
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4562,7 +5192,7 @@ MoleculeQNFjnuclSpin
 -------------------------------------------------------------------
 
 
-
+ID of the nuclear spin coupling to give quantum number Fj
 
 
 
@@ -4577,7 +5207,7 @@ MoleculeQNFnuclSpin
 -------------------------------------------------------------------
 
 
-
+ID of the nuclear spin coupling to give quantum number F, the total angular momentum (including nuclear spin).
 
 
 
@@ -4592,11 +5222,11 @@ MoleculeQNI
 -------------------------------------------------------------------
 
 
+The total nuclear spin quantum number for a coupled set of identical nuclear spins, I = I1 + I2 + ...
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4622,11 +5252,11 @@ MoleculeQNJ
 -------------------------------------------------------------------
 
 
+The molecular J quantum number for total angular momentum excluding nuclear spin
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4637,11 +5267,11 @@ MoleculeQNK
 -------------------------------------------------------------------
 
 
+K is the quantum number associated with the projection of the total angular momentum excluding nuclear spin, J, onto the molecular symmetry axis.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4652,11 +5282,11 @@ MoleculeQNKa
 -------------------------------------------------------------------
 
 
+Ka is the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4667,11 +5297,11 @@ MoleculeQNKc
 -------------------------------------------------------------------
 
 
+Kc is the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4682,11 +5312,11 @@ MoleculeQNLambda
 -------------------------------------------------------------------
 
 
+|Lambda| is the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4697,11 +5327,11 @@ MoleculeQNN
 -------------------------------------------------------------------
 
 
+N is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: J = N + S.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4712,11 +5342,11 @@ MoleculeQNOmega
 -------------------------------------------------------------------
 
 
+Omega is the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), J, onto the molecular axis.
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4727,11 +5357,11 @@ MoleculeQNS
 -------------------------------------------------------------------
 
 
+S is the quantum number associated with the total electronic spin angular momentum.
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4742,11 +5372,11 @@ MoleculeQNSigma
 -------------------------------------------------------------------
 
 
+Sigma is the quantum number associated with the magnitude of the projection of S onto the molecular axis.
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 
 **Constraints:** 
@@ -4757,7 +5387,7 @@ MoleculeQNSpinComponentLabel
 -------------------------------------------------------------------
 
 
-
+SpinComponentLabel is the positive integer identifying the spin-component label, Fx, where x=1,2,3,... in order of increasing energy for a given value of J - see Herzberg, Spectra of Diatomic Molecules, Van Nostrand, Princeton, N.J., 1950.
 
 
 
@@ -4772,7 +5402,7 @@ MoleculeQNasSym
 -------------------------------------------------------------------
 
 
-
+a/s-symmetry: the symmetry of the rovibronic wavefunction, 'a' or 's' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of identical nuclei
 
 
 
@@ -4787,7 +5417,7 @@ MoleculeQNelecInv
 -------------------------------------------------------------------
 
 
-
+elecInv is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system ('g' or 'u')
 
 
 
@@ -4799,6 +5429,36 @@ MoleculeQNelecInv
 
 
 MoleculeQNelecRefl
+-------------------------------------------------------------------
+
+
+The parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system), '+' or '-'
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeQNelecSym
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeQNelecSymGroup
 -------------------------------------------------------------------
 
 
@@ -4817,7 +5477,7 @@ MoleculeQNkronigParity
 -------------------------------------------------------------------
 
 
-
+kronigParity is the 'rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, 'e' or 'f'
 
 
 
@@ -4832,11 +5492,11 @@ MoleculeQNl
 -------------------------------------------------------------------
 
 
+The vibrational angular momentum quantum number, l
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4847,11 +5507,11 @@ MoleculeQNl2
 -------------------------------------------------------------------
 
 
+For linear triatomic molecules, the vibrational angular momentum quantum number associated with the nu2 bending vibration: |l2| = v2, v2-2, ..., 1 or 0
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4862,11 +5522,11 @@ MoleculeQNli
 -------------------------------------------------------------------
 
 
+The vibrational angular momentum quantum number, l_i, associated with a degenerate vibrational mode, nu_i: |li| = vi, vi-2, ..., 1 or 0
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4877,11 +5537,11 @@ MoleculeQNliMode
 -------------------------------------------------------------------
 
 
+An integer identifying the degenerate vibrational mode to which the li quantum number belongs
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4892,7 +5552,7 @@ MoleculeQNparity
 -------------------------------------------------------------------
 
 
-
+Total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the E* operation, '+' or '-'
 
 
 
@@ -4907,11 +5567,11 @@ MoleculeQNr
 -------------------------------------------------------------------
 
 
+r is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4922,7 +5582,7 @@ MoleculeQNrName
 -------------------------------------------------------------------
 
 
-
+A name, identifying the ranking label, r
 
 
 
@@ -4937,7 +5597,7 @@ MoleculeQNrotSym
 -------------------------------------------------------------------
 
 
-
+rotSym is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
 
 
 
@@ -4949,6 +5609,36 @@ MoleculeQNrotSym
 
 
 MoleculeQNrotSymGroup
+-------------------------------------------------------------------
+
+
+The symmetry group used in giving the rotational symmetry species label
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeQNrovibSym
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeQNrovibSymGroup
 -------------------------------------------------------------------
 
 
@@ -4967,11 +5657,11 @@ MoleculeQNv
 -------------------------------------------------------------------
 
 
+For diatomic molecules, the vibrational quantum number, v
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4982,11 +5672,11 @@ MoleculeQNv1
 -------------------------------------------------------------------
 
 
+The v1 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -4997,11 +5687,11 @@ MoleculeQNv2
 -------------------------------------------------------------------
 
 
+The v2 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -5012,11 +5702,11 @@ MoleculeQNv3
 -------------------------------------------------------------------
 
 
+The v3 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -5027,11 +5717,11 @@ MoleculeQNvi
 -------------------------------------------------------------------
 
 
+The vi vibrational quantum number for the ith normal mode
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -5042,11 +5732,11 @@ MoleculeQNviMode
 -------------------------------------------------------------------
 
 
+An integer identifying the vibrational normal mode for the vi quantum number
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 
 **Constraints:** 
@@ -5057,7 +5747,7 @@ MoleculeQNvibInv
 -------------------------------------------------------------------
 
 
-
+vibInv is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system. Only really necessary for molecules with a low barrier to such an inversion (for example, NH3), 's' or 'a'.
 
 
 
@@ -5072,7 +5762,7 @@ MoleculeQNvibRefl
 -------------------------------------------------------------------
 
 
-
+vibRefl is the parity of the vibrational wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system, '+' or '-'.
 
 
 
@@ -5087,7 +5777,7 @@ MoleculeQNvibSym
 -------------------------------------------------------------------
 
 
-
+Vibrational wavefunction symmetry species
 
 
 
@@ -5102,7 +5792,7 @@ MoleculeQNvibSymGroup
 -------------------------------------------------------------------
 
 
-
+The symmetry group used to specify the vibrational wavefunction symmetry species
 
 
 
@@ -5132,7 +5822,7 @@ MoleculeSpeciesID
 -------------------------------------------------------------------
 
 
-
+ID for the molecular species
 
 
 
@@ -5147,7 +5837,7 @@ MoleculeStableMolecularProperties
 -------------------------------------------------------------------
 
 
-
+Molecular properties such as molecular weight
 
 
 
@@ -5162,7 +5852,7 @@ MoleculeStateDescription
 -------------------------------------------------------------------
 
 
-
+A text description of this molecular state
 
 
 
@@ -5177,7 +5867,7 @@ MoleculeStateEnergy
 -------------------------------------------------------------------
 
 
-
+The energy of a molecular state
 
 **Units:** 1/cm
 
@@ -5194,7 +5884,97 @@ MoleculeStateEnergyOrigin
 -------------------------------------------------------------------
 
 
+A string identifying where the origin is taken for the energy of this molecular state
 
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateExpansionCoeff
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** floating-point number
+
+
+**Constraints:** 
+
+
+
+MoleculeStateExpansionCoeffStateRef
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateExpansionComments
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateExpansionMethodRef
+-------------------------------------------------------------------
+
+
+
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateExpansionSourceRef
+-------------------------------------------------------------------
+
+
+One or more source references - these entries should match the sourceID attributes of the Sources.
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateFullyAssigned
+-------------------------------------------------------------------
+
+
+A boolean value, asserting that the state is fully assigned (true) or not (false)
 
 
 
@@ -5209,7 +5989,7 @@ MoleculeStateID
 -------------------------------------------------------------------
 
 
-
+A string, of the form 'Sxxx' identifying this molecular state
 
 
 
@@ -5256,7 +6036,7 @@ MoleculeStateNuclearSpinIsomer
 -------------------------------------------------------------------
 
 
-Nuclear spin isomer (symetry) of a molecular state.
+Nuclear spin isomer (symmetry) of a molecular state. Can take values like 'ortho','para','A','E','meta', etc.
 
 
 
@@ -5499,6 +6279,21 @@ MoleculeStateParameters
 
 
 Additional parameters of molecular state
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+MoleculeStateParity
+-------------------------------------------------------------------
+
+
+
 
 
 
@@ -5800,55 +6595,6 @@ Has **DataType** suffixes support
 
 
 
-NormalModeHarmonicFrequency
--------------------------------------------------------------------
-
-
-The harmonic frequency of a normal mode
-
-**Units:** 1/cm
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** >0
-
-
-
-NormalModeIntensity
--------------------------------------------------------------------
-
-
-Intensity of a normal mode
-
-**Units:** km/mol
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** >0
-
-
-
-NormalModeSymmetry
--------------------------------------------------------------------
-
-
-The character of the irreducible representation for this vibrational normal mode in the molecular point group
-
-
-
-**Type:** string
-
-
-**Constraints:** 
-
-
-
 ParticleCharge
 -------------------------------------------------------------------
 
@@ -5986,45 +6732,11 @@ ParticleSpin
 
 
 
-RadTransBandCentre
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** 
-
-
-
-RadTransBandWidth
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-Has **DataType** suffixes support
-
-
-**Constraints:** 
-
-
-
 RadTransBroadeningDopplerComment
 -------------------------------------------------------------------
 
 
-
+Comments relating to this Doppler broadening process
 
 
 
@@ -6039,7 +6751,7 @@ RadTransBroadeningDopplerEnvironment
 -------------------------------------------------------------------
 
 
-
+A reference to an Environment ID, describing the environment (in particular, temperature) for this Doppler broadening process
 
 
 
@@ -6054,7 +6766,7 @@ RadTransBroadeningDopplerLineshapeName
 -------------------------------------------------------------------
 
 
-
+The name of the lineshape resulting from this Doppler broadening process ('gaussian', most likely).
 
 
 
@@ -6069,7 +6781,7 @@ RadTransBroadeningDopplerLineshapeParameter
 -------------------------------------------------------------------
 
 
-
+A parameter to the Doppler lineshape
 
 
 
@@ -6086,7 +6798,7 @@ RadTransBroadeningDopplerLineshapeParameterName
 -------------------------------------------------------------------
 
 
-
+The name of a parameter for the Doppler lineshape.
 
 
 
@@ -6101,7 +6813,7 @@ RadTransBroadeningDopplerMethod
 -------------------------------------------------------------------
 
 
-
+A reference to the method by which this Doppler broadening process is determined.
 
 
 
@@ -6116,7 +6828,7 @@ RadTransBroadeningDopplerRef
 -------------------------------------------------------------------
 
 
-
+A source reference for Doppler broadening process.
 
 
 
@@ -6131,7 +6843,7 @@ RadTransBroadeningInstrumentComment
 -------------------------------------------------------------------
 
 
-
+Comments relating to instrumental line broadening
 
 
 
@@ -6146,7 +6858,7 @@ RadTransBroadeningInstrumentEnvironment
 -------------------------------------------------------------------
 
 
-
+The ID of an Environment element, describing the environment of the intstrumental broadening process
 
 
 
@@ -6161,7 +6873,7 @@ RadTransBroadeningInstrumentLineshapeName
 -------------------------------------------------------------------
 
 
-
+Instrument broadening lineshape name
 
 
 
@@ -6176,7 +6888,7 @@ RadTransBroadeningInstrumentLineshapeParameter
 -------------------------------------------------------------------
 
 
-
+An instrument broadening lineshape parameter
 
 
 
@@ -6193,7 +6905,7 @@ RadTransBroadeningInstrumentLineshapeParameterName
 -------------------------------------------------------------------
 
 
-
+The name of a parameter used in the description of an instrument-broadening lineshape.
 
 
 
@@ -6208,7 +6920,7 @@ RadTransBroadeningInstrumentMethod
 -------------------------------------------------------------------
 
 
-
+A reference to the Method by which the instrument-broadening process is determined.
 
 
 
@@ -6223,7 +6935,7 @@ RadTransBroadeningInstrumentRef
 -------------------------------------------------------------------
 
 
-
+A Source reference for the instrument-broadening process.
 
 
 
@@ -6238,7 +6950,7 @@ RadTransBroadeningNaturalComment
 -------------------------------------------------------------------
 
 
-
+Comments relating to this natural (radiative) broadening process
 
 
 
@@ -6253,7 +6965,7 @@ RadTransBroadeningNaturalEnvironment
 -------------------------------------------------------------------
 
 
-
+The ID of an Environment element, describing the environment of this natural broadening process
 
 
 
@@ -6268,7 +6980,7 @@ RadTransBroadeningNaturalLineshapeName
 -------------------------------------------------------------------
 
 
-
+The name of the line shape used to describe this natural line broadening
 
 
 
@@ -6315,7 +7027,7 @@ RadTransBroadeningNaturalMethod
 -------------------------------------------------------------------
 
 
-
+A reference to the Method by which this natural broadening line shape was determined
 
 
 
@@ -6330,7 +7042,7 @@ RadTransBroadeningNaturalRef
 -------------------------------------------------------------------
 
 
-
+A Source reference for this natural broadening line shape
 
 
 
@@ -6345,7 +7057,7 @@ RadTransBroadeningPressureComment
 -------------------------------------------------------------------
 
 
-
+Comments relating to this pressure broadening process
 
 
 
@@ -6360,7 +7072,7 @@ RadTransBroadeningPressureEnvironment
 -------------------------------------------------------------------
 
 
-
+A reference to the Environment element describing the environment (temperature, pressure, composition) of this pressure broadening process
 
 
 
@@ -6375,7 +7087,7 @@ RadTransBroadeningPressureLineshapeName
 -------------------------------------------------------------------
 
 
-
+The name of the line shape used to describe the line broadening by pressure-broadening.
 
 
 
@@ -6390,7 +7102,7 @@ RadTransBroadeningPressureLineshapeParameter
 -------------------------------------------------------------------
 
 
-
+A parameter to the pressure-broadened line shape.
 
 
 
@@ -6407,7 +7119,7 @@ RadTransBroadeningPressureLineshapeParameterName
 -------------------------------------------------------------------
 
 
-
+The name of this parameter to the pressure-broadened line shape.
 
 
 
@@ -6422,7 +7134,7 @@ RadTransBroadeningPressureMethod
 -------------------------------------------------------------------
 
 
-
+A reference to the Method by which this pressure-broadened line shape was determined.
 
 
 
@@ -6437,7 +7149,7 @@ RadTransBroadeningPressureRef
 -------------------------------------------------------------------
 
 
-
+A Source reference for this pressure-broadened line shape.
 
 
 
@@ -6484,7 +7196,7 @@ RadTransEnergy
 -------------------------------------------------------------------
 
 
-
+The energy of a radiative transition
 
 
 
@@ -6501,9 +7213,9 @@ RadTransFrequency
 -------------------------------------------------------------------
 
 
+Radiative transition frequency.
 
-
-
+**Units:** MHz
 
 **Type:** floating-point number
 
@@ -6548,7 +7260,7 @@ RadTransLowerStateRef
 -------------------------------------------------------------------
 
 
-
+Reference to the lower State of this radiative transition.
 
 
 
@@ -6710,7 +7422,7 @@ RadTransShifting
 -------------------------------------------------------------------
 
 
-
+The pressure-shifting process for a radiative transition.
 
 
 
@@ -6725,7 +7437,7 @@ RadTransShiftingComment
 -------------------------------------------------------------------
 
 
-
+Comments relating to this pressure-shifting process.
 
 
 
@@ -6740,7 +7452,7 @@ RadTransShiftingEnv
 -------------------------------------------------------------------
 
 
-
+A reference to an Environment element giving the environment (pressure, temperature, composition) in which this pressure-shifting process occurs.
 
 
 
@@ -6755,7 +7467,7 @@ RadTransShiftingMethod
 -------------------------------------------------------------------
 
 
-
+Reference to the Method by which this pressure-shifting process was determined.
 
 
 
@@ -6939,7 +7651,7 @@ RadTransShiftingRef
 -------------------------------------------------------------------
 
 
-
+Reference to a Source for this pressure-shifting process.
 
 
 
@@ -6955,6 +7667,21 @@ RadTransSpeciesRef
 
 
 
+
+
+
+**Type:** string
+
+
+**Constraints:** 
+
+
+
+RadTransTransitionType
+-------------------------------------------------------------------
+
+
+A string, 'excitation' or 'deexcitation', determining whether a radiative transition is given in absorption or emission respectively
 
 
 
@@ -6984,7 +7711,7 @@ RadTransWavelength
 -------------------------------------------------------------------
 
 
-
+Radiative transition vacuum wavelength
 
 **Units:** A
 
@@ -7001,7 +7728,7 @@ RadTransWavenumber
 -------------------------------------------------------------------
 
 
-
+Radiative transition wavenumber.
 
 
 

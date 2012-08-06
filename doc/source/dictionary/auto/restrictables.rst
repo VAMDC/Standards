@@ -255,7 +255,7 @@ EnvironmentSpeciesConcentration
 -------------------------------------------------------------------
 
 
-
+The concentration of a species contributing to an Environment
 
 
 
@@ -269,7 +269,7 @@ EnvironmentSpeciesMoleFraction
 -------------------------------------------------------------------
 
 
-
+The mole fraction of a species contributing to an Environment
 
 
 
@@ -283,7 +283,7 @@ EnvironmentSpeciesPartialPressure
 -------------------------------------------------------------------
 
 
-
+The partial pressure of a species contributing to an Environment
 
 
 
@@ -311,7 +311,7 @@ EnvironmentTotalNumberDensity
 -------------------------------------------------------------------
 
 
-
+The total number density of particles comprising an Environment
 
 **Units:** 1/cm3
 
@@ -339,7 +339,7 @@ FunctionID
 -------------------------------------------------------------------
 
 
-
+A unique identifier for this function, of the form 'Fxxx'
 
 
 
@@ -353,7 +353,7 @@ FunctionName
 -------------------------------------------------------------------
 
 
-
+The name of this function
 
 
 
@@ -452,7 +452,7 @@ MoleculeNormalModeHarmonicFrequency
 -------------------------------------------------------------------
 
 
-
+The harmonic frequency of a normal mode.
 
 **Units:** MHz
 
@@ -480,11 +480,11 @@ MoleculeQNJ
 -------------------------------------------------------------------
 
 
+The molecular J quantum number for total angular momentum excluding nuclear spin
 
 
 
-
-**Type:** string
+**Type:** floating-point number
 
 **Constraints:** 
 
@@ -494,11 +494,11 @@ MoleculeQNK
 -------------------------------------------------------------------
 
 
+K is the quantum number associated with the projection of the total angular momentum excluding nuclear spin, J, onto the molecular symmetry axis.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -508,11 +508,11 @@ MoleculeQNKa
 -------------------------------------------------------------------
 
 
+Ka is the rotational quantum label of an asymmetric top molecule, correlating to K in the prolate symmetric top limit.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -522,11 +522,11 @@ MoleculeQNKc
 -------------------------------------------------------------------
 
 
+Kc is the rotational quantum label of an asymmetric top molecule, correlating to K in the oblate symmetric top limit.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -536,11 +536,11 @@ MoleculeQNv
 -------------------------------------------------------------------
 
 
+For diatomic molecules, the vibrational quantum number, v
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -550,11 +550,11 @@ MoleculeQNv1
 -------------------------------------------------------------------
 
 
+The v1 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -564,11 +564,11 @@ MoleculeQNv2
 -------------------------------------------------------------------
 
 
+The v2 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -578,11 +578,11 @@ MoleculeQNv3
 -------------------------------------------------------------------
 
 
+The v3 vibrational quantum number.
 
 
 
-
-**Type:** string
+**Type:** integer number
 
 **Constraints:** 
 
@@ -592,7 +592,7 @@ MoleculeStateNuclearSpinIsomer
 -------------------------------------------------------------------
 
 
-Nuclear spin isomer (symetry) of a molecular state.
+Nuclear spin isomer (symmetry) of a molecular state. Can take values like 'ortho','para','A','E','meta', etc.
 
 
 
@@ -658,20 +658,6 @@ NonRadTranWidth
 
 
 
-NormalModeSymmetry
--------------------------------------------------------------------
-
-
-The character of the irreducible representation for this vibrational normal mode in the molecular point group
-
-
-
-**Type:** string
-
-**Constraints:** 
-
-
-
 ParticleName
 -------------------------------------------------------------------
 
@@ -681,48 +667,6 @@ Particle name, one of photon, electron, muon, positron, neutron, alpha, cosmic
 
 
 **Type:** string
-
-**Constraints:** 
-
-
-
-Pressure
--------------------------------------------------------------------
-
-
-Pressure as a Restrictable alone. Each node can decide itself how to interpret and treat this, if it makes sense to its data.
-
-**Units:** Pa
-
-**Type:** floating-point number
-
-**Constraints:** >=0
-
-
-
-RadTransBandCentre
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
-
-**Constraints:** 
-
-
-
-RadTransBandWidth
--------------------------------------------------------------------
-
-
-
-
-
-
-**Type:** floating-point number
 
 **Constraints:** 
 
@@ -802,7 +746,7 @@ RadTransEnergy
 -------------------------------------------------------------------
 
 
-
+The energy of a radiative transition
 
 
 
@@ -816,9 +760,9 @@ RadTransFrequency
 -------------------------------------------------------------------
 
 
+Radiative transition frequency.
 
-
-
+**Units:** MHz
 
 **Type:** floating-point number
 
@@ -914,7 +858,7 @@ RadTransWavelength
 -------------------------------------------------------------------
 
 
-
+Radiative transition vacuum wavelength
 
 **Units:** A
 
@@ -928,7 +872,7 @@ RadTransWavenumber
 -------------------------------------------------------------------
 
 
-
+Radiative transition wavenumber.
 
 
 
@@ -963,6 +907,20 @@ Publication Year
 **Type:** integer number
 
 **Constraints:** >0
+
+
+
+SpeciesID
+-------------------------------------------------------------------
+
+
+Node-specific species identifier, last measure to uniquely identify species if any other identifiers collide
+
+
+
+**Type:** string
+
+**Constraints:** 
 
 
 
@@ -1008,15 +966,15 @@ StateStatisticalWeight
 
 
 
-Temperature
+VAMDCSpeciesID
 -------------------------------------------------------------------
 
 
-Temperature as a Restrictable alone. Each node can decide itself how to interpret and treat this, if it makes sense to its data.
+Internal VAMDC species identifier, inchikey plus suffix, used in case inchikeys collide for molecules.
 
-**Units:** K
 
-**Type:** floating-point number
 
-**Constraints:** >0
+**Type:** string
+
+**Constraints:** 
 
