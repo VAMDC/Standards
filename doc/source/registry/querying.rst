@@ -8,13 +8,13 @@ Querying
 Querying requires software to conform to the IVOA registry interface specification: http://www.ivoa.net/Documents/RegistryInterface/ .
 There are four main query methods:
 
-* Xquery - not supported in all IVOA registries, but VAMDC does support Xquery. It is the most advanced way of querying on the registry. But requires knowledge of all the schema structure to construct certain XPATH nodes. Software such as Astrogrid VODesktop gives you a simple query interface and performs the more complex Xquery behind the scenes.
+* Xquery - not supported in all IVOA registries, but VAMDC does support Xquery. It is the most advanced way of querying on the registry. But requires knowledge of all the registration schema structure to construct certain XPATH nodes. Software such as Astrogrid VODesktop gives you a simple query interface and performs the more complex Xquery behind the scenes.
 
 * ADQL - also an advanced way of querying the registry. It is an SQL form over XML. It does not have all the functionality as Xquery such as ADQL can only return the full resource from the registry, but is standard and all IVOA registries conform to ADQL. Software that wants to be certain to work for all IVOA registries tend to use this method such as TopCat.
 
 * KeywordSearch - generic keyword search mechanism.  
 
-* GetResource - gets one particular resource entry from the registry. 
+* GetResource - gets one particular resource entry from the registry, knowing that resource IVOA identifier. 
 
 See :ref:`queryingForResources` for the available libraries and help querying of the registry.
 

@@ -1,5 +1,5 @@
 .. _queryLanguage-index:
-.. |queryLanguageVersion| replace:: 11.12
+.. |queryLanguageVersion| replace:: 12.07
 
 Query language  [v |queryLanguageVersion|] [r |release|]
 =========================================================

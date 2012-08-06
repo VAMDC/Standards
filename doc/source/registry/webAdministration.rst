@@ -9,9 +9,11 @@ The End User does not have the capability to access registry via this Web interf
 Location, home page and menus
 =================================
 
-Production registry: http://registry.vamdc.eu/vamdc_registry
+Production registry: http://registry.vamdc.eu/registry-12.07/
 
-Development registry: http://casx019-zone1.ast.cam.ac.uk/registry
+Registry of legacy system: http://registry.vamdc.org/registry-11.12/
+
+Development registry: http://casx019-zone1.ast.cam.ac.uk/registry/
 
 Welcome page
 -----------------

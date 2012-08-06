@@ -1,5 +1,5 @@
 .. _vamdcxsamsLanguage-index:
-.. |vamdcxsamsLanguage-version| replace:: 0.3
+.. |vamdcxsamsLanguage-version| replace:: 1.0
 
 ==============================================================================================
 VAMDC-XSAMS reference guide  [v |vamdcxsamsLanguage-version|] [r |release|]

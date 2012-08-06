@@ -1,5 +1,5 @@
 
-	CollisionTabulatedDataYAccuracyMethod
+CollisionTabulatedDataYAccuracyMethod
 -------------------------------------------------------------------
 
 
@@ -5312,7 +5312,7 @@ MoleculeQNLambda
 -------------------------------------------------------------------
 
 
-|Lambda| is the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis.
+Lambda is the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, L, onto the molecular axis.
 
 
 
@@ -5507,7 +5507,7 @@ MoleculeQNl2
 -------------------------------------------------------------------
 
 
-For linear triatomic molecules, the vibrational angular momentum quantum number associated with the nu2 bending vibration: |l2| = v2, v2-2, ..., 1 or 0
+For linear triatomic molecules, the vibrational angular momentum quantum number associated with the nu2 bending vibration: l2 = v2, v2-2, ..., 1 or 0
 
 
 
@@ -5522,7 +5522,7 @@ MoleculeQNli
 -------------------------------------------------------------------
 
 
-The vibrational angular momentum quantum number, l_i, associated with a degenerate vibrational mode, nu_i: |li| = vi, vi-2, ..., 1 or 0
+The vibrational angular momentum quantum number, l_i, associated with a degenerate vibrational mode, nu_i: li = vi, vi-2, ..., 1 or 0
 
 
 

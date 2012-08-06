@@ -102,10 +102,26 @@ Routines are:
 * String getTapURL(String ivoaid) - get access URL for specific service
 * Collection getRestrictables(String ivoaID) - get list of supported restrictables for specific service
 
+
+Lightweight VAMDC Registry Client
+===================================
+
+Another implementation of VAMDC registry client library exists, used by VAMDC Portal and TAPValidator tool.
+
+This client has some specific features:
+
+*	Higher-level client, instantly provides VAMDC-TAP and XSAMS Processor service access URLs.
+*	Uses JAXB mappings for passing registration information.
+*	Does one registry lookup at instantiation time, then uses cached results.
+*	Does not require any legacy Astrogrid library code, smaller dependencies footprint.
+
+It will be available for download from VAMDC official libraries section later on.
+
 VAMDC web-portal
 ================
 
-If you are only interested in VAMDC-TAP data-services, then you can find them in the registry using the VAMDC web-portal.
+If you are only interested in getting data from VAMDC-TAP data-services, then you can access them through 
+VAMDC web-portal, which handles registry lookups by itself.
 
 Astrogrid VODesktop
 =======================

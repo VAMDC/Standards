@@ -128,8 +128,8 @@ The following information must be included in VAMDC-TAP capability registration 
 		- must result in valid XSAMS documents provided as the response
 		
 		- must result in documents that return a portion of all the specific database content,
-		i.e. all the elements that may be returned in documents for any query should be
-		returned in at least one document returned as a response to sample query.
+		  i.e. all the elements that may be returned in documents for any query should be
+		  returned in at least one document returned as a response to sample query.
 		
 *	A set of *returnable* keywords, indicating the major elements filled in XSAMS.
 	If node software is not using *returnable* keywords internally, only a brief set of most important keywords that are specific to this database may be returned.

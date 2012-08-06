@@ -120,7 +120,9 @@ For applications conforming to the current standard, there must be a capability 
 
 Capabilities must contain at least the following information:
 
-* URL for root resource
+* Interface URL for the form
+
+* Interface URL for the primary result
 
 * Version of this standard supported.
 
@@ -150,7 +152,7 @@ The following code shows a sample capabilities-document, with the namespaces and
         <accessURL>http://some.server/some/app/service</accessURL>
         <resultType>text/html</resultType>
       </interface>
-      <versionOfStandards>11.12</versionOfStandards>
+      <versionOfStandards>12.07</versionOfStandards>
       <versionOfSoftware>whatever</versionOfSoftware>
       <numberOfInputs>1-100</numberOfInputs>
     </capability>

@@ -1,5 +1,5 @@
 .. _dataConsumerProtocol-index:
-.. |dataConsumerProtocol-version| replace:: 11.12
+.. |dataConsumerProtocol-version| replace:: 12.07
 
 ==============================================================================================
 Data consumer protocol [v |dataConsumerProtocol-version|] [r |release|]

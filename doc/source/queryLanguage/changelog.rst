@@ -31,3 +31,11 @@ VSS2 was formally defined. Its specification document is independent of that for
 The prefices on restrictables were changed. "Upper" and "lower" replaced "initial" and "final".
 
 In v11.12 of the system, VAMDC nodes are expected to accept either VSS1 or VSS2.
+
+Changes between v11.12 and v12.07
+-------------------------------------
+
+VSS1 query language becomes obsolete, all nodes must support VSS2 queries now.
+
+VSS2 specification stays unchanged. 
+More keywords for restrictables and requestables are defined in VAMDC dictionary document

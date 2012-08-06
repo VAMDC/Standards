@@ -1,5 +1,5 @@
 .. _registry-index:
-.. |reigistry-version| replace:: 11.12
+.. |reigistry-version| replace:: 12.07
 
 ==============================================================================================
 Registry user's guide [v |reigistry-version|] [r |release|]

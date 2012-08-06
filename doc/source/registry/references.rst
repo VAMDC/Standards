@@ -20,8 +20,8 @@ References
 
 * ADQL one of the query languages of the registry interface: http://www.ivoa.net/xml/ADQL/ADQL-v1.0.xsd
 
-* VAMDC registry browser: http://131.111.70.87:8080/registrybrowser/registryViewer.seam 
+* Production registry: http://registry.vamdc.org/registry-12.07/
 
-* Production registry: http://registry.vamdc.eu/vamdc_registry 
+* Legacy production registry: http://registry.vamdc.org/registry-11.12/
 
-* Development registry: http://casx019-zone1.ast.cam.ac.uk 
+* Development registry: http://casx019-zone1.ast.cam.ac.uk/registry/ 

@@ -1,5 +1,5 @@
 .. _dictionary-index:
-.. |dictionary-version| replace:: 11.12
+.. |dictionary-version| replace:: 12.07
 
 ==============================================================================================
 Dictionaries  [v |dictionary-version|] [r |release|]

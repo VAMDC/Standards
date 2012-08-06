@@ -1,5 +1,5 @@
 .. _dataAccessProtocol-index:
-.. |dataAccessProtocol-version| replace:: 11.12
+.. |dataAccessProtocol-version| replace:: 12.07
 
 ==============================================================================================
 Data access protocol [v |dataAccessProtocol-version|] [r |release|]

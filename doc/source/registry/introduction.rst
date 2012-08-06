@@ -28,10 +28,10 @@ Identifier must be in the following form::
 
 	ivo://{authorityid}/{resourcekey}
 
-Registry manages authoritIDs. Any other registry cannot duplicate an authorityID, it is owned by one registry only.  For the purposes of VAMDC only one authority id ``vamdc`` is managed at present.
+Registry manages authorityIDs. Any other registry cannot duplicate an authorityID, it is owned by one registry only.  For the purposes of VAMDC only one authority id ``vamdc`` is managed at present.
 ResourceKey is a localised name and is unique in respect of the authorityID.
 
-Though an identifier can be of any form, it is widely accepted that authorityId is a domain name or a subsection of an institute, such as ``mssl.ucl.ac.uk`` or ``climatephysics.mssl.ucl.ac.uk``.  Currently the assumption has been made that VAMDC only needs one main registry and will use the authority ID ``vamdc``. A ResourceKey is typically a name with reference to the registered resource.
+Though an identifier can be of any form, it is widely accepted that authorityID is a domain name or a subsection of an institute, such as ``mssl.ucl.ac.uk`` or ``climatephysics.mssl.ucl.ac.uk``.  Currently the assumption has been made that VAMDC only needs one main registry and will use the authority ID ``vamdc``. A ResourceKey is typically a name with reference to the registered resource.
 
 More information about registry identifiers can be obtained below
  http://www.ivoa.net/Documents/REC/Identifiers/Identifiers-20070302.html
@@ -41,11 +41,11 @@ Virtual Observatory Support Interface (VOSI)
 
 The Support interface is required by all IVOA compliant services and defines common interfaces for its services. The registry uses common support interfaces to help populate resources in the registry.
 
-* **Capability** - All services define capability metadata, which comprises of XML formatted metadata that describes a particular capability and location of this particular service. The capability also describes what standards this service conforms to. Certain capabilities will be to other VOSI interfaces or the VAMDC-XSAMS location along with what standard interface it supports for VAMDC-XSAMS. Registry uses this VOSI location of the capability metadata to property fill out the resource in the registry. If other VOSI locations are present such as Table and Application metadata it additionally harvests that data.
+* **Capability** - All services define capability metadata, which comprises of XML formatted metadata that describes a particular capability and location of this particular service. The capability also describes what standards this service conforms to. Certain capabilities will be to other VOSI interfaces or the VAMDC-TAP service location along with what standard interface it supports for VAMDC-TAP. Registry uses this VOSI location of the capability metadata to property fill out the resource in the registry. If other VOSI locations are present such as Table and Application metadata it additionally harvests that data.
 
-* **Table Metadata** - Another VOSI interface in XML form to describe table metadata for Catalogue services.
+* **Table Metadata** - Another VOSI interface in XML form to describe table metadata for Catalogue services. Not used within VAMDC
 
-* **Application Metadata** - Not part of VOSI, an extension created to have a piece of XML VOSI for application description.
+* **Application Metadata** - Not part of VOSI, an extension created to have a piece of XML VOSI for application description. Not used within VAMDC
 
-* **Availability** - Not used by the registry, but is provided as a Support interface to make retrieve information of uptime and other availability information concerning the service.
+* **Availability** - Not used by the registry, but is provided as a Support interface to make retrieve information of uptime and other availability information concerning the service. Is used for service monitoring purposes.
 
