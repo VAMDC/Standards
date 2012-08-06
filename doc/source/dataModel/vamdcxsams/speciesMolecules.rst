@@ -274,7 +274,8 @@ Nuclear spin isomer
 	*	mandatory attribute **lowestEnergyStateRef** of :ref:`statereftype` to give a reference 
 		to the state of the same symmetry type, having the lowest energy value.
 
-	*	optional **Name** element that may contain one of *para*, *ortho*, *meta*, *A* or *E* values.
+	*	mandatory **Name** string element that should contain a conventional label of the nuclear spin isomer,
+		like *para*, *ortho*, *meta*, *A* or *E*.
 	
 	*	optional **LowestRoVibSym** element, providing the symmetry species of the rovibronic
 		wavefunction of the lowest state of the nuclear spin isomer, in turn having an attribute
