@@ -222,16 +222,16 @@ HTTP Code	meaning             	Content type				Response body
 		but no matching 
 		data found
             
-400 		bad request with	application/x-votable+xml	votable with error message
-		malformed query 
+400 		bad request with	unspecified, may be		unspecified, may be a
+		malformed query 	application/x-votable+xml	votable with error message
 		string or missing 
 		restrictable 
             
-404		not used, will be	unspecified, may be		unspecified, may be the
+404		not used, will be	unspecified, may be		unspecified, may be a
 		encountered if the	application/x-votable+xml	votable with error message
 		endpoint is wrong 
             
-500		internal crash		unspecified, may be		unspecified, may be the
+500		internal crash		unspecified, may be		unspecified, may be a
 					application/x-votable+xml	votable with error message
 ==========	====================	=========================	====================
 
