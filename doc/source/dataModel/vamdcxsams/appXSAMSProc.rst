@@ -129,17 +129,17 @@ States class involved in process
 ======  =======================         =====================================================================================
 Code     Name                               Description
 ======  =======================         =====================================================================================
-rota    rotational process              characterizes processes involving transition between rotational states
-vibr    vibrational process             characterizes processes involving transition between vibrational states
-rvib    ro-vibrational process          characterizes processes involving transition between ro-vibrational  states
-hype    hyperfine process               characterizes processes involving transition between hyperfine states
-hyp1	hyperfine 1 process		characterizes processes involving transition between hyperfine states
+rota    Rotational process              Characterizes processes involving transition between rotational states
+vibr    Vibrational process             Characterizes processes involving transition between vibrational states
+rvib    Ro-Vibrational process          Characterizes processes involving transition between ro-vibrational states
+hype    Hyperfine process               Characterizes processes involving transition between hyperfine states
+hyp1	Hyperfine 1 process		Characterizes processes involving transition between hyperfine states
 					when 1 nuclear spin coupling is resolved
-hypN	hyperfine N process		characterizes processes involving transition between hyperfine states
+hypN	Hyperfine N process		Characterizes processes involving transition between hyperfine states
 					when N nuclear spin couplings is resolved (here N is a digit in range 1-9)
-fine    fine process                    characterizes processes involving transition between fine states
-tors    torsional process               characterizes processes involving transition between torsional states
-rtor    ro-torsional process            characterizes processes involving transition between ro-torsional states
+fine    Fine process                    Characterizes processes involving transition between fine states
+tors    Torsional process               Characterizes processes involving transition between torsional states
+rtor    Ro-Torsional process            Characterizes processes involving transition between ro-torsional states
 
 ======  =======================         =====================================================================================
 
