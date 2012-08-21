@@ -189,6 +189,11 @@ MolecularState
 	
 	*	**fullyAssigned** optional boolean attribute, "true" defines that the state is fully described 
 		by a set of good quantum numbers.
+		
+	*	**auxillary** optional boolean attribute, that defaults to "false".
+		This attribute should be set to true if and only if a state was added to be referenced
+		as *energyOrigin* of **StateEnergy** or *lowestEnergyStateRef* of :ref:`NuclearSpinIsomer`
+		and does not actually match the conditions of a query that produced the document.
 
 	*	optional **Description** string element, where arbitrary name of state can be given.
 

@@ -8,12 +8,13 @@ For a complete changelog, describing the difference between IAEA XSAMS and first
 a separate Changelog document [VAMDC-XSAMS-LOG]_
 
 Changes between VAMDC-XSAMS 0.3 and 1.0
+--------------------------------------------
 
         #.      Added extra :ref:`XSAMSProcessCodes` suggested by MLD
         
         #.      Move process codes to typesAttributes.xsd
         
-        #.      Added ProcessClass element to :ref:`radiative` transitions
+        #.      Added **ProcessClass** element to :ref:`radiative` transitions
         
         #.      :ref:`BasisStates` are now given once at the root of the Molecule element and referenced in StateExpansion, 
                 which gives the coefficients only.
@@ -26,16 +27,19 @@ Changes between VAMDC-XSAMS 0.3 and 1.0
         
 	#.	fixed bug in J for open-shell cases lpos and ltos, which should be ctypes:AMType
 	
-	#.      change DataDescription element name into **Description** in :ref:`dataSeriesType`
+	#.      change **DataDescription** element name into **Description** in :ref:`dataSeriesType`
 	
 	#.	:ref:`Particle` name attribute is now mandatory
 	
 	#.	Implemented vacuum flag, environment reference, 
 	        airtovacuum conversion factor for transition **Wavelength** element in :ref:`EnergyWavelength`
 	
-	#.	Added BranchingRatio element to :ref:`collision`
+	#.	Added **BranchingRatio** element to :ref:`collision`
 	
-	#.	Use stateRef for energyOrigin attribute of StateEnergy in :ref:`MolecularStateCharacterisation`
+	#.	Use *stateRef* for **energyOrigin** attribute of StateEnergy in :ref:`MolecularStateCharacterisation`.
+
+	#.	Added attribute **auxillary** to :ref:`MolecularState` to indicate states that were included 
+		only to be referenced as *energyOrigin* or *lowestEnergyStateRef*.
 	
 	#.      Added **pressure-neutral** and **pressure-charged** :ref:`broadening` names
 	
