@@ -2,7 +2,7 @@
 .. |caseByCase-reference-version| replace:: 11.05
 
 ==============================================================================================
-Case-By-Case reference guide  [v |caseByCase-reference-version|] [r |release|]
+Case-By-Case reference guide [v |caseByCase-reference-version|] [r |release|] **OBSOLETE**
 ==============================================================================================
 
 .. toctree::
