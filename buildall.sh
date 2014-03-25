@@ -5,6 +5,8 @@ make clean html
 cd build/html
 tar -cjf ../../../html.tbz2 ./
 
+cd ../../../
+
 for pdfdir in pdf_*
 do
 	cd $pdfdir
