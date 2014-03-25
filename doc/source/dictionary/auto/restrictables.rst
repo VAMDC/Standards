@@ -592,13 +592,13 @@ MoleculeStateNuclearSpinIsomer
 -------------------------------------------------------------------
 
 
-Nuclear spin isomer (symmetry) of a molecular state. Can take values like 'ortho','para','A','E','meta', etc.
+Nuclear spin isomer (symmetry) of a molecular state. Can take values like ‘ortho’,’para’,’A’,’E’,’meta’, etc.
 
 
 
 **Type:** string
 
-**Constraints:** (ortho|para|A|E|none)
+**Constraints:** 
 
 
 
@@ -893,6 +893,20 @@ Type of publication, e.g. journal, book etc.
 **Type:** string
 
 **Constraints:** Journal | Book | Proceedings | On-line
+
+
+
+SourceDOI
+-------------------------------------------------------------------
+
+
+Digital Object Identifier of bibliography source
+
+
+
+**Type:** string
+
+**Constraints:** 
 
 
 
