@@ -15,6 +15,7 @@ To build the documentation in PDF format:
 *	If you wish to rebuild individual pdf documents, do the following:
 
 	$ cd pdf_xxx
+
 	$ make clean latexpdf
 
 	The resulting PDF document may be foun in the pdf_xxx/build/latex/ folder.
