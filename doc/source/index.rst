@@ -52,15 +52,13 @@ Data model
 .. toctree::
    :maxdepth: 1
 
-   dataModel/vamdcxsams/index
-   dataModel/changelog/index
-   dataModel/cases/index
-   
-* VAMDC-XSAMS schema files are available for download below.
+VAMDC e-science infrastructure uses a data model that is serialized in a XML schema called VAMDC-XSAMS schema. The links point to the latest release of the VAMDC-XSAMS schema (though the previous releases are left below for history)
 
-* VAMDC-XSAMS schema documentation can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-1.0>`_ in the browser or downloaded from below.
-
-* Case-By-Case schema documentation can be `viewed <http://www.vamdc.eu/documents/cbc-1.0>`_ in the browser or downloaded from below.
+* The VAMDC-XSAMS schema files can be downloaded below `v1.0 <http://www.vamdc.org/downloads/vamdc-xsams-v1.0.tar.bz2>`_
+* The VAMDC-XSAMS general reference guide can be :ref:`viewed <vamdcxsamsLanguage-index>` and can be `downloaded <http://www.vamdc.org/documents/vamdc-xsams-guide_v12.07.pdf>`_
+* The VAMDC-XSAMS change log to the reference guide is included in the PDF reference guide and is available on line :ref:`here <dataModel-changelog-index>`
+* The automatically generated documentation of the schema can be `viewed <http://www.vamdc.eu/documents/vamdc-xsams-doc-1.0>`_ or `downloaded <http://www.vamdc.org/downloads/vamdc-xsams-doc-v1.0.tar.bz2>`_
+* The description of quantum numbers for molecules are done using different sets of quantum numbers packaged in "cases" related to the the type of molecule. The following documentation is compulsory in order to implement molecular databases or in order to understand the content of XSAMS files for molecules. This documentation called "case-by-case" schema documentation can be viewed `here <http://www.vamdc.eu/documents/cbc-1.0>`_
 
 
 Registry
