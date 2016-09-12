@@ -1,0 +1,3379 @@
+\section*{Diatomic closed-shell molecules: dcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v$}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:v>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v$ is the vibrational quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ (or $\boldsymbol{F_1}$) to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if both couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<dcs:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Hund's case (a) diatomics: hunda}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$|\mathit{\Lambda}|$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:Lambda>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$|\mathit{\Lambda}|$ is the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, $\boldsymbol{L}$, onto the molecular axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$|\mathit{\Sigma}|$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:Sigma>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$|\mathit{\Sigma}|$ is the quantum number associated with the magnitude of the projection of $\boldsymbol{S}$ onto the molecular axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\item $|\mathit{\Sigma}| = S, S-1, \cdots, \frac{1}{2}\;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$\mathit{\Omega}$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:Omega>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$\mathit{\Omega}$ is the quantum number associated with the projection of the total angular momentum (excluding nuclear spin), $\boldsymbol{J}$, onto the molecular axis: $\mathit{\Omega} = |\mathit{\Lambda} + \mathit{\Sigma}|$ (or $\mathit{\Omega} = |\mathit{\Lambda}| + \mathit{\Sigma}$ if $S > |\mathit{\Lambda}| > 0$).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|\mathit{\Omega}| \le J$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:v>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v$ is the vibrational quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin: $\boldsymbol{J}=\boldsymbol{L}+\boldsymbol{S}+\boldsymbol{R}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ (or $\boldsymbol{F_1}$) to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved; $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if both couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<hunda:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Hund's case (b) diatomics: hundb}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$|\mathit{\Lambda}|$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:Lambda>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$|\mathit{\Lambda}|$ is the quantum number associated with the magnitude of the projection of the total electronic orbital angular momentum, $\boldsymbol{L}$, onto the molecular axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:v>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v$ is the vibrational quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S} = \boldsymbol{L} + \boldsymbol{S} + \boldsymbol{R}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|N - S| \le J \le N + S$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, $\boldsymbol{N}$: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $N \ge |\mathit{\Lambda}|$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{SpinComponentLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:SpinComponentLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{SpinComponentLabel} is the positive integer identifying the spin-component label, $F_x$, where $x = 1,2,3, \cdots$ in order of increasing energy for a given value of $J$ - see Herzberg, \emph{Spectra of Diatomic Molecules}, Van Nostrand, Princeton, N.J., 1950.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ (or $\boldsymbol{F_1}$) to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved; $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if both couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<hundb:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for diatomic molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed-shell, linear triatomic molecules: ltcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:v1>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_1$ is the vibrational quantum number associated with the $\nu_1$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:v2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_2$ is the vibrational quantum number associated with the doubly-degenerate $\nu_2$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:l2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$l_2$ is the vibrational angular momentum quantum number associated with the degenerate bending vibration, $\nu_2$; positive and negative values distinguish $l$-type doubling components.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item integer.
+\item $|l_2| = v_2, v_2 - 2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_3$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:v3>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_3$ is the vibrational quantum number associated with the $\nu_3$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:F2>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{F_1}$ to form an intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_2$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: $\boldsymbol{F_2} = \boldsymbol{F_1} + \boldsymbol{I_2}$; $F_2$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_1 - I_2| \le F_2 \le F_1 + I_2$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$, $\boldsymbol{F_1}$, or $\boldsymbol{F}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one hyperfine coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if two couplings are resolved, or $\boldsymbol{F} = \boldsymbol{F_2} + \boldsymbol{I_3}$ if all three couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_2 - I_3| \le F \le F_2 + I_3$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltcs:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed-shell, non-linear triatomics: nltcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:v1>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_1$ is the vibrational quantum number associated with the $\nu_1$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:v2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_2$ is the vibrational quantum number associated with the $\nu_2$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_3$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:v3>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_3$ is the vibrational quantum number associated with the $\nu_3$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_a$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:Ka>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_a$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the prolate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_a \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_c$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:Kc>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_c$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the oblate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_c \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:F2>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{F_1}$ to form an intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_2$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: $\boldsymbol{F_2} = \boldsymbol{F_1} + \boldsymbol{I_2}$; $F_2$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_1 - I_2| \le F_2 \le F_1 + I_2$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$, $\boldsymbol{F_1}$, or $\boldsymbol{F}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one hyperfine coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if two couplings are resolved, or $\boldsymbol{F} = \boldsymbol{F_2} + \boldsymbol{I_3}$ if all three couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_2 - I_3| \le F \le F_2 + I_3$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltcs:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed shell, symmetric-top molecules: stcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:li>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$l_i$ is the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $|l_i| = v_i, v_i-2, \cdots, 1\;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:vibInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibInv} is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system. Only really necessary for molecules with a low barrier to such an inversion (for example, $\mathrm{NH_3}$).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:vibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{vibSym} is the symmetry species of the vibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:K>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K$ is the quantum number associated with the projection of the total angular momentum excluding nuclear spin, $\boldsymbol{J}$, onto the molecular symmetry axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K \le J$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rotSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:rotSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rotSym} is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rovibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:rovibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rovibSym} is the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<stcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed-shell, linear polyatomic molecules: lpcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:li>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$l_i$ is the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components; if two or more degenerate vibrations are excited, $l_i$ is only approximately defined (\emph{i.e.} it is not a totally good quantum number) - see \emph{e.g.} Herzerg II, p.212.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $|l_i| = v_i, v_i-2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:l>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$l$ is the total vibrational angular momentum quantum number associated with resultant vibrational angular momentum about the internuclear axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:vibInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibInv} is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:vibRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibRefl} is the parity of the vibrational wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $J \ge |l|$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label, matching \texttt{/Q.+/} identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label, matching \texttt{/Q.+/} identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpcs:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed-shell, asymmetric top molecules: asymcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:vibInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibInv} is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:vibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{vibSym} is the symmetry species of the vibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_a$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:Ka>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_a$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the prolate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_a \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_c$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:Kc>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_c$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the oblate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_c \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rotSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:rotSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rotSym} is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rovibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:rovibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rovibSym} is the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Open-shell, asymmetric top molecules: asymos}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:vibInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibInv} is the parity of the vibrational wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:vibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{vibSym} is the symmetry species of the vibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_a$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:Ka>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_a$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the prolate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_a \le N$.
+\item $K_a + K_c = N \;\mathrm{or}\;N + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_c$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:Kc>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_c$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the oblate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_c \le N$.
+\item $K_a + K_c = N \;\mathrm{or}\;N + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rotSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:rotSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rotSym} is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rovibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:rovibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rovibSym} is the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<asymos:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Closed-shell, spherical-top molecules: sphcs}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:li>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$l_i$ is the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $|l_i| = v_i, v_i-2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:vibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{vibSym} is the symmetry species of the vibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:J>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rotSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:rotSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{rotSym} is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rovibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:rovibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rovibSym} is the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphcs:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Open-shell, spherical-top molecules: sphos}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:li>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$l_i$ is the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $|l_i| = v_i, v_i-2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:vibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{vibSym} is the symmetry species of the vibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rotSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:rotSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rotSym} is the symmetry species of the rotational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{rovibSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:rovibSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{rovibSym} is the symmetry species of the rovibrational wavefunction, in some appropriate symmetry group.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<sphos:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Open-shell,linear triatomic molecules: ltos}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:v1>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_1$ is the vibrational quantum number associated with the $\nu_1$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:v2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_2$ is the vibrational quantum number associated with the doubly-degenerate $\nu_2$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:l2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$l_2$ is the vibrational angular momentum quantum number associated with the degenerate bending vibration, $\nu_2$; positive and negative values distinguish $l$-type doubling components.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item integer.
+\item $|l_2| = v_2, v_2 - 2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_3$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:v3>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_3$ is the vibrational quantum number associated with the $\nu_3$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:F2>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{F_1}$ to form an intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_2$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: $\boldsymbol{F_2} = \boldsymbol{F_1} + \boldsymbol{I_2}$; $F_2$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_1 - I_2| \le F_2 \le F_1 + I_2$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$, $\boldsymbol{F_1}$, or $\boldsymbol{F}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one hyperfine coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if two couplings are resolved, or $\boldsymbol{F} = \boldsymbol{F_2} + \boldsymbol{I_3}$ if all three couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_2 - I_3| \le F \le F_2 + I_3$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<ltos:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Open-shell, linear polyatomic molecules: lpos}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:elecRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecRefl} is the parity of the electronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system (equivalent to inversion through the molecular centre of mass in the laboratory coordinate system).
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:vi>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the normal mode that this quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$v_i$ is the vibrational quantum number associated with the $\nu_i$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l_i$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:li>}
+\subsubsection*{\underline{Attributes}}
+\texttt{mode}: a positive integer, identifying the degenerate normal mode that this vibrational angular momentum quantum number is associated with.
+\subsubsection*{\underline{Description}}
+$l_i$ is the vibrational angular momentum quantum number associated with the degenerate $\nu_i$ normal mode; positive and negative values distinguish $l$-type doubling components; if two or more degenerate vibrations are excited, $l_i$ is only approximately defined (\emph{i.e.} it is not a totally good quantum number) - see \emph{e.g.} Herzerg II, p.212.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $|l_i| = v_i, v_i-2, \cdots, 1 \;\mathrm{or}\;0$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$l$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:l>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$l$ is the total vibrational angular momentum quantum number associated with resultant vibrational angular momentum about the internuclear axis.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:vibInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibInv} is the parity of the vibronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{vibRefl}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:vibRefl>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{vibRefl} is the parity of the vibronic wavefunction with respect to reflection in a plane containing the molecular symmetry axis in the molecular coordinate system.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\item $J \ge |l|$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$I$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:I>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label, matching \texttt{/Q.+/} identifying the group of nuclear spins coupled to one another to form a total nuclear spin angular momentum.
+\subsubsection*{\underline{Description}}
+$I$ is the quantum number associated with the total nuclear spin angular momentum: $\boldsymbol{I} = \boldsymbol{I_1} + \boldsymbol{I_2} + \cdots$ where nuclei $1, 2, \cdots$ have individual nuclear spin angular momenta $\boldsymbol{I_1}, \boldsymbol{I_2}, \cdots$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_j$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:Fj>}
+\subsubsection*{\underline{Attributes}}
+\begin{itemize}\item\texttt{nuclearSpinRef}: a label identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_{j-1}}$ to form an intermediate angular momentum;\item $j$: an integer label identifying the order of the hyperfine coupling\end{itemize}.
+\subsubsection*{\underline{Description}}
+$F_j$ is the intermediate angular momentum quantum number associated with the coupling of the nuclear spin angular momentum of nucleus $j$ to the intermediate angular momentum: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$ or $\boldsymbol{F_j} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$; $\boldsymbol{F_j}$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label, matching \texttt{/Q.+/} identifying the nuclear spin being coupled to $\boldsymbol{J}$ or $\boldsymbol{F_j}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one such coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_{j-1}} + \boldsymbol{I_j}$ if two or more such couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{kronigParity}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:kronigParity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{kronigParity} is the `rotationless' parity: the parity of the total molecular wavefunction excluding nuclear spin and rotation with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system. For integral $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^J,\\f\;\mathrm{if\;parity\;is}\;-(-1)^J.\end{align*}For half-odd integer $J$, the levels are called: \begin{align*}e\;\mathrm{if\;parity\;is}\;+(-1)^{J-\frac{1}{2}},\\f\;\mathrm{if\;parity\;is}\;-(-1)^{J-\frac{1}{2}}.\end{align*}.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `e' or `f'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<lpos:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is (for linear molecules with a centre of inversion) the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
+\section*{Open-shell, non-linear triatomics: nltos}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{ElecStateLabel}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:ElecStateLabel>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{ElecStateLabel} is a label identifying the electronic state: $X$, $A$, $a$, $B$, etc..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:elecSym>}
+\subsubsection*{\underline{Attributes}}
+\texttt{group}: the symmetry group to which this species belongs.
+\subsubsection*{\underline{Description}}
+\texttt{elecSym} is the symmetry species of the electronic wavefunction described by some symmetry group..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item string.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{elecInv}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:elecInv>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{elecInv} is the parity of the electronic wavefunction with respect to inversion through the molecular centre of mass in the molecular coordinate system..
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `g' or `u'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$S$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:S>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$S$ is the quantum number associated with the total electronic spin angular momentum, $\boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:v1>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_1$ is the vibrational quantum number associated with the $\nu_1$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:v2>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_2$ is the vibrational quantum number associated with the $\nu_2$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$v_3$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:v3>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$v_3$ is the vibrational quantum number associated with the $\nu_3$ normal mode.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$J$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:J>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$J$ is the quantum number associated with the total angular momentum excluding nuclear spin, $\boldsymbol{J}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-odd integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$N$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:N>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$N$ is the quantum number associated with the total angular momentum excluding electronic and nuclear spin, N: $\boldsymbol{J} = \boldsymbol{N} + \boldsymbol{S}$.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_a$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:Ka>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_a$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the prolate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_a \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$K_c$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:Kc>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+$K_c$ is the rotational quantum label of an asymmetric top molecule, correlating to $K$ in the oblate symmetric top limit.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer.
+\item $K_c \le J$.
+\item $K_a + K_c = J \;\mathrm{or}\;J + 1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_1$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:F1>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$ to form the intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_1$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 1 where two or more such couplings are resolved: $\boldsymbol{F_1} = \boldsymbol{J} + \boldsymbol{I_1}$; $F_1$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|J - I_1| \le F_1 \le J + I_1$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F_2$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:F2>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{F_1}$ to form an intermediate angular momentum.
+\subsubsection*{\underline{Description}}
+$F_2$ is the intermediate angular momentum quantum number associated with the coupling of the rotational angular momentum and nuclear spin of nucleus 2 where three such couplings are resolved: $\boldsymbol{F_2} = \boldsymbol{F_1} + \boldsymbol{I_2}$; $F_2$ is often not a good quantum number.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_1 - I_2| \le F_2 \le F_1 + I_2$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$F$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:F>}
+\subsubsection*{\underline{Attributes}}
+\texttt{nuclearSpinRef}: a label identifying the nuclear spin coupled to $\boldsymbol{J}$, $\boldsymbol{F_1}$, or $\boldsymbol{F}$ to form the total angular momentum.
+\subsubsection*{\underline{Description}}
+$F$ is the quantum number associated with the total angular momentum including nuclear spin: $\boldsymbol{F} = \boldsymbol{J} + \boldsymbol{I_1}$ if only one hyperfine coupling is resolved, $\boldsymbol{F} = \boldsymbol{F_1} + \boldsymbol{I_2}$ if two couplings are resolved, or $\boldsymbol{F} = \boldsymbol{F_2} + \boldsymbol{I_3}$ if all three couplings are resolved.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item non-negative integer or half-integer.
+\item $|F_2 - I_3| \le F \le F_2 + I_3$.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{$r$}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:r>}
+\subsubsection*{\underline{Attributes}}
+\texttt{name}: a string identifying this ranking index.
+\subsubsection*{\underline{Description}}
+$r$ is a named, positive integer label identifying the state if no other good quantum numbers or symmetries are known.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item positive integer.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{parity}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:parity>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{parity} is the total parity: the parity of the total molecular wavefunction (excluding nuclear spin) with respect to inversion through the molecular centre of mass of all particles' coordinates in the laboratory coordinate system, the $\hat{E}^*$ operation.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `$+$' or `$-$'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+\fbox{
+\parbox{12cm}{
+\subsection*{\texttt{asSym}}
+\subsubsection*{\underline{Element}}
+\texttt{<nltos:asSym>}
+\subsubsection*{\underline{Attributes}}
+None.
+\subsubsection*{\underline{Description}}
+\texttt{asSym} is the symmetry of the rovibronic wavefunction: `a' or `s' such that the total wavefunction including nuclear spin is symmetric or antisymmetric with respect to permutation of the identical nuclei ($\hat{P}_{12}$), according to whether they are bosons or fermions respectively.
+\subsubsection*{\underline{Restrictions}}
+\begin{itemize}
+\item `s' or `a'.
+\end{itemize}
+}
+}
+\vspace{0.5cm}
+
+
+
+
