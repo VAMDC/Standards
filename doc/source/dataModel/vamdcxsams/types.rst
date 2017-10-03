@@ -263,13 +263,14 @@ UnitsType
 	- nm
 	- deg
 	- rad
-	- srad
+	- sr
 	- s
 	- m3/s
 	- cm3/s
 	- cm6/s
 	- m2
 	- cm2
+    - m2/sr
 	- b
 	- Mb
 	- 1/s
