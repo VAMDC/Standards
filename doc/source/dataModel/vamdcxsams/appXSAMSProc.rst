@@ -68,6 +68,7 @@ inel    Inelastic scattering        Scattering of one reactant from another with
                                     in case none of the other specific inelastic codes
                                     are applicable or appropriate (e.g., energy or spin
                                     transfer reactions, projectile energy loss)
+angu    Angular Scattering          To describe angular dependent values.                                    
 exci    Excitation                  Excitation from a lower to higher state of any
                                     fundamental reactant, e.g., electron-impact 
                                     excitation of an atom, photoexcitation of a 
